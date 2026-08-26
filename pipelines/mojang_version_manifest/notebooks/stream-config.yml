@@ -1,0 +1,15 @@
+main:
+  headers:
+    User-Agent: "liamxaro/Minecraft-data-platform/(contact: stormcraftmods@gmail.com)"
+
+  parent-folder: data
+
+  ingestion-log: ingestion_log
+
+streams:
+  - name: mojang_version_manifest
+    source-url: https://piston-meta.mojang.com/mc/game/version_manifest_v2.json
+    table-name: mojang_version_manifest
+    cdc-keys: id
+    cdc-modification-column: time
+

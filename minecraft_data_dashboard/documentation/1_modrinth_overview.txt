@@ -1,0 +1,17 @@
+This page seeks to answer the question of what does the source of the data look like?
+
+KPIS:
+-how many project listings are there
+-how many authors
+-how many downloads
+-how many project types (mods, resource packs, datapacks, plug-ins)
+
+Charts:
+-Pie chart of project type distribution
+
+potential:
+    Section 4: Data recency / growth
+snapshot counts over time, if available
+
+Data Preview:
+-A sample of 50 rows of what the data looks like

@@ -1,0 +1,15 @@
+main:
+  headers:
+    User-Agent: "liamxaro/Minecraft-data-platform/(contact: stormcraftmods@gmail.com)"
+
+  parent-folder: data
+
+  ingestion-log: ingestion_log
+
+streams:
+  - name: modrinth_project_listings
+    source-url: https://api.modrinth.com/v2
+    search-limit: 100
+    table-name: modrinth_project_listings
+    concurrency-limit: 10
+

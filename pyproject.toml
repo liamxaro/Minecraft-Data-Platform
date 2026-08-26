@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "minecraft-data-platform"
+version = "0.1.0"
+
+dependencies = [
+    "duckdb",
+    "polars",
+    "pandas",
+    "pyarrow",
+    "httpx",
+    "pyyaml",
+    "streamlit",
+    "plotly",
+    "jupyter",
+    "ipykernel",
+    "nbconvert",
+    "tldextract",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = [
+    "shared_code*",
+    "pipelines*",
+    "minecraft_data_dashboard*"
+]

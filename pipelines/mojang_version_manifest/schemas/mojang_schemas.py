@@ -1,0 +1,48 @@
+def build_bronze_mojang_version_manifest_schema(
+    table_name: str,
+) -> str:
+    return f"""
+        CREATE TABLE IF NOT EXISTS {table_name} (
+            run_id VARCHAR NOT NULL,
+            stream VARCHAR NOT NULL,
+            payload JSON NOT NULL,
+            c_pull_timestamp_utc TIMESTAMPTZ NOT NULL,
+            PRIMARY KEY (
+                run_id,
+                stream
+            )
+        );
+    """
+    
+def build_ingestion_log_schema(
+    table_name: str,
+) -> str:
+    return f"""
+        CREATE TABLE IF NOT EXISTS {table_name} (
+            run_id VARCHAR NOT NULL,
+            ingestion_type VARCHAR NOT NULL,
+            api_url VARCHAR NOT NULL,
+            project_type VARCHAR NOT NULL,
+            status VARCHAR NOT NULL,
+
+            records_processed BIGINT,
+            records_written BIGINT,
+            records_failed BIGINT,
+            records_skipped BIGINT,
+            nested_records_fetched BIGINT,
+
+            failed_record_ids VARCHAR[],
+            skipped_record_ids VARCHAR[],
+
+            error_message VARCHAR,
+            start_time TIMESTAMPTZ,
+            end_time TIMESTAMPTZ,
+            duration_seconds DOUBLE,
+
+            PRIMARY KEY (
+                run_id,
+                ingestion_type,
+                project_type
+            )
+        );
+    """

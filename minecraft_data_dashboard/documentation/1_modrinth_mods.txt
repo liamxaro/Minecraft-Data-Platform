@@ -1,0 +1,15 @@
+This page seeks to answer questions around what the best mods are and why
+
+Charts:
+. Top-level source composition
+If you have fields like client/server support, categories, or license:
+. Top 10 mods of all time
+
+.Bar chart mod categories by downloads (most popular mod category)
+
+project count by client_side
+project count by server_side
+top categories
+top licenses
+
+just some small notes from me written on my new keyboard : )
