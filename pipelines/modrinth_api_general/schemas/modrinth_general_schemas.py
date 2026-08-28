@@ -7,6 +7,7 @@ def build_bronze_modrinth_project_listings_schema(
             project_type VARCHAR NOT NULL,
             project_id VARCHAR NOT NULL,
             payload JSON NOT NULL,
+            hashed_payload VARCHAR NOT NULL,
             c_pull_timestamp_utc TIMESTAMPTZ NOT NULL,
             PRIMARY KEY (
                 run_id,

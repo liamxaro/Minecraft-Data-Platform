@@ -12,4 +12,6 @@ streams:
     search-limit: 100
     table-name: modrinth_project_listings
     concurrency-limit: 10
+    cdc-key:
+    cdc-sequence-key:
 
