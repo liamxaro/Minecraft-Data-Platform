@@ -22,6 +22,12 @@ data/
 *.duckdb
 *.duckdb.wal
 
+#dbt generated files
+# dbt
+transformations/target/
+transformations/logs/
+transformations/dbt_packages/
+
 # Airflow local runtime
 .airflow/
 

@@ -7,11 +7,12 @@ minecraft_data_platform:
     dev:
       type: duckdb
 
-      path: /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/data/silver/dev/api.modrinth.com.duckdb
+      path: /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/data/silver/dev/api_modrinth_com.duckdb
+
 
       threads: 4
 
       attach:
-        - path: /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/data/bronze/dev/api.modrinth.com.duckdb
+        - path: /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/data/bronze/dev/api_modrinth_com.duckdb
           alias: bronze
           read_only: true
