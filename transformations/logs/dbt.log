@@ -1,0 +1,280 @@
+[0m17:45:04.767384 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d6d5940>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e8eb750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e8eb9d0>]}
+
+
+============================== 17:45:04.770802 | 16cf65c3-075e-4935-a9b4-ecfa0508022d ==============================
+[0m17:45:04.770802 [info ] [MainThread]: Running with dbt=1.11.11
+[0m17:45:04.771169 [debug] [MainThread]: running dbt with arguments {'indirect_selection': 'eager', 'debug': 'False', 'static_parser': 'True', 'use_experimental_parser': 'False', 'send_anonymous_usage_stats': 'True', 'fail_fast': 'False', 'quiet': 'False', 'version_check': 'True', 'invocation_command': 'dbt run --project-dir transformations --profiles-dir transformations --select test_bronze_connection', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'partial_parse': 'True', 'printer_width': '80', 'write_json': 'True', 'warn_error': 'None', 'empty': 'False', 'log_path': 'transformations/logs', 'target_path': 'None', 'profiles_dir': 'transformations', 'log_format': 'default', 'cache_selected_only': 'False', 'introspect': 'True', 'use_colors': 'True', 'log_cache_events': 'False', 'no_print': 'None'}
+[0m17:45:04.923723 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '16cf65c3-075e-4935-a9b4-ecfa0508022d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10db915b0>]}
+[0m17:45:04.954288 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '16cf65c3-075e-4935-a9b4-ecfa0508022d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e91b130>]}
+[0m17:45:04.956080 [info ] [MainThread]: Registered adapter: duckdb=1.11.0
+[0m17:45:05.016941 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m17:45:05.017713 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m17:45:05.017943 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '16cf65c3-075e-4935-a9b4-ecfa0508022d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e9c1450>]}
+[0m17:45:05.630119 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '16cf65c3-075e-4935-a9b4-ecfa0508022d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e1545f0>]}
+[0m17:45:05.665271 [debug] [MainThread]: Wrote artifact WritableManifest to transformations/target/manifest.json
+[0m17:45:05.667161 [debug] [MainThread]: Wrote artifact SemanticManifest to transformations/target/semantic_manifest.json
+[0m17:45:05.675077 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '16cf65c3-075e-4935-a9b4-ecfa0508022d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e868750>]}
+[0m17:45:05.675338 [info ] [MainThread]: Found 1 model, 500 macros
+[0m17:45:05.675493 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '16cf65c3-075e-4935-a9b4-ecfa0508022d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10edb4e20>]}
+[0m17:45:05.676229 [warn ] [MainThread]: Nothing to do. Try checking your model configs and model specification args
+[0m17:45:05.676503 [debug] [MainThread]: Command end result
+[0m17:45:05.692339 [debug] [MainThread]: Wrote artifact WritableManifest to transformations/target/manifest.json
+[0m17:45:05.693499 [debug] [MainThread]: Wrote artifact SemanticManifest to transformations/target/semantic_manifest.json
+[0m17:45:05.695178 [debug] [MainThread]: Wrote artifact RunExecutionResult to transformations/target/run_results.json
+[0m17:45:05.697209 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 0.9760017, "process_in_blocks": "0", "process_kernel_time": 0.250427, "process_mem_max_rss": "164610048", "process_out_blocks": "0", "process_user_time": 2.120259}
+[0m17:45:05.697577 [debug] [MainThread]: Command `dbt run` succeeded at 17:45:05.697524 after 0.98 seconds
+[0m17:45:05.697798 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e861b50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ef4e570>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ef4e620>]}
+[0m17:45:05.697995 [debug] [MainThread]: Flushing usage events
+[0m17:45:06.074446 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:45:17.614548 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d519940>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e72f750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e72f9d0>]}
+
+
+============================== 17:45:17.618505 | a48ecda8-6d77-409c-8d46-7421d268e0b6 ==============================
+[0m17:45:17.618505 [info ] [MainThread]: Running with dbt=1.11.11
+[0m17:45:17.618879 [debug] [MainThread]: running dbt with arguments {'no_print': 'None', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'use_colors': 'True', 'profiles_dir': 'transformations', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'version_check': 'True', 'target_path': 'None', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_format': 'default', 'invocation_command': 'dbt run --project-dir transformations --profiles-dir transformations --select test_bronze_connection', 'empty': 'False', 'debug': 'False', 'quiet': 'False', 'static_parser': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'printer_width': '80', 'send_anonymous_usage_stats': 'True', 'log_path': 'transformations/logs', 'warn_error': 'None'}
+[0m17:45:17.751230 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'a48ecda8-6d77-409c-8d46-7421d268e0b6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d9d55b0>]}
+[0m17:45:17.783501 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'a48ecda8-6d77-409c-8d46-7421d268e0b6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e75f130>]}
+[0m17:45:17.785988 [info ] [MainThread]: Registered adapter: duckdb=1.11.0
+[0m17:45:17.849506 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m17:45:17.901679 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m17:45:17.902075 [debug] [MainThread]: Partial parsing: updated file: minecraft_data_platform://models/staging/test_bronze_connection.sql
+[0m17:45:18.029950 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'a48ecda8-6d77-409c-8d46-7421d268e0b6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e800250>]}
+[0m17:45:18.064835 [debug] [MainThread]: Wrote artifact WritableManifest to transformations/target/manifest.json
+[0m17:45:18.066607 [debug] [MainThread]: Wrote artifact SemanticManifest to transformations/target/semantic_manifest.json
+[0m17:45:18.073044 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'a48ecda8-6d77-409c-8d46-7421d268e0b6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e7a7200>]}
+[0m17:45:18.073315 [info ] [MainThread]: Found 1 model, 500 macros
+[0m17:45:18.073485 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'a48ecda8-6d77-409c-8d46-7421d268e0b6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ed5e7b0>]}
+[0m17:45:18.074339 [info ] [MainThread]: 
+[0m17:45:18.074515 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m17:45:18.074644 [info ] [MainThread]: 
+[0m17:45:18.074881 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m17:45:18.075285 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_https:||api.modrinth.com'
+[0m17:45:18.112723 [debug] [ThreadPool]: Using duckdb connection "list_https:||api.modrinth.com"
+[0m17:45:18.112990 [debug] [ThreadPool]: On list_https:||api.modrinth.com: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "connection_name": "list_https:||api.modrinth.com"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"https:||api.modrinth.com"'
+    
+  
+  
+[0m17:45:18.113152 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:45:18.131649 [debug] [ThreadPool]: SQL status: OK in 0.018 seconds
+[0m17:45:18.132602 [debug] [ThreadPool]: On list_https:||api.modrinth.com: Close
+[0m17:45:18.133079 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_https:||api.modrinth.com, now create_https:||api.modrinth.com_main)
+[0m17:45:18.133422 [debug] [ThreadPool]: Creating schema "database: "https:||api.modrinth.com"
+schema: "main"
+"
+[0m17:45:18.137804 [debug] [ThreadPool]: Using duckdb connection "create_https:||api.modrinth.com_main"
+[0m17:45:18.138042 [debug] [ThreadPool]: On create_https:||api.modrinth.com_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "connection_name": "create_https:||api.modrinth.com_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='https:||api.modrinth.com'
+        and type != 'duckdb'
+    
+  
+[0m17:45:18.138189 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m17:45:18.139211 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m17:45:18.140208 [debug] [ThreadPool]: Using duckdb connection "create_https:||api.modrinth.com_main"
+[0m17:45:18.140368 [debug] [ThreadPool]: On create_https:||api.modrinth.com_main: BEGIN
+[0m17:45:18.140604 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m17:45:18.140734 [debug] [ThreadPool]: Using duckdb connection "create_https:||api.modrinth.com_main"
+[0m17:45:18.140862 [debug] [ThreadPool]: On create_https:||api.modrinth.com_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "connection_name": "create_https:||api.modrinth.com_main"} */
+
+    
+    
+        create schema if not exists "https:||api.modrinth.com"."main"
+    
+[0m17:45:18.144305 [debug] [ThreadPool]: DuckDB adapter: duckdb error: Binder Error: Catalog "https:||api.modrinth.com" does not exist!
+[0m17:45:18.144475 [debug] [ThreadPool]: DuckDB adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "connection_name": "create_https:||api.modrinth.com_main"} */
+
+    
+    
+        create schema if not exists "https:||api.modrinth.com"."main"
+    
+[0m17:45:18.144603 [debug] [ThreadPool]: DuckDB adapter: Rolling back transaction.
+[0m17:45:18.144726 [debug] [ThreadPool]: On create_https:||api.modrinth.com_main: ROLLBACK
+[0m17:45:18.145019 [debug] [ThreadPool]: On create_https:||api.modrinth.com_main: Close
+[0m17:45:18.145496 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m17:45:18.145722 [debug] [MainThread]: Connection 'create_https:||api.modrinth.com_main' was properly closed.
+[0m17:45:18.145874 [info ] [MainThread]: 
+[0m17:45:18.146040 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 0.07 seconds (0.07s).
+[0m17:45:18.146289 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Binder Error: Catalog "https:||api.modrinth.com" does not exist!
+[0m17:45:18.148252 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.5794752, "process_in_blocks": "0", "process_kernel_time": 0.252284, "process_mem_max_rss": "178307072", "process_out_blocks": "0", "process_user_time": 1.746458}
+[0m17:45:18.148568 [debug] [MainThread]: Command `dbt run` failed at 17:45:18.148512 after 0.58 seconds
+[0m17:45:18.148771 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ee55300>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e6a5b50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10eeb5cd0>]}
+[0m17:45:18.148964 [debug] [MainThread]: Flushing usage events
+[0m17:45:18.490104 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:46:55.458109 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d7bd940>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e9d3750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e9d39d0>]}
+
+
+============================== 17:46:55.461848 | b9f61c36-179a-4de4-b4e1-e1df12e6d8a0 ==============================
+[0m17:46:55.461848 [info ] [MainThread]: Running with dbt=1.11.11
+[0m17:46:55.462287 [debug] [MainThread]: running dbt with arguments {'empty': 'False', 'version_check': 'True', 'write_json': 'True', 'log_cache_events': 'False', 'target_path': 'None', 'log_format': 'default', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'use_colors': 'True', 'invocation_command': 'dbt run --project-dir transformations --profiles-dir transformations --select test_bronze_connection', 'cache_selected_only': 'False', 'profiles_dir': 'transformations', 'quiet': 'False', 'use_experimental_parser': 'False', 'printer_width': '80', 'introspect': 'True', 'warn_error': 'None', 'fail_fast': 'False', 'partial_parse': 'True', 'static_parser': 'True', 'no_print': 'None', 'debug': 'False', 'send_anonymous_usage_stats': 'True', 'indirect_selection': 'eager', 'log_path': 'transformations/logs'}
+[0m17:46:55.613943 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'b9f61c36-179a-4de4-b4e1-e1df12e6d8a0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10dc795b0>]}
+[0m17:46:55.646040 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'b9f61c36-179a-4de4-b4e1-e1df12e6d8a0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ea03130>]}
+[0m17:46:55.648093 [info ] [MainThread]: Registered adapter: duckdb=1.11.0
+[0m17:46:55.710878 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m17:46:55.766987 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m17:46:55.767413 [debug] [MainThread]: Partial parsing: updated file: minecraft_data_platform://models/staging/test_bronze_connection.sql
+[0m17:46:55.897417 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'b9f61c36-179a-4de4-b4e1-e1df12e6d8a0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10eaa4250>]}
+[0m17:46:55.932036 [debug] [MainThread]: Wrote artifact WritableManifest to transformations/target/manifest.json
+[0m17:46:55.933936 [debug] [MainThread]: Wrote artifact SemanticManifest to transformations/target/semantic_manifest.json
+[0m17:46:55.941465 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'b9f61c36-179a-4de4-b4e1-e1df12e6d8a0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ea4b200>]}
+[0m17:46:55.941745 [info ] [MainThread]: Found 1 model, 500 macros
+[0m17:46:55.941910 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b9f61c36-179a-4de4-b4e1-e1df12e6d8a0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f0027b0>]}
+[0m17:46:55.942742 [info ] [MainThread]: 
+[0m17:46:55.942920 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m17:46:55.943044 [info ] [MainThread]: 
+[0m17:46:55.943286 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m17:46:55.943820 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_https:||api.modrinth.com'
+[0m17:46:55.981235 [debug] [ThreadPool]: Using duckdb connection "list_https:||api.modrinth.com"
+[0m17:46:55.981518 [debug] [ThreadPool]: On list_https:||api.modrinth.com: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "connection_name": "list_https:||api.modrinth.com"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"https:||api.modrinth.com"'
+    
+  
+  
+[0m17:46:55.981709 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:46:55.997708 [debug] [ThreadPool]: SQL status: OK in 0.016 seconds
+[0m17:46:55.998644 [debug] [ThreadPool]: On list_https:||api.modrinth.com: Close
+[0m17:46:55.999116 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_https:||api.modrinth.com, now create_https:||api.modrinth.com_main)
+[0m17:46:55.999402 [debug] [ThreadPool]: Creating schema "database: "https:||api.modrinth.com"
+schema: "main"
+"
+[0m17:46:56.003444 [debug] [ThreadPool]: Using duckdb connection "create_https:||api.modrinth.com_main"
+[0m17:46:56.003650 [debug] [ThreadPool]: On create_https:||api.modrinth.com_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "connection_name": "create_https:||api.modrinth.com_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='https:||api.modrinth.com'
+        and type != 'duckdb'
+    
+  
+[0m17:46:56.003787 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m17:46:56.004297 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m17:46:56.004950 [debug] [ThreadPool]: Using duckdb connection "create_https:||api.modrinth.com_main"
+[0m17:46:56.005089 [debug] [ThreadPool]: On create_https:||api.modrinth.com_main: BEGIN
+[0m17:46:56.005296 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m17:46:56.005417 [debug] [ThreadPool]: Using duckdb connection "create_https:||api.modrinth.com_main"
+[0m17:46:56.005539 [debug] [ThreadPool]: On create_https:||api.modrinth.com_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "connection_name": "create_https:||api.modrinth.com_main"} */
+
+    
+    
+        create schema if not exists "https:||api.modrinth.com"."main"
+    
+[0m17:46:56.005920 [debug] [ThreadPool]: DuckDB adapter: duckdb error: Binder Error: Catalog "https:||api.modrinth.com" does not exist!
+[0m17:46:56.006055 [debug] [ThreadPool]: DuckDB adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "connection_name": "create_https:||api.modrinth.com_main"} */
+
+    
+    
+        create schema if not exists "https:||api.modrinth.com"."main"
+    
+[0m17:46:56.006175 [debug] [ThreadPool]: DuckDB adapter: Rolling back transaction.
+[0m17:46:56.006296 [debug] [ThreadPool]: On create_https:||api.modrinth.com_main: ROLLBACK
+[0m17:46:56.006538 [debug] [ThreadPool]: On create_https:||api.modrinth.com_main: Close
+[0m17:46:56.006924 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m17:46:56.007098 [debug] [MainThread]: Connection 'create_https:||api.modrinth.com_main' was properly closed.
+[0m17:46:56.007259 [info ] [MainThread]: 
+[0m17:46:56.007425 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 0.06 seconds (0.06s).
+[0m17:46:56.007669 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Binder Error: Catalog "https:||api.modrinth.com" does not exist!
+[0m17:46:56.009702 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.6046401, "process_in_blocks": "0", "process_kernel_time": 0.28121, "process_mem_max_rss": "177963008", "process_out_blocks": "0", "process_user_time": 1.751493}
+[0m17:46:56.010077 [debug] [MainThread]: Command `dbt run` failed at 17:46:56.010020 after 0.61 seconds
+[0m17:46:56.010299 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f0f5300>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e949b50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f14dcd0>]}
+[0m17:46:56.010501 [debug] [MainThread]: Flushing usage events
+[0m17:46:56.379518 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:57:06.019825 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d4a1940>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e6b7750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e6b79d0>]}
+
+
+============================== 17:57:06.023767 | 42a8b922-f21a-44dc-ba9e-0e49fec38409 ==============================
+[0m17:57:06.023767 [info ] [MainThread]: Running with dbt=1.11.11
+[0m17:57:06.024131 [debug] [MainThread]: running dbt with arguments {'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'cache_selected_only': 'False', 'use_colors': 'True', 'debug': 'False', 'printer_width': '80', 'partial_parse': 'True', 'log_cache_events': 'False', 'introspect': 'True', 'invocation_command': 'dbt run --project-dir transformations --profiles-dir transformations --select test_bronze_connection', 'static_parser': 'True', 'indirect_selection': 'eager', 'fail_fast': 'False', 'log_format': 'default', 'target_path': 'None', 'use_experimental_parser': 'False', 'quiet': 'False', 'warn_error': 'None', 'version_check': 'True', 'log_path': 'transformations/logs', 'no_print': 'None', 'write_json': 'True', 'profiles_dir': 'transformations', 'empty': 'False', 'send_anonymous_usage_stats': 'True'}
+[0m17:57:06.179559 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '42a8b922-f21a-44dc-ba9e-0e49fec38409', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d95d5b0>]}
+[0m17:57:06.213243 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '42a8b922-f21a-44dc-ba9e-0e49fec38409', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e6e7130>]}
+[0m17:57:06.215176 [info ] [MainThread]: Registered adapter: duckdb=1.11.0
+[0m17:57:06.280719 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m17:57:06.317256 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m17:57:06.317589 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '42a8b922-f21a-44dc-ba9e-0e49fec38409', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e78d450>]}
+[0m17:57:06.915457 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '42a8b922-f21a-44dc-ba9e-0e49fec38409', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e733110>]}
+[0m17:57:06.949340 [debug] [MainThread]: Wrote artifact WritableManifest to transformations/target/manifest.json
+[0m17:57:06.951518 [debug] [MainThread]: Wrote artifact SemanticManifest to transformations/target/semantic_manifest.json
+[0m17:57:06.958813 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '42a8b922-f21a-44dc-ba9e-0e49fec38409', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e8cd470>]}
+[0m17:57:06.959077 [info ] [MainThread]: Found 1 model, 500 macros
+[0m17:57:06.959237 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '42a8b922-f21a-44dc-ba9e-0e49fec38409', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ec13520>]}
+[0m17:57:06.960035 [info ] [MainThread]: 
+[0m17:57:06.960201 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m17:57:06.960325 [info ] [MainThread]: 
+[0m17:57:06.960552 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m17:57:06.960962 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_api.modrinth.com'
+[0m17:57:07.005420 [debug] [ThreadPool]: Using duckdb connection "list_api.modrinth.com"
+[0m17:57:07.005694 [debug] [ThreadPool]: On list_api.modrinth.com: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "connection_name": "list_api.modrinth.com"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"api.modrinth.com"'
+    
+  
+  
+[0m17:57:07.005852 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:57:07.021796 [debug] [ThreadPool]: SQL status: OK in 0.016 seconds
+[0m17:57:07.022600 [debug] [ThreadPool]: On list_api.modrinth.com: Close
+[0m17:57:07.023106 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_api.modrinth.com, now create_api.modrinth.com_main)
+[0m17:57:07.023444 [debug] [ThreadPool]: Creating schema "database: "api.modrinth.com"
+schema: "main"
+"
+[0m17:57:07.027514 [debug] [ThreadPool]: Using duckdb connection "create_api.modrinth.com_main"
+[0m17:57:07.027732 [debug] [ThreadPool]: On create_api.modrinth.com_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "connection_name": "create_api.modrinth.com_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='api.modrinth.com'
+        and type != 'duckdb'
+    
+  
+[0m17:57:07.027870 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m17:57:07.028351 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m17:57:07.028987 [debug] [ThreadPool]: Using duckdb connection "create_api.modrinth.com_main"
+[0m17:57:07.029132 [debug] [ThreadPool]: On create_api.modrinth.com_main: BEGIN
+[0m17:57:07.029403 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m17:57:07.029635 [debug] [ThreadPool]: Using duckdb connection "create_api.modrinth.com_main"
+[0m17:57:07.029781 [debug] [ThreadPool]: On create_api.modrinth.com_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "connection_name": "create_api.modrinth.com_main"} */
+
+    
+    
+        create schema if not exists "api.modrinth.com"."main"
+    
+[0m17:57:07.030219 [debug] [ThreadPool]: DuckDB adapter: duckdb error: Binder Error: Catalog "api.modrinth.com" does not exist!
+[0m17:57:07.030363 [debug] [ThreadPool]: DuckDB adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "connection_name": "create_api.modrinth.com_main"} */
+
+    
+    
+        create schema if not exists "api.modrinth.com"."main"
+    
+[0m17:57:07.030491 [debug] [ThreadPool]: DuckDB adapter: Rolling back transaction.
+[0m17:57:07.030624 [debug] [ThreadPool]: On create_api.modrinth.com_main: ROLLBACK
+[0m17:57:07.030874 [debug] [ThreadPool]: On create_api.modrinth.com_main: Close
+[0m17:57:07.031292 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m17:57:07.031454 [debug] [MainThread]: Connection 'create_api.modrinth.com_main' was properly closed.
+[0m17:57:07.031585 [info ] [MainThread]: 
+[0m17:57:07.031723 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 0.07 seconds (0.07s).
+[0m17:57:07.031933 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Binder Error: Catalog "api.modrinth.com" does not exist!
+[0m17:57:07.033883 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 1.0656276, "process_in_blocks": "0", "process_kernel_time": 0.31253, "process_mem_max_rss": "176521216", "process_out_blocks": "0", "process_user_time": 2.216487}
+[0m17:57:07.034108 [debug] [MainThread]: Command `dbt run` failed at 17:57:07.034065 after 1.07 seconds
+[0m17:57:07.034280 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e62db50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10eda97b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10eda9700>]}
+[0m17:57:07.034451 [debug] [MainThread]: Flushing usage events
+[0m17:57:07.424798 [debug] [MainThread]: An error was encountered while trying to flush usage events

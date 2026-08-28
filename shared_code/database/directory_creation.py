@@ -1,5 +1,6 @@
 import os
 import tldextract
+from urllib.parse import urlparse
 
 def _extract_tld(url: str) -> str:
         """
@@ -22,14 +23,13 @@ def build_db_filename(url: str) -> str:
     """
     description: function that builds the database filename
     
-    example: https:||api.modrinth.com.duckdb
+    example: api.modrinth.com.duckdb
     
     note: potentially come back and see if you can givev it a new name based on param url passed in
     """
-    tld = _extract_tld(url)
-    base = url.replace('/', '|')
-    base = base[0:(url.index(tld) + len(tld))]
-    return f"{base}.duckdb"
+    hostname = urlparse(url).netloc
+
+    return f"{hostname}.duckdb"
 
 #data directories / locations
 # self.root_project_directory = os.path.dirname(os.getcwd())

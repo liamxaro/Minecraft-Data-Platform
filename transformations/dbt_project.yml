@@ -1,0 +1,12 @@
+name: minecraft_data_platform
+version: "1.0.0"
+config-version: 2
+
+profile: minecraft_data_platform
+
+model-paths:
+  - models
+
+clean-targets:
+  - target
+  - dbt_packages
