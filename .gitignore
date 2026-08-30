@@ -28,6 +28,9 @@ transformations/target/
 transformations/logs/
 transformations/dbt_packages/
 
+sandbox/
+*.ipynb
+
 # Airflow local runtime
 .airflow/
 
