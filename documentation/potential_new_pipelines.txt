@@ -1,0 +1,9 @@
+general takeaway:
+    minecraft mod distribution is shared between modrinth and curseforge. The other repos are substantially inferior
+
+nexusmods.com -> has api
+hangar.papermc.io -> has an api, but focus is around plugins
+
+planetminecraft.com -> doesn't have an api, but there are talks of developing one
+minecraftmods.com -> doesn't have an api
+minecraftsix.com -> doesn't have an api

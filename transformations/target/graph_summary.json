@@ -1,1 +1,1 @@
-{"_invocation_id": "f4a4692d-c180-4f5c-abbf-2b873f07271b", "linked": {"0": {"name": "model.minecraft_data_platform.modrinth_project_listings", "type": "model"}}}
+{"_invocation_id": "1da9b5ad-2a8d-4961-9ac6-4233713c2cdd", "linked": {"0": {"name": "model.minecraft_data_platform.modrinth_project_versions", "type": "model"}, "1": {"name": "model.minecraft_data_platform.modrinth_project_listings", "type": "model"}, "2": {"name": "model.minecraft_data_platform.mojang_version_manifest", "type": "model"}}}

@@ -10,7 +10,10 @@ minecraft_data_platform:
       path: /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/data/silver/dev/api_modrinth_com.duckdb
 
 
-      threads: 4
+      threads: 1
+      settings:
+        memory_limit: "14GB"
+        preserve_insertion_order: false
 
       attach:
         - path: /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/data/bronze/dev/api_modrinth_com.duckdb
