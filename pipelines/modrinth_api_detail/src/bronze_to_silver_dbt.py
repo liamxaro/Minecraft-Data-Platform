@@ -1,31 +1,7 @@
 import argparse
 import os
-import shutil
 import subprocess
 
-
-project_root = os.path.abspath(
-    os.path.join(
-        os.path.dirname(__file__),
-        "../../..",
-    )
-)
-
-src_dir = os.path.dirname(
-        os.path.abspath(__file__)
-    )
-
-pipeline_dir = os.path.abspath(
-        os.path.join(
-            src_dir,
-            "..",
-        )
-    )
-
-transformations_dir = os.path.join(
-    project_root,
-    "transformations",
-)
 
 def parse_args():
     parser = argparse.ArgumentParser()
@@ -42,7 +18,7 @@ def parse_args():
 
     parser.add_argument(
         "--select",
-        default=None,
+        required=True,
     )
 
     parser.add_argument(
@@ -52,21 +28,70 @@ def parse_args():
 
     return parser.parse_args()
 
+
 def run_dbt(
     target: str,
-    select: str | None = None,
+    select: str,
     full_refresh: bool = False,
 ) -> None:
-    dbt_executable = shutil.which("dbt")
 
-    if dbt_executable is None:
-        raise RuntimeError(
-            "dbt executable was not found "
-            "in the current environment."
+    src_dir = os.path.dirname(
+        os.path.abspath(__file__)
+    )
+
+    project_root = os.path.abspath(
+        os.path.join(
+            src_dir,
+            "..",
+            "..",
+            "..",
         )
+    )
+
+    transformations_dir = os.path.join(
+        project_root,
+        "transformations",
+    )
+
+    dbt_path = os.path.join(
+        project_root,
+        ".venv",
+        "bin",
+        "dbt",
+    )
+
+    bronze_path = os.path.join(
+        project_root,
+        "data",
+        "bronze",
+        target,
+        "api_modrinth_com.duckdb",
+    )
+
+    silver_path = os.path.join(
+        project_root,
+        "data",
+        "silver",
+        target,
+        "api_modrinth_com.duckdb",
+    )
+
+    os.makedirs(
+        os.path.dirname(silver_path),
+        exist_ok=True,
+    )
+
+    dbt_env = os.environ.copy()
+
+    dbt_env["DBT_BRONZE_PATH"] = bronze_path
+    dbt_env["DBT_SILVER_PATH"] = silver_path
+
+    # Modrinth is the heavy pipeline.
+    dbt_env["DBT_MEMORY_LIMIT"] = "14GB"
+    dbt_env["DBT_THREADS"] = "1"
 
     command = [
-        dbt_executable,
+        dbt_path,
         "run",
         "--project-dir",
         transformations_dir,
@@ -74,24 +99,39 @@ def run_dbt(
         transformations_dir,
         "--target",
         target,
+        "--select",
+        select,
     ]
-
-    if select:
-        command.extend(
-            [
-                "--select",
-                select,
-            ]
-        )
 
     if full_refresh:
         command.append(
             "--full-refresh"
         )
 
+    print(
+        f"(INFO) Environment: {target}"
+    )
+
+    print(
+        f"(INFO) Bronze: {bronze_path}"
+    )
+
+    print(
+        f"(INFO) Silver: {silver_path}"
+    )
+
+    print(
+        f"(INFO) DuckDB memory limit: {dbt_env['DBT_MEMORY_LIMIT']}"
+    )
+
+    print(
+        f"(INFO) dbt threads: {dbt_env['DBT_THREADS']}"
+    )
+
     subprocess.run(
         command,
         cwd=project_root,
+        env=dbt_env,
         check=True,
     )
 

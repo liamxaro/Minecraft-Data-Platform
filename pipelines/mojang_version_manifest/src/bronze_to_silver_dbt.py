@@ -1,24 +1,6 @@
 import argparse
 import os
-import shutil
 import subprocess
-
-
-project_root = os.path.abspath(
-    os.path.join(
-        os.path.dirname(__file__),
-        "../../..",
-    )
-)
-
-src_dir = os.path.dirname(
-    os.path.abspath(__file__)
-)
-
-transformations_dir = os.path.join(
-    project_root,
-    "transformations",
-)
 
 
 def parse_args():
@@ -36,7 +18,7 @@ def parse_args():
 
     parser.add_argument(
         "--select",
-        default=None,
+        required=True,
     )
 
     parser.add_argument(
@@ -49,26 +31,41 @@ def parse_args():
 
 def run_dbt(
     target: str,
-    select: str | None = None,
+    select: str,
     full_refresh: bool = False,
 ) -> None:
 
-    dbt_executable = shutil.which(
-        "dbt"
+    src_dir = os.path.dirname(
+        os.path.abspath(__file__)
     )
 
-    if dbt_executable is None:
-        raise RuntimeError(
-            "dbt executable was not found "
-            "in the current environment."
+    project_root = os.path.abspath(
+        os.path.join(
+            src_dir,
+            "..",
+            "..",
+            "..",
         )
+    )
+
+    transformations_dir = os.path.join(
+        project_root,
+        "transformations",
+    )
+
+    dbt_path = os.path.join(
+        project_root,
+        ".venv",
+        "bin",
+        "dbt",
+    )
 
     bronze_path = os.path.join(
         project_root,
         "data",
         "bronze",
         target,
-        "api_modrinth_com.duckdb",
+        "piston_meta_mojang_com.duckdb",
     )
 
     silver_path = os.path.join(
@@ -76,7 +73,7 @@ def run_dbt(
         "data",
         "silver",
         target,
-        "api_modrinth_com.duckdb",
+        "piston_meta_mojang_com.duckdb",
     )
 
     os.makedirs(
@@ -88,11 +85,13 @@ def run_dbt(
 
     dbt_env["DBT_BRONZE_PATH"] = bronze_path
     dbt_env["DBT_SILVER_PATH"] = silver_path
-    dbt_env["DBT_MEMORY_LIMIT"] = "14GB"
-    dbt_env["DBT_THREADS"] = "1"
+
+    # Mojang manifest is tiny.
+    dbt_env["DBT_MEMORY_LIMIT"] = "8GB"
+    dbt_env["DBT_THREADS"] = "4"
 
     command = [
-        dbt_executable,
+        dbt_path,
         "run",
         "--project-dir",
         transformations_dir,
@@ -100,15 +99,9 @@ def run_dbt(
         transformations_dir,
         "--target",
         target,
+        "--select",
+        select,
     ]
-
-    if select:
-        command.extend(
-            [
-                "--select",
-                select,
-            ]
-        )
 
     if full_refresh:
         command.append(
@@ -116,15 +109,15 @@ def run_dbt(
         )
 
     print(
-        f"(INFO) Target: {target}"
+        f"(INFO) Environment: {target}"
     )
 
     print(
-        f"(INFO) Bronze database: {bronze_path}"
+        f"(INFO) Bronze: {bronze_path}"
     )
 
     print(
-        f"(INFO) Silver database: {silver_path}"
+        f"(INFO) Silver: {silver_path}"
     )
 
     print(

@@ -22,5 +22,6 @@ def build_db_filename(url: str) -> str:
     """
     hostname = urlparse(url).netloc
     hostname = hostname.replace('.', '_')
+    hostname = hostname.replace('-', '_')
 
     return f"{hostname}.duckdb"

@@ -21302,3 +21302,1662 @@ select
 [0m16:08:51.976719 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b6efa10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b2a8730>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b2a85f0>]}
 [0m16:08:51.976892 [debug] [MainThread]: Flushing usage events
 [0m16:08:52.680863 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:13:43.775773 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10dc15940>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ee2b750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ee2b9d0>]}
+
+
+============================== 17:13:43.779034 | bf284c53-1094-4445-a8b6-2fa4046111ef ==============================
+[0m17:13:43.779034 [info ] [MainThread]: Running with dbt=1.11.11
+[0m17:13:43.779398 [debug] [MainThread]: running dbt with arguments {'empty': 'False', 'use_experimental_parser': 'False', 'warn_error': 'None', 'log_cache_events': 'False', 'quiet': 'False', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'debug': 'False', 'log_format': 'default', 'send_anonymous_usage_stats': 'True', 'target_path': 'None', 'partial_parse': 'True', 'printer_width': '80', 'profiles_dir': '/Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations', 'introspect': 'True', 'log_path': '/Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/logs', 'static_parser': 'True', 'no_print': 'None', 'write_json': 'True', 'indirect_selection': 'eager', 'use_colors': 'True', 'fail_fast': 'False', 'cache_selected_only': 'False', 'invocation_command': 'dbt run --project-dir /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations --profiles-dir /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations --target dev --select mojang_versions_manifest'}
+[0m17:13:43.928434 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'bf284c53-1094-4445-a8b6-2fa4046111ef', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e0d15b0>]}
+[0m17:13:43.959919 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'bf284c53-1094-4445-a8b6-2fa4046111ef', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ee5f130>]}
+[0m17:13:43.961613 [info ] [MainThread]: Registered adapter: duckdb=1.11.0
+[0m17:13:44.021604 [debug] [MainThread]: checksum: b276df2e725538900e19c36eb2bf632d2152ccbe55054f2124b6d2db0feda968, vars: {}, profile: , target: dev, version: 1.11.11
+[0m17:13:44.077132 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m17:13:44.077491 [debug] [MainThread]: Partial parsing: updated file: minecraft_data_platform://models/silver/mojang_version_manifest.py
+[0m17:13:44.193969 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'bf284c53-1094-4445-a8b6-2fa4046111ef', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ef01550>]}
+[0m17:13:44.228591 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/target/manifest.json
+[0m17:13:44.230270 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/target/semantic_manifest.json
+[0m17:13:44.237270 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'bf284c53-1094-4445-a8b6-2fa4046111ef', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10eea7200>]}
+[0m17:13:44.237539 [info ] [MainThread]: Found 3 models, 507 macros
+[0m17:13:44.237711 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'bf284c53-1094-4445-a8b6-2fa4046111ef', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f575550>]}
+[0m17:13:44.238045 [warn ] [MainThread]: The selection criterion 'mojang_versions_manifest' does not match any enabled nodes
+[0m17:13:44.238651 [warn ] [MainThread]: Nothing to do. Try checking your model configs and model specification args
+[0m17:13:44.238913 [debug] [MainThread]: Command end result
+[0m17:13:44.320038 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/target/manifest.json
+[0m17:13:44.321178 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/target/semantic_manifest.json
+[0m17:13:44.323119 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/target/run_results.json
+[0m17:13:44.325048 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 0.59515285, "process_in_blocks": "0", "process_kernel_time": 0.233744, "process_mem_max_rss": "165888000", "process_out_blocks": "0", "process_user_time": 1.649988}
+[0m17:13:44.325312 [debug] [MainThread]: Command `dbt run` succeeded at 17:13:44.325269 after 0.60 seconds
+[0m17:13:44.325503 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f3dd570>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10eda1b50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f46c410>]}
+[0m17:13:44.325673 [debug] [MainThread]: Flushing usage events
+[0m17:13:44.789763 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:14:32.168624 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10dafd940>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ed13890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ed13750>]}
+
+
+============================== 17:14:32.171752 | 297ed034-da34-45e3-9180-bf66ab650a6a ==============================
+[0m17:14:32.171752 [info ] [MainThread]: Running with dbt=1.11.11
+[0m17:14:32.172098 [debug] [MainThread]: running dbt with arguments {'target_path': 'None', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_path': '/Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/logs', 'empty': 'False', 'static_parser': 'True', 'profiles_dir': '/Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations', 'cache_selected_only': 'False', 'warn_error': 'None', 'log_cache_events': 'False', 'partial_parse': 'True', 'indirect_selection': 'eager', 'send_anonymous_usage_stats': 'True', 'use_experimental_parser': 'False', 'write_json': 'True', 'use_colors': 'True', 'introspect': 'True', 'no_print': 'None', 'quiet': 'False', 'printer_width': '80', 'fail_fast': 'False', 'invocation_command': 'dbt run --project-dir /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations --profiles-dir /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations --target dev --select mojang_versions_manifest --full-refresh', 'debug': 'False', 'log_format': 'default'}
+[0m17:14:32.297959 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '297ed034-da34-45e3-9180-bf66ab650a6a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10dfbd5b0>]}
+[0m17:14:32.327478 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '297ed034-da34-45e3-9180-bf66ab650a6a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ed47130>]}
+[0m17:14:32.329520 [info ] [MainThread]: Registered adapter: duckdb=1.11.0
+[0m17:14:32.387645 [debug] [MainThread]: checksum: b276df2e725538900e19c36eb2bf632d2152ccbe55054f2124b6d2db0feda968, vars: {}, profile: , target: dev, version: 1.11.11
+[0m17:14:32.439890 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m17:14:32.440132 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m17:14:32.440269 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m17:14:32.453119 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '297ed034-da34-45e3-9180-bf66ab650a6a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ede4250>]}
+[0m17:14:32.488072 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/target/manifest.json
+[0m17:14:32.489549 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/target/semantic_manifest.json
+[0m17:14:32.495743 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '297ed034-da34-45e3-9180-bf66ab650a6a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ed8fd40>]}
+[0m17:14:32.495986 [info ] [MainThread]: Found 3 models, 507 macros
+[0m17:14:32.496154 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '297ed034-da34-45e3-9180-bf66ab650a6a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ef2de10>]}
+[0m17:14:32.496477 [warn ] [MainThread]: The selection criterion 'mojang_versions_manifest' does not match any enabled nodes
+[0m17:14:32.497113 [warn ] [MainThread]: Nothing to do. Try checking your model configs and model specification args
+[0m17:14:32.498045 [debug] [MainThread]: Command end result
+[0m17:14:32.513170 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/target/manifest.json
+[0m17:14:32.514259 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/target/semantic_manifest.json
+[0m17:14:32.516260 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/target/run_results.json
+[0m17:14:32.518202 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 0.39499718, "process_in_blocks": "0", "process_kernel_time": 0.209414, "process_mem_max_rss": "160514048", "process_out_blocks": "0", "process_user_time": 1.492927}
+[0m17:14:32.518476 [debug] [MainThread]: Command `dbt run` succeeded at 17:14:32.518423 after 0.40 seconds
+[0m17:14:32.518682 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f2caea0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ec89b50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f357710>]}
+[0m17:14:32.518864 [debug] [MainThread]: Flushing usage events
+[0m17:14:32.947596 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:15:45.626210 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d785940>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e99b890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e99b750>]}
+
+
+============================== 17:15:45.629893 | 96037831-a64b-418d-a736-435d7e5e4686 ==============================
+[0m17:15:45.629893 [info ] [MainThread]: Running with dbt=1.11.11
+[0m17:15:45.630369 [debug] [MainThread]: running dbt with arguments {'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'version_check': 'True', 'introspect': 'True', 'cache_selected_only': 'False', 'partial_parse': 'True', 'quiet': 'False', 'invocation_command': 'dbt run --project-dir /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations --profiles-dir /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations --target dev --select mojang_version_manifest --full-refresh', 'write_json': 'True', 'warn_error': 'None', 'static_parser': 'True', 'printer_width': '80', 'empty': 'False', 'use_colors': 'True', 'target_path': 'None', 'indirect_selection': 'eager', 'profiles_dir': '/Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations', 'send_anonymous_usage_stats': 'True', 'log_cache_events': 'False', 'debug': 'False', 'fail_fast': 'False', 'log_path': '/Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/logs', 'log_format': 'default', 'use_experimental_parser': 'False', 'no_print': 'None'}
+[0m17:15:45.778925 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '96037831-a64b-418d-a736-435d7e5e4686', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10dc455b0>]}
+[0m17:15:45.809668 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '96037831-a64b-418d-a736-435d7e5e4686', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e9cb130>]}
+[0m17:15:45.811571 [info ] [MainThread]: Registered adapter: duckdb=1.11.0
+[0m17:15:45.871175 [debug] [MainThread]: checksum: b276df2e725538900e19c36eb2bf632d2152ccbe55054f2124b6d2db0feda968, vars: {}, profile: , target: dev, version: 1.11.11
+[0m17:15:45.926962 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m17:15:45.927229 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m17:15:45.927380 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m17:15:45.941048 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '96037831-a64b-418d-a736-435d7e5e4686', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ea70250>]}
+[0m17:15:45.979333 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/target/manifest.json
+[0m17:15:45.980999 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/target/semantic_manifest.json
+[0m17:15:45.988060 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '96037831-a64b-418d-a736-435d7e5e4686', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ea13d40>]}
+[0m17:15:45.988311 [info ] [MainThread]: Found 3 models, 507 macros
+[0m17:15:45.988479 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '96037831-a64b-418d-a736-435d7e5e4686', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ebb5e10>]}
+[0m17:15:45.989321 [info ] [MainThread]: 
+[0m17:15:45.989494 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m17:15:45.989622 [info ] [MainThread]: 
+[0m17:15:45.989882 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m17:15:45.990315 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_api_modrinth_com'
+[0m17:15:46.024748 [debug] [ThreadPool]: Using duckdb connection "list_api_modrinth_com"
+[0m17:15:46.025002 [debug] [ThreadPool]: On list_api_modrinth_com: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "connection_name": "list_api_modrinth_com"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"api_modrinth_com"'
+    
+  
+  
+[0m17:15:46.025154 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:15:46.039942 [debug] [ThreadPool]: SQL status: OK in 0.015 seconds
+[0m17:15:46.040761 [debug] [ThreadPool]: On list_api_modrinth_com: Close
+[0m17:15:46.041219 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_api_modrinth_com, now create_api_modrinth_com_main)
+[0m17:15:46.041564 [debug] [ThreadPool]: Creating schema "database: "api_modrinth_com"
+schema: "main"
+"
+[0m17:15:46.045831 [debug] [ThreadPool]: Using duckdb connection "create_api_modrinth_com_main"
+[0m17:15:46.046048 [debug] [ThreadPool]: On create_api_modrinth_com_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "connection_name": "create_api_modrinth_com_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='api_modrinth_com'
+        and type != 'duckdb'
+    
+  
+[0m17:15:46.046193 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m17:15:46.046814 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m17:15:46.047602 [debug] [ThreadPool]: Using duckdb connection "create_api_modrinth_com_main"
+[0m17:15:46.047771 [debug] [ThreadPool]: On create_api_modrinth_com_main: BEGIN
+[0m17:15:46.047996 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m17:15:46.048130 [debug] [ThreadPool]: Using duckdb connection "create_api_modrinth_com_main"
+[0m17:15:46.048253 [debug] [ThreadPool]: On create_api_modrinth_com_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "connection_name": "create_api_modrinth_com_main"} */
+
+    
+    
+        create schema if not exists "api_modrinth_com"."main"
+    
+[0m17:15:46.048461 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m17:15:46.048857 [debug] [ThreadPool]: On create_api_modrinth_com_main: COMMIT
+[0m17:15:46.048993 [debug] [ThreadPool]: Using duckdb connection "create_api_modrinth_com_main"
+[0m17:15:46.049114 [debug] [ThreadPool]: On create_api_modrinth_com_main: COMMIT
+[0m17:15:46.049280 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m17:15:46.049410 [debug] [ThreadPool]: On create_api_modrinth_com_main: Close
+[0m17:15:46.052021 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_api_modrinth_com_main, now list_api_modrinth_com_main)
+[0m17:15:46.055064 [debug] [ThreadPool]: Using duckdb connection "list_api_modrinth_com_main"
+[0m17:15:46.055274 [debug] [ThreadPool]: On list_api_modrinth_com_main: BEGIN
+[0m17:15:46.055403 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m17:15:46.055773 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m17:15:46.055897 [debug] [ThreadPool]: Using duckdb connection "list_api_modrinth_com_main"
+[0m17:15:46.056023 [debug] [ThreadPool]: On list_api_modrinth_com_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "connection_name": "list_api_modrinth_com_main"} */
+select
+      'api_modrinth_com' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'api_modrinth_com'
+  
+[0m17:15:46.057839 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m17:15:46.058543 [debug] [ThreadPool]: On list_api_modrinth_com_main: ROLLBACK
+[0m17:15:46.058787 [debug] [ThreadPool]: On list_api_modrinth_com_main: Close
+[0m17:15:46.059430 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '96037831-a64b-418d-a736-435d7e5e4686', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f1de8f0>]}
+[0m17:15:46.059710 [debug] [MainThread]: Using duckdb connection "master"
+[0m17:15:46.059845 [debug] [MainThread]: On master: BEGIN
+[0m17:15:46.059957 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m17:15:46.060336 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m17:15:46.060463 [debug] [MainThread]: On master: COMMIT
+[0m17:15:46.060582 [debug] [MainThread]: Using duckdb connection "master"
+[0m17:15:46.060705 [debug] [MainThread]: On master: COMMIT
+[0m17:15:46.060873 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m17:15:46.060988 [debug] [MainThread]: On master: Close
+[0m17:15:46.062590 [debug] [Thread-1 (]: Began running node model.minecraft_data_platform.mojang_version_manifest
+[0m17:15:46.062885 [info ] [Thread-1 (]: 1 of 1 START python incremental model main.mojang_version_manifest ............. [RUN]
+[0m17:15:46.063117 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_api_modrinth_com_main, now model.minecraft_data_platform.mojang_version_manifest)
+[0m17:15:46.063295 [debug] [Thread-1 (]: Began compiling node model.minecraft_data_platform.mojang_version_manifest
+[0m17:15:46.077987 [debug] [Thread-1 (]: Writing injected SQL for node "model.minecraft_data_platform.mojang_version_manifest"
+[0m17:15:46.079064 [debug] [Thread-1 (]: Began executing node model.minecraft_data_platform.mojang_version_manifest
+[0m17:15:46.118598 [debug] [Thread-1 (]: Writing runtime python for node "model.minecraft_data_platform.mojang_version_manifest"
+[0m17:15:46.119196 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m17:15:46.307866 [debug] [Thread-1 (]: On model.minecraft_data_platform.mojang_version_manifest: Close
+[0m17:15:46.313392 [debug] [Thread-1 (]: Runtime Error in model mojang_version_manifest (models/silver/mojang_version_manifest.py)
+  Python model failed:
+  Traceback (most recent call last):
+    File "/Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/.venv/lib/python3.13/site-packages/dbt/adapters/duckdb/environments/__init__.py", line 286, in run_python_job
+      df = module.model(dbt, con)
+    File "/var/folders/r8/ks2n7khs6d10wwz1_sv2w49h0000gn/T/tmpgxaq0zr6.py", line 226, in model
+      raw_df = session.sql(
+               ~~~~~~~~~~~^
+          query
+          ^^^^^
+      ).pl()
+      ^
+  _duckdb.CatalogException: Catalog Error: Table with name mojang_version_manifest does not exist!
+  Did you mean "modrinth_project_versions"?
+  
+[0m17:15:46.314550 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '96037831-a64b-418d-a736-435d7e5e4686', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f022090>]}
+[0m17:15:46.314914 [error] [Thread-1 (]: 1 of 1 ERROR creating python incremental model main.mojang_version_manifest .... [[31mERROR[0m in 0.25s]
+[0m17:15:46.315237 [debug] [Thread-1 (]: Finished running node model.minecraft_data_platform.mojang_version_manifest
+[0m17:15:46.315538 [debug] [Thread-4 (]: Marking all children of 'model.minecraft_data_platform.mojang_version_manifest' to be skipped because of status 'error'.  Reason: Runtime Error in model mojang_version_manifest (models/silver/mojang_version_manifest.py)
+  Python model failed:
+  Traceback (most recent call last):
+    File "/Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/.venv/lib/python3.13/site-packages/dbt/adapters/duckdb/environments/__init__.py", line 286, in run_python_job
+      df = module.model(dbt, con)
+    File "/var/folders/r8/ks2n7khs6d10wwz1_sv2w49h0000gn/T/tmpgxaq0zr6.py", line 226, in model
+      raw_df = session.sql(
+               ~~~~~~~~~~~^
+          query
+          ^^^^^
+      ).pl()
+      ^
+  _duckdb.CatalogException: Catalog Error: Table with name mojang_version_manifest does not exist!
+  Did you mean "modrinth_project_versions"?
+  .
+[0m17:15:46.316717 [debug] [MainThread]: Using duckdb connection "master"
+[0m17:15:46.316961 [debug] [MainThread]: On master: BEGIN
+[0m17:15:46.317102 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m17:15:46.317603 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m17:15:46.317741 [debug] [MainThread]: On master: COMMIT
+[0m17:15:46.317867 [debug] [MainThread]: Using duckdb connection "master"
+[0m17:15:46.317984 [debug] [MainThread]: On master: COMMIT
+[0m17:15:46.318169 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m17:15:46.318289 [debug] [MainThread]: On master: Close
+[0m17:15:46.318463 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m17:15:46.318579 [debug] [MainThread]: Connection 'model.minecraft_data_platform.mojang_version_manifest' was properly closed.
+[0m17:15:46.318710 [info ] [MainThread]: 
+[0m17:15:46.318846 [info ] [MainThread]: Finished running 1 incremental model in 0 hours 0 minutes and 0.33 seconds (0.33s).
+[0m17:15:46.319155 [debug] [MainThread]: Command end result
+[0m17:15:46.351735 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/target/manifest.json
+[0m17:15:46.352936 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/target/semantic_manifest.json
+[0m17:15:46.356319 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/target/run_results.json
+[0m17:15:46.356487 [info ] [MainThread]: 
+[0m17:15:46.356676 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m17:15:46.356826 [info ] [MainThread]: 
+[0m17:15:46.357006 [error] [MainThread]: [31mFailure in model mojang_version_manifest (models/silver/mojang_version_manifest.py)[0m
+[0m17:15:46.357204 [error] [MainThread]:   Runtime Error in model mojang_version_manifest (models/silver/mojang_version_manifest.py)
+  Python model failed:
+  Traceback (most recent call last):
+    File "/Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/.venv/lib/python3.13/site-packages/dbt/adapters/duckdb/environments/__init__.py", line 286, in run_python_job
+      df = module.model(dbt, con)
+    File "/var/folders/r8/ks2n7khs6d10wwz1_sv2w49h0000gn/T/tmpgxaq0zr6.py", line 226, in model
+      raw_df = session.sql(
+               ~~~~~~~~~~~^
+          query
+          ^^^^^
+      ).pl()
+      ^
+  _duckdb.CatalogException: Catalog Error: Table with name mojang_version_manifest does not exist!
+  Did you mean "modrinth_project_versions"?
+  
+[0m17:15:46.357352 [info ] [MainThread]: 
+[0m17:15:46.357508 [info ] [MainThread]:   compiled code at target/compiled/minecraft_data_platform/models/silver/mojang_version_manifest.py
+[0m17:15:46.357639 [info ] [MainThread]: 
+[0m17:15:46.357785 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 NO-OP=0 TOTAL=1
+[0m17:15:46.359845 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.77977777, "process_in_blocks": "0", "process_kernel_time": 0.268572, "process_mem_max_rss": "204783616", "process_out_blocks": "0", "process_user_time": 1.734391}
+[0m17:15:46.360184 [debug] [MainThread]: Command `dbt run` failed at 17:15:46.360112 after 0.78 seconds
+[0m17:15:46.360421 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1100a36a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110115810>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110116490>]}
+[0m17:15:46.360616 [debug] [MainThread]: Flushing usage events
+[0m17:15:46.729403 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:23:59.575926 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10da25940>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ec3b890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ec3b750>]}
+
+
+============================== 17:23:59.579330 | e15d2756-82b7-481c-9222-ccfc9b297cc9 ==============================
+[0m17:23:59.579330 [info ] [MainThread]: Running with dbt=1.11.11
+[0m17:23:59.579733 [debug] [MainThread]: running dbt with arguments {'log_path': '/Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/logs', 'profiles_dir': '/Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations', 'cache_selected_only': 'False', 'log_format': 'default', 'indirect_selection': 'eager', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'empty': 'False', 'printer_width': '80', 'target_path': 'None', 'static_parser': 'True', 'log_cache_events': 'False', 'send_anonymous_usage_stats': 'True', 'debug': 'False', 'quiet': 'False', 'fail_fast': 'False', 'write_json': 'True', 'version_check': 'True', 'use_colors': 'True', 'warn_error': 'None', 'invocation_command': 'dbt run --project-dir /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations --profiles-dir /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations --target dev --select mojang_version_manifest --full-refresh', 'no_print': 'None', 'partial_parse': 'True', 'use_experimental_parser': 'False'}
+[0m17:23:59.725350 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'e15d2756-82b7-481c-9222-ccfc9b297cc9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10dee15b0>]}
+[0m17:23:59.754601 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'e15d2756-82b7-481c-9222-ccfc9b297cc9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ec6b130>]}
+[0m17:23:59.756202 [info ] [MainThread]: Registered adapter: duckdb=1.11.0
+[0m17:23:59.813337 [debug] [MainThread]: checksum: b276df2e725538900e19c36eb2bf632d2152ccbe55054f2124b6d2db0feda968, vars: {}, profile: , target: dev, version: 1.11.11
+[0m17:23:59.867004 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m17:23:59.867266 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m17:23:59.867404 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m17:23:59.880296 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'e15d2756-82b7-481c-9222-ccfc9b297cc9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ed10250>]}
+[0m17:23:59.916517 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/target/manifest.json
+[0m17:23:59.918596 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/target/semantic_manifest.json
+[0m17:23:59.926225 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'e15d2756-82b7-481c-9222-ccfc9b297cc9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ecb7d40>]}
+[0m17:23:59.926515 [info ] [MainThread]: Found 3 models, 507 macros
+[0m17:23:59.926697 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'e15d2756-82b7-481c-9222-ccfc9b297cc9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ee45e10>]}
+[0m17:23:59.927533 [info ] [MainThread]: 
+[0m17:23:59.927706 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m17:23:59.927833 [info ] [MainThread]: 
+[0m17:23:59.928099 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m17:23:59.928551 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_api_modrinth_com'
+[0m17:23:59.962963 [debug] [ThreadPool]: Using duckdb connection "list_api_modrinth_com"
+[0m17:23:59.963241 [debug] [ThreadPool]: On list_api_modrinth_com: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "connection_name": "list_api_modrinth_com"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"api_modrinth_com"'
+    
+  
+  
+[0m17:23:59.963398 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:23:59.977979 [debug] [ThreadPool]: SQL status: OK in 0.015 seconds
+[0m17:23:59.978757 [debug] [ThreadPool]: On list_api_modrinth_com: Close
+[0m17:23:59.979125 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_api_modrinth_com, now create_api_modrinth_com_main)
+[0m17:23:59.979378 [debug] [ThreadPool]: Creating schema "database: "api_modrinth_com"
+schema: "main"
+"
+[0m17:23:59.983390 [debug] [ThreadPool]: Using duckdb connection "create_api_modrinth_com_main"
+[0m17:23:59.983568 [debug] [ThreadPool]: On create_api_modrinth_com_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "connection_name": "create_api_modrinth_com_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='api_modrinth_com'
+        and type != 'duckdb'
+    
+  
+[0m17:23:59.983706 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m17:23:59.984212 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m17:23:59.984905 [debug] [ThreadPool]: Using duckdb connection "create_api_modrinth_com_main"
+[0m17:23:59.985084 [debug] [ThreadPool]: On create_api_modrinth_com_main: BEGIN
+[0m17:23:59.985291 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m17:23:59.985420 [debug] [ThreadPool]: Using duckdb connection "create_api_modrinth_com_main"
+[0m17:23:59.985549 [debug] [ThreadPool]: On create_api_modrinth_com_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "connection_name": "create_api_modrinth_com_main"} */
+
+    
+    
+        create schema if not exists "api_modrinth_com"."main"
+    
+[0m17:23:59.985761 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m17:23:59.986180 [debug] [ThreadPool]: On create_api_modrinth_com_main: COMMIT
+[0m17:23:59.986318 [debug] [ThreadPool]: Using duckdb connection "create_api_modrinth_com_main"
+[0m17:23:59.986437 [debug] [ThreadPool]: On create_api_modrinth_com_main: COMMIT
+[0m17:23:59.986621 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m17:23:59.986753 [debug] [ThreadPool]: On create_api_modrinth_com_main: Close
+[0m17:23:59.989403 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_api_modrinth_com_main, now list_api_modrinth_com_main)
+[0m17:23:59.992236 [debug] [ThreadPool]: Using duckdb connection "list_api_modrinth_com_main"
+[0m17:23:59.992413 [debug] [ThreadPool]: On list_api_modrinth_com_main: BEGIN
+[0m17:23:59.992541 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m17:23:59.992932 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m17:23:59.993092 [debug] [ThreadPool]: Using duckdb connection "list_api_modrinth_com_main"
+[0m17:23:59.993240 [debug] [ThreadPool]: On list_api_modrinth_com_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "connection_name": "list_api_modrinth_com_main"} */
+select
+      'api_modrinth_com' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'api_modrinth_com'
+  
+[0m17:23:59.994985 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m17:23:59.995629 [debug] [ThreadPool]: On list_api_modrinth_com_main: ROLLBACK
+[0m17:23:59.995838 [debug] [ThreadPool]: On list_api_modrinth_com_main: Close
+[0m17:23:59.996355 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'e15d2756-82b7-481c-9222-ccfc9b297cc9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f47e8f0>]}
+[0m17:23:59.996575 [debug] [MainThread]: Using duckdb connection "master"
+[0m17:23:59.996699 [debug] [MainThread]: On master: BEGIN
+[0m17:23:59.996817 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m17:23:59.997122 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m17:23:59.997247 [debug] [MainThread]: On master: COMMIT
+[0m17:23:59.997363 [debug] [MainThread]: Using duckdb connection "master"
+[0m17:23:59.997472 [debug] [MainThread]: On master: COMMIT
+[0m17:23:59.997632 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m17:23:59.997748 [debug] [MainThread]: On master: Close
+[0m17:23:59.999210 [debug] [Thread-1 (]: Began running node model.minecraft_data_platform.mojang_version_manifest
+[0m17:23:59.999464 [info ] [Thread-1 (]: 1 of 1 START python incremental model main.mojang_version_manifest ............. [RUN]
+[0m17:23:59.999685 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_api_modrinth_com_main, now model.minecraft_data_platform.mojang_version_manifest)
+[0m17:23:59.999849 [debug] [Thread-1 (]: Began compiling node model.minecraft_data_platform.mojang_version_manifest
+[0m17:24:00.014985 [debug] [Thread-1 (]: Writing injected SQL for node "model.minecraft_data_platform.mojang_version_manifest"
+[0m17:24:00.015894 [debug] [Thread-1 (]: Began executing node model.minecraft_data_platform.mojang_version_manifest
+[0m17:24:00.053749 [debug] [Thread-1 (]: Writing runtime python for node "model.minecraft_data_platform.mojang_version_manifest"
+[0m17:24:00.054501 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m17:24:00.206228 [debug] [Thread-1 (]: On model.minecraft_data_platform.mojang_version_manifest: Close
+[0m17:24:00.211674 [debug] [Thread-1 (]: Runtime Error in model mojang_version_manifest (models/silver/mojang_version_manifest.py)
+  Python model failed:
+  Traceback (most recent call last):
+    File "/Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/.venv/lib/python3.13/site-packages/dbt/adapters/duckdb/environments/__init__.py", line 286, in run_python_job
+      df = module.model(dbt, con)
+    File "/var/folders/r8/ks2n7khs6d10wwz1_sv2w49h0000gn/T/tmp7g6bu6um.py", line 226, in model
+      raw_df = session.sql(
+               ~~~~~~~~~~~^
+          query
+          ^^^^^
+      ).pl()
+      ^
+  _duckdb.CatalogException: Catalog Error: Table with name mojang_version_manifest does not exist!
+  Did you mean "modrinth_project_versions"?
+  
+[0m17:24:00.212819 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'e15d2756-82b7-481c-9222-ccfc9b297cc9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f2be090>]}
+[0m17:24:00.213187 [error] [Thread-1 (]: 1 of 1 ERROR creating python incremental model main.mojang_version_manifest .... [[31mERROR[0m in 0.21s]
+[0m17:24:00.213500 [debug] [Thread-1 (]: Finished running node model.minecraft_data_platform.mojang_version_manifest
+[0m17:24:00.213800 [debug] [Thread-4 (]: Marking all children of 'model.minecraft_data_platform.mojang_version_manifest' to be skipped because of status 'error'.  Reason: Runtime Error in model mojang_version_manifest (models/silver/mojang_version_manifest.py)
+  Python model failed:
+  Traceback (most recent call last):
+    File "/Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/.venv/lib/python3.13/site-packages/dbt/adapters/duckdb/environments/__init__.py", line 286, in run_python_job
+      df = module.model(dbt, con)
+    File "/var/folders/r8/ks2n7khs6d10wwz1_sv2w49h0000gn/T/tmp7g6bu6um.py", line 226, in model
+      raw_df = session.sql(
+               ~~~~~~~~~~~^
+          query
+          ^^^^^
+      ).pl()
+      ^
+  _duckdb.CatalogException: Catalog Error: Table with name mojang_version_manifest does not exist!
+  Did you mean "modrinth_project_versions"?
+  .
+[0m17:24:00.214744 [debug] [MainThread]: Using duckdb connection "master"
+[0m17:24:00.214922 [debug] [MainThread]: On master: BEGIN
+[0m17:24:00.215055 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m17:24:00.215520 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m17:24:00.215655 [debug] [MainThread]: On master: COMMIT
+[0m17:24:00.215782 [debug] [MainThread]: Using duckdb connection "master"
+[0m17:24:00.215903 [debug] [MainThread]: On master: COMMIT
+[0m17:24:00.216066 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m17:24:00.216191 [debug] [MainThread]: On master: Close
+[0m17:24:00.216354 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m17:24:00.216469 [debug] [MainThread]: Connection 'model.minecraft_data_platform.mojang_version_manifest' was properly closed.
+[0m17:24:00.216597 [info ] [MainThread]: 
+[0m17:24:00.216734 [info ] [MainThread]: Finished running 1 incremental model in 0 hours 0 minutes and 0.29 seconds (0.29s).
+[0m17:24:00.217053 [debug] [MainThread]: Command end result
+[0m17:24:00.233394 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/target/manifest.json
+[0m17:24:00.234568 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/target/semantic_manifest.json
+[0m17:24:00.237825 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/target/run_results.json
+[0m17:24:00.238000 [info ] [MainThread]: 
+[0m17:24:00.238194 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m17:24:00.238346 [info ] [MainThread]: 
+[0m17:24:00.238533 [error] [MainThread]: [31mFailure in model mojang_version_manifest (models/silver/mojang_version_manifest.py)[0m
+[0m17:24:00.238716 [error] [MainThread]:   Runtime Error in model mojang_version_manifest (models/silver/mojang_version_manifest.py)
+  Python model failed:
+  Traceback (most recent call last):
+    File "/Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/.venv/lib/python3.13/site-packages/dbt/adapters/duckdb/environments/__init__.py", line 286, in run_python_job
+      df = module.model(dbt, con)
+    File "/var/folders/r8/ks2n7khs6d10wwz1_sv2w49h0000gn/T/tmp7g6bu6um.py", line 226, in model
+      raw_df = session.sql(
+               ~~~~~~~~~~~^
+          query
+          ^^^^^
+      ).pl()
+      ^
+  _duckdb.CatalogException: Catalog Error: Table with name mojang_version_manifest does not exist!
+  Did you mean "modrinth_project_versions"?
+  
+[0m17:24:00.238872 [info ] [MainThread]: 
+[0m17:24:00.239030 [info ] [MainThread]:   compiled code at target/compiled/minecraft_data_platform/models/silver/mojang_version_manifest.py
+[0m17:24:00.239157 [info ] [MainThread]: 
+[0m17:24:00.239308 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 NO-OP=0 TOTAL=1
+[0m17:24:00.241134 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.70868367, "process_in_blocks": "0", "process_kernel_time": 0.250237, "process_mem_max_rss": "204423168", "process_out_blocks": "0", "process_user_time": 1.692105}
+[0m17:24:00.241356 [debug] [MainThread]: Command `dbt run` failed at 17:24:00.241316 after 0.71 seconds
+[0m17:24:00.241531 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1103a36a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11040d810>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11040e490>]}
+[0m17:24:00.241698 [debug] [MainThread]: Flushing usage events
+[0m17:24:00.641687 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:54:46.962498 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109e05940>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b01b890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b01b750>]}
+
+
+============================== 17:54:46.965698 | c1b7e049-1a3e-40c0-8b3c-b70c103b4c91 ==============================
+[0m17:54:46.965698 [info ] [MainThread]: Running with dbt=1.11.11
+[0m17:54:46.966046 [debug] [MainThread]: running dbt with arguments {'cache_selected_only': 'False', 'write_json': 'True', 'log_cache_events': 'False', 'warn_error': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'fail_fast': 'False', 'quiet': 'False', 'version_check': 'True', 'target_path': 'None', 'invocation_command': 'dbt run --project-dir /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations --profiles-dir /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations --target dev --select mojang_version_manifest --full-refresh', 'empty': 'False', 'no_print': 'None', 'static_parser': 'True', 'partial_parse': 'True', 'indirect_selection': 'eager', 'profiles_dir': '/Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations', 'use_experimental_parser': 'False', 'log_format': 'default', 'printer_width': '80', 'introspect': 'True', 'debug': 'False', 'use_colors': 'True', 'log_path': '/Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/logs', 'send_anonymous_usage_stats': 'True'}
+[0m17:54:46.967953 [error] [MainThread]: Encountered an error:
+Runtime Error
+  The profile 'minecraft_data_platform' does not have a target named 'dev'. The valid target names for this profile are:
+   - modrinth_dev
+   - mojang_dev
+[0m17:54:46.969891 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.056785874, "process_in_blocks": "0", "process_kernel_time": 0.189743, "process_mem_max_rss": "131432448", "process_out_blocks": "0", "process_user_time": 1.236036}
+[0m17:54:46.970198 [debug] [MainThread]: Command `dbt run` failed at 17:54:46.970143 after 0.06 seconds
+[0m17:54:46.970385 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10aff3490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b059910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b049150>]}
+[0m17:54:46.970559 [debug] [MainThread]: Flushing usage events
+[0m17:54:47.890313 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m18:16:51.737063 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109545940>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a75b890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a75b750>]}
+
+
+============================== 18:16:51.740335 | 1392d010-e82f-4919-84cd-9e425fbc5141 ==============================
+[0m18:16:51.740335 [info ] [MainThread]: Running with dbt=1.11.11
+[0m18:16:51.740692 [debug] [MainThread]: running dbt with arguments {'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'introspect': 'True', 'log_format': 'default', 'log_path': '/Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/logs', 'indirect_selection': 'eager', 'profiles_dir': '/Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations', 'no_print': 'None', 'static_parser': 'True', 'write_json': 'True', 'debug': 'False', 'warn_error': 'None', 'use_colors': 'True', 'send_anonymous_usage_stats': 'True', 'empty': 'False', 'cache_selected_only': 'False', 'log_cache_events': 'False', 'version_check': 'True', 'invocation_command': 'dbt run --project-dir /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations --profiles-dir /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations --target dev --select mojang_version_manifest --full-refresh', 'use_experimental_parser': 'False', 'quiet': 'False', 'partial_parse': 'True', 'fail_fast': 'False'}
+[0m18:16:51.912510 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '1392d010-e82f-4919-84cd-9e425fbc5141', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109a015b0>]}
+[0m18:16:51.943578 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '1392d010-e82f-4919-84cd-9e425fbc5141', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a78e9c0>]}
+[0m18:16:51.945305 [info ] [MainThread]: Registered adapter: duckdb=1.11.0
+[0m18:16:52.031571 [debug] [MainThread]: checksum: b276df2e725538900e19c36eb2bf632d2152ccbe55054f2124b6d2db0feda968, vars: {}, profile: , target: dev, version: 1.11.11
+[0m18:16:52.067642 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m18:16:52.067971 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '1392d010-e82f-4919-84cd-9e425fbc5141', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a835150>]}
+[0m18:16:52.703000 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '1392d010-e82f-4919-84cd-9e425fbc5141', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10aca0c80>]}
+[0m18:16:52.734501 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/target/manifest.json
+[0m18:16:52.736002 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/target/semantic_manifest.json
+[0m18:16:52.743422 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '1392d010-e82f-4919-84cd-9e425fbc5141', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a89d8d0>]}
+[0m18:16:52.743678 [info ] [MainThread]: Found 3 models, 507 macros
+[0m18:16:52.743847 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '1392d010-e82f-4919-84cd-9e425fbc5141', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ad0fc70>]}
+[0m18:16:52.744624 [info ] [MainThread]: 
+[0m18:16:52.744800 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m18:16:52.744936 [info ] [MainThread]: 
+[0m18:16:52.745180 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m18:16:52.745591 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_piston_meta_mojang_com'
+[0m18:16:52.794134 [debug] [ThreadPool]: Using duckdb connection "list_piston_meta_mojang_com"
+[0m18:16:52.794426 [debug] [ThreadPool]: On list_piston_meta_mojang_com: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "connection_name": "list_piston_meta_mojang_com"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"piston_meta_mojang_com"'
+    
+  
+  
+[0m18:16:52.794586 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:16:52.808914 [debug] [ThreadPool]: SQL status: OK in 0.014 seconds
+[0m18:16:52.809700 [debug] [ThreadPool]: On list_piston_meta_mojang_com: Close
+[0m18:16:52.810092 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_piston_meta_mojang_com, now create_piston_meta_mojang_com_main)
+[0m18:16:52.810353 [debug] [ThreadPool]: Creating schema "database: "piston_meta_mojang_com"
+schema: "main"
+"
+[0m18:16:52.814579 [debug] [ThreadPool]: Using duckdb connection "create_piston_meta_mojang_com_main"
+[0m18:16:52.814820 [debug] [ThreadPool]: On create_piston_meta_mojang_com_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "connection_name": "create_piston_meta_mojang_com_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='piston_meta_mojang_com'
+        and type != 'duckdb'
+    
+  
+[0m18:16:52.814968 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m18:16:52.816079 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m18:16:52.816710 [debug] [ThreadPool]: Using duckdb connection "create_piston_meta_mojang_com_main"
+[0m18:16:52.816847 [debug] [ThreadPool]: On create_piston_meta_mojang_com_main: BEGIN
+[0m18:16:52.817051 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m18:16:52.817168 [debug] [ThreadPool]: Using duckdb connection "create_piston_meta_mojang_com_main"
+[0m18:16:52.817284 [debug] [ThreadPool]: On create_piston_meta_mojang_com_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "connection_name": "create_piston_meta_mojang_com_main"} */
+
+    
+    
+        create schema if not exists "piston_meta_mojang_com"."main"
+    
+[0m18:16:52.817538 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m18:16:52.818125 [debug] [ThreadPool]: On create_piston_meta_mojang_com_main: COMMIT
+[0m18:16:52.818300 [debug] [ThreadPool]: Using duckdb connection "create_piston_meta_mojang_com_main"
+[0m18:16:52.818438 [debug] [ThreadPool]: On create_piston_meta_mojang_com_main: COMMIT
+[0m18:16:52.818662 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m18:16:52.818801 [debug] [ThreadPool]: On create_piston_meta_mojang_com_main: Close
+[0m18:16:52.821428 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_piston_meta_mojang_com_main, now list_piston_meta_mojang_com_main)
+[0m18:16:52.824630 [debug] [ThreadPool]: Using duckdb connection "list_piston_meta_mojang_com_main"
+[0m18:16:52.824813 [debug] [ThreadPool]: On list_piston_meta_mojang_com_main: BEGIN
+[0m18:16:52.824936 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m18:16:52.825342 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m18:16:52.825520 [debug] [ThreadPool]: Using duckdb connection "list_piston_meta_mojang_com_main"
+[0m18:16:52.825676 [debug] [ThreadPool]: On list_piston_meta_mojang_com_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "connection_name": "list_piston_meta_mojang_com_main"} */
+select
+      'piston_meta_mojang_com' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'piston_meta_mojang_com'
+  
+[0m18:16:52.828038 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m18:16:52.828753 [debug] [ThreadPool]: On list_piston_meta_mojang_com_main: ROLLBACK
+[0m18:16:52.828992 [debug] [ThreadPool]: On list_piston_meta_mojang_com_main: Close
+[0m18:16:52.829375 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '1392d010-e82f-4919-84cd-9e425fbc5141', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ad9f890>]}
+[0m18:16:52.829625 [debug] [MainThread]: Using duckdb connection "master"
+[0m18:16:52.829764 [debug] [MainThread]: On master: BEGIN
+[0m18:16:52.829895 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m18:16:52.830281 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m18:16:52.830427 [debug] [MainThread]: On master: COMMIT
+[0m18:16:52.830557 [debug] [MainThread]: Using duckdb connection "master"
+[0m18:16:52.830676 [debug] [MainThread]: On master: COMMIT
+[0m18:16:52.830840 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m18:16:52.830967 [debug] [MainThread]: On master: Close
+[0m18:16:52.832590 [debug] [Thread-1 (]: Began running node model.minecraft_data_platform.mojang_version_manifest
+[0m18:16:52.832850 [info ] [Thread-1 (]: 1 of 1 START python incremental model main.mojang_version_manifest ............. [RUN]
+[0m18:16:52.833073 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_piston_meta_mojang_com_main, now model.minecraft_data_platform.mojang_version_manifest)
+[0m18:16:52.833253 [debug] [Thread-1 (]: Began compiling node model.minecraft_data_platform.mojang_version_manifest
+[0m18:16:52.849370 [debug] [Thread-1 (]: Writing injected SQL for node "model.minecraft_data_platform.mojang_version_manifest"
+[0m18:16:52.850992 [debug] [Thread-1 (]: Began executing node model.minecraft_data_platform.mojang_version_manifest
+[0m18:16:52.887690 [debug] [Thread-1 (]: Writing runtime python for node "model.minecraft_data_platform.mojang_version_manifest"
+[0m18:16:52.888315 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:16:53.622137 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.mojang_version_manifest"
+[0m18:16:53.622441 [debug] [Thread-1 (]: On model.minecraft_data_platform.mojang_version_manifest: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "node_id": "model.minecraft_data_platform.mojang_version_manifest"} */
+
+    SELECT index_name
+    FROM duckdb_indexes()
+    WHERE database_name = 'piston_meta_mojang_com'
+      AND schema_name = 'main'
+      AND table_name = 'mojang_version_manifest'
+  
+[0m18:16:53.623048 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m18:16:53.626552 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.mojang_version_manifest"
+[0m18:16:53.626764 [debug] [Thread-1 (]: On model.minecraft_data_platform.mojang_version_manifest: BEGIN
+[0m18:16:53.627021 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m18:16:53.627194 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.mojang_version_manifest"
+[0m18:16:53.627363 [debug] [Thread-1 (]: On model.minecraft_data_platform.mojang_version_manifest: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "node_id": "model.minecraft_data_platform.mojang_version_manifest"} */
+alter table "piston_meta_mojang_com"."main"."mojang_version_manifest" rename to "mojang_version_manifest__dbt_backup"
+[0m18:16:53.627654 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m18:16:53.628910 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.mojang_version_manifest"
+[0m18:16:53.629086 [debug] [Thread-1 (]: On model.minecraft_data_platform.mojang_version_manifest: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "node_id": "model.minecraft_data_platform.mojang_version_manifest"} */
+alter table "piston_meta_mojang_com"."main"."mojang_version_manifest__dbt_tmp" rename to "mojang_version_manifest"
+[0m18:16:53.629336 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m18:16:53.637348 [debug] [Thread-1 (]: On model.minecraft_data_platform.mojang_version_manifest: COMMIT
+[0m18:16:53.637566 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.mojang_version_manifest"
+[0m18:16:53.637732 [debug] [Thread-1 (]: On model.minecraft_data_platform.mojang_version_manifest: COMMIT
+[0m18:16:53.638130 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m18:16:53.638370 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.mojang_version_manifest"
+[0m18:16:53.638533 [debug] [Thread-1 (]: On model.minecraft_data_platform.mojang_version_manifest: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "node_id": "model.minecraft_data_platform.mojang_version_manifest"} */
+
+    SELECT index_name
+    FROM duckdb_indexes()
+    WHERE database_name = 'piston_meta_mojang_com'
+      AND schema_name = 'main'
+      AND table_name = 'mojang_version_manifest__dbt_backup'
+  
+[0m18:16:53.638897 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m18:16:53.641907 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.mojang_version_manifest"
+[0m18:16:53.642101 [debug] [Thread-1 (]: On model.minecraft_data_platform.mojang_version_manifest: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "node_id": "model.minecraft_data_platform.mojang_version_manifest"} */
+
+      drop table if exists "piston_meta_mojang_com"."main"."mojang_version_manifest__dbt_backup" cascade
+    
+[0m18:16:53.642508 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m18:16:53.643661 [debug] [Thread-1 (]: On model.minecraft_data_platform.mojang_version_manifest: Close
+[0m18:16:53.644746 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '1392d010-e82f-4919-84cd-9e425fbc5141', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x118f02ba0>]}
+[0m18:16:53.645074 [info ] [Thread-1 (]: 1 of 1 OK created python incremental model main.mojang_version_manifest ........ [[32mOK[0m in 0.81s]
+[0m18:16:53.645361 [debug] [Thread-1 (]: Finished running node model.minecraft_data_platform.mojang_version_manifest
+[0m18:16:53.646235 [debug] [MainThread]: Using duckdb connection "master"
+[0m18:16:53.646406 [debug] [MainThread]: On master: BEGIN
+[0m18:16:53.646536 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m18:16:53.646952 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m18:16:53.647091 [debug] [MainThread]: On master: COMMIT
+[0m18:16:53.647219 [debug] [MainThread]: Using duckdb connection "master"
+[0m18:16:53.647336 [debug] [MainThread]: On master: COMMIT
+[0m18:16:53.647498 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m18:16:53.647624 [debug] [MainThread]: On master: Close
+[0m18:16:53.647786 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m18:16:53.647906 [debug] [MainThread]: Connection 'model.minecraft_data_platform.mojang_version_manifest' was properly closed.
+[0m18:16:53.648039 [info ] [MainThread]: 
+[0m18:16:53.648182 [info ] [MainThread]: Finished running 1 incremental model in 0 hours 0 minutes and 0.90 seconds (0.90s).
+[0m18:16:53.648492 [debug] [MainThread]: Command end result
+[0m18:16:53.665374 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/target/manifest.json
+[0m18:16:53.666591 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/target/semantic_manifest.json
+[0m18:16:53.669961 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/target/run_results.json
+[0m18:16:53.670138 [info ] [MainThread]: 
+[0m18:16:53.670359 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m18:16:53.670506 [info ] [MainThread]: 
+[0m18:16:53.670676 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=1
+[0m18:16:53.673889 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 1.9816852, "process_in_blocks": "0", "process_kernel_time": 0.391379, "process_mem_max_rss": "302497792", "process_out_blocks": "0", "process_user_time": 2.614625}
+[0m18:16:53.674126 [debug] [MainThread]: Command `dbt run` succeeded at 18:16:53.674084 after 1.98 seconds
+[0m18:16:53.674315 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b144910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b026ba0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ae233d0>]}
+[0m18:16:53.674492 [debug] [MainThread]: Flushing usage events
+[0m18:16:54.176384 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m18:22:22.066339 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e1e5940>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f3fb750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f3fb9d0>]}
+
+
+============================== 18:22:22.069738 | fb162385-6993-4402-951f-92da46d83011 ==============================
+[0m18:22:22.069738 [info ] [MainThread]: Running with dbt=1.11.11
+[0m18:22:22.070085 [debug] [MainThread]: running dbt with arguments {'debug': 'False', 'printer_width': '80', 'partial_parse': 'True', 'introspect': 'True', 'version_check': 'True', 'quiet': 'False', 'write_json': 'True', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'empty': 'False', 'no_print': 'None', 'profiles_dir': '/Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations', 'fail_fast': 'False', 'cache_selected_only': 'False', 'log_format': 'default', 'warn_error': 'None', 'target_path': 'None', 'log_path': '/Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/logs', 'log_cache_events': 'False', 'indirect_selection': 'eager', 'send_anonymous_usage_stats': 'True', 'use_colors': 'True', 'invocation_command': 'dbt run --project-dir /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations --profiles-dir /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations --target dev --select modrinth_project_versions', 'use_experimental_parser': 'False'}
+[0m18:22:22.218305 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'fb162385-6993-4402-951f-92da46d83011', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e6a55b0>]}
+[0m18:22:22.247742 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'fb162385-6993-4402-951f-92da46d83011', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f42a9c0>]}
+[0m18:22:22.249465 [info ] [MainThread]: Registered adapter: duckdb=1.11.0
+[0m18:22:22.309311 [debug] [MainThread]: checksum: b276df2e725538900e19c36eb2bf632d2152ccbe55054f2124b6d2db0feda968, vars: {}, profile: , target: dev, version: 1.11.11
+[0m18:22:22.345163 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m18:22:22.345492 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'fb162385-6993-4402-951f-92da46d83011', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f4d5150>]}
+[0m18:22:22.913318 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'fb162385-6993-4402-951f-92da46d83011', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f94cc80>]}
+[0m18:22:22.945278 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/target/manifest.json
+[0m18:22:22.946708 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/target/semantic_manifest.json
+[0m18:22:22.953455 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'fb162385-6993-4402-951f-92da46d83011', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f53d8d0>]}
+[0m18:22:22.953719 [info ] [MainThread]: Found 3 models, 507 macros
+[0m18:22:22.953882 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'fb162385-6993-4402-951f-92da46d83011', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f9abc70>]}
+[0m18:22:22.954652 [info ] [MainThread]: 
+[0m18:22:22.954822 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m18:22:22.954960 [info ] [MainThread]: 
+[0m18:22:22.955197 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m18:22:22.955610 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_api_modrinth_com'
+[0m18:22:22.992245 [debug] [ThreadPool]: Using duckdb connection "list_api_modrinth_com"
+[0m18:22:22.992518 [debug] [ThreadPool]: On list_api_modrinth_com: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "connection_name": "list_api_modrinth_com"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"api_modrinth_com"'
+    
+  
+  
+[0m18:22:22.992670 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:22:23.007650 [debug] [ThreadPool]: SQL status: OK in 0.015 seconds
+[0m18:22:23.008428 [debug] [ThreadPool]: On list_api_modrinth_com: Close
+[0m18:22:23.008806 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_api_modrinth_com, now create_api_modrinth_com_main)
+[0m18:22:23.009061 [debug] [ThreadPool]: Creating schema "database: "api_modrinth_com"
+schema: "main"
+"
+[0m18:22:23.013245 [debug] [ThreadPool]: Using duckdb connection "create_api_modrinth_com_main"
+[0m18:22:23.013432 [debug] [ThreadPool]: On create_api_modrinth_com_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "connection_name": "create_api_modrinth_com_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='api_modrinth_com'
+        and type != 'duckdb'
+    
+  
+[0m18:22:23.013568 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m18:22:23.014119 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m18:22:23.014743 [debug] [ThreadPool]: Using duckdb connection "create_api_modrinth_com_main"
+[0m18:22:23.014886 [debug] [ThreadPool]: On create_api_modrinth_com_main: BEGIN
+[0m18:22:23.015062 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m18:22:23.015188 [debug] [ThreadPool]: Using duckdb connection "create_api_modrinth_com_main"
+[0m18:22:23.015304 [debug] [ThreadPool]: On create_api_modrinth_com_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "connection_name": "create_api_modrinth_com_main"} */
+
+    
+    
+        create schema if not exists "api_modrinth_com"."main"
+    
+[0m18:22:23.015501 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m18:22:23.015861 [debug] [ThreadPool]: On create_api_modrinth_com_main: COMMIT
+[0m18:22:23.015993 [debug] [ThreadPool]: Using duckdb connection "create_api_modrinth_com_main"
+[0m18:22:23.016111 [debug] [ThreadPool]: On create_api_modrinth_com_main: COMMIT
+[0m18:22:23.016276 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m18:22:23.016403 [debug] [ThreadPool]: On create_api_modrinth_com_main: Close
+[0m18:22:23.018843 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_api_modrinth_com_main, now list_api_modrinth_com_main)
+[0m18:22:23.021616 [debug] [ThreadPool]: Using duckdb connection "list_api_modrinth_com_main"
+[0m18:22:23.021783 [debug] [ThreadPool]: On list_api_modrinth_com_main: BEGIN
+[0m18:22:23.021909 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m18:22:23.022274 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m18:22:23.022411 [debug] [ThreadPool]: Using duckdb connection "list_api_modrinth_com_main"
+[0m18:22:23.022539 [debug] [ThreadPool]: On list_api_modrinth_com_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "connection_name": "list_api_modrinth_com_main"} */
+select
+      'api_modrinth_com' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'api_modrinth_com'
+  
+[0m18:22:23.024281 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m18:22:23.024919 [debug] [ThreadPool]: On list_api_modrinth_com_main: ROLLBACK
+[0m18:22:23.025131 [debug] [ThreadPool]: On list_api_modrinth_com_main: Close
+[0m18:22:23.025647 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'fb162385-6993-4402-951f-92da46d83011', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10fcd8a10>]}
+[0m18:22:23.025881 [debug] [MainThread]: Using duckdb connection "master"
+[0m18:22:23.026018 [debug] [MainThread]: On master: BEGIN
+[0m18:22:23.026141 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m18:22:23.026494 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m18:22:23.026629 [debug] [MainThread]: On master: COMMIT
+[0m18:22:23.026748 [debug] [MainThread]: Using duckdb connection "master"
+[0m18:22:23.026860 [debug] [MainThread]: On master: COMMIT
+[0m18:22:23.027022 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m18:22:23.027149 [debug] [MainThread]: On master: Close
+[0m18:22:23.028798 [debug] [Thread-1 (]: Began running node model.minecraft_data_platform.modrinth_project_versions
+[0m18:22:23.029074 [info ] [Thread-1 (]: 1 of 1 START sql project_type_incremental model main.modrinth_project_versions . [RUN]
+[0m18:22:23.029289 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_api_modrinth_com_main, now model.minecraft_data_platform.modrinth_project_versions)
+[0m18:22:23.029449 [debug] [Thread-1 (]: Began compiling node model.minecraft_data_platform.modrinth_project_versions
+[0m18:22:23.032835 [debug] [Thread-1 (]: Writing injected SQL for node "model.minecraft_data_platform.modrinth_project_versions"
+[0m18:22:23.033452 [debug] [Thread-1 (]: Began executing node model.minecraft_data_platform.modrinth_project_versions
+[0m18:22:23.043702 [info ] [Thread-1 (]: Processing project_type: shader
+[0m18:22:23.044078 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_project_versions"
+[0m18:22:23.044290 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_project_versions: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "node_id": "model.minecraft_data_platform.modrinth_project_versions"} */
+
+    
+
+            SELECT
+                r.run_id,
+
+                MAX(
+                    r.c_pull_timestamp_utc
+                ) AS max_pull_timestamp
+
+            FROM bronze.main.modrinth_project_versions AS r
+
+            WHERE
+                r.project_type = 'shader'
+
+                AND EXISTS (
+                    SELECT
+                        1
+
+                    FROM bronze.main.ingestion_log AS l
+
+                    WHERE l.run_id = r.run_id
+
+                        AND l.project_type =
+                            r.project_type
+
+                        AND l.status =
+                            'success'
+                )
+
+
+            
+
+                AND r.c_pull_timestamp_utc > (
+                    SELECT
+                        COALESCE(
+                            MAX(
+                                c_pull_timestamp_utc
+                            ),
+                            TIMESTAMP '1900-01-01'
+                        )
+
+                    FROM "api_modrinth_com"."main"."modrinth_project_versions"
+
+                    WHERE
+                        project_type =
+                            'shader'
+                )
+
+            
+
+
+            GROUP BY
+                r.run_id
+
+            ORDER BY
+                max_pull_timestamp,
+                r.run_id
+
+        
+  
+[0m18:22:23.044487 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:22:23.051974 [debug] [Thread-1 (]: SQL status: OK in 0.007 seconds
+[0m18:22:23.052751 [info ] [Thread-1 (]: Processing project_type: datapack
+[0m18:22:23.053010 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_project_versions"
+[0m18:22:23.053209 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_project_versions: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "node_id": "model.minecraft_data_platform.modrinth_project_versions"} */
+
+    
+
+            SELECT
+                r.run_id,
+
+                MAX(
+                    r.c_pull_timestamp_utc
+                ) AS max_pull_timestamp
+
+            FROM bronze.main.modrinth_project_versions AS r
+
+            WHERE
+                r.project_type = 'datapack'
+
+                AND EXISTS (
+                    SELECT
+                        1
+
+                    FROM bronze.main.ingestion_log AS l
+
+                    WHERE l.run_id = r.run_id
+
+                        AND l.project_type =
+                            r.project_type
+
+                        AND l.status =
+                            'success'
+                )
+
+
+            
+
+                AND r.c_pull_timestamp_utc > (
+                    SELECT
+                        COALESCE(
+                            MAX(
+                                c_pull_timestamp_utc
+                            ),
+                            TIMESTAMP '1900-01-01'
+                        )
+
+                    FROM "api_modrinth_com"."main"."modrinth_project_versions"
+
+                    WHERE
+                        project_type =
+                            'datapack'
+                )
+
+            
+
+
+            GROUP BY
+                r.run_id
+
+            ORDER BY
+                max_pull_timestamp,
+                r.run_id
+
+        
+  
+[0m18:22:23.056385 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m18:22:23.057121 [info ] [Thread-1 (]: Processing project_type: plugin
+[0m18:22:23.057452 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_project_versions"
+[0m18:22:23.057682 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_project_versions: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "node_id": "model.minecraft_data_platform.modrinth_project_versions"} */
+
+    
+
+            SELECT
+                r.run_id,
+
+                MAX(
+                    r.c_pull_timestamp_utc
+                ) AS max_pull_timestamp
+
+            FROM bronze.main.modrinth_project_versions AS r
+
+            WHERE
+                r.project_type = 'plugin'
+
+                AND EXISTS (
+                    SELECT
+                        1
+
+                    FROM bronze.main.ingestion_log AS l
+
+                    WHERE l.run_id = r.run_id
+
+                        AND l.project_type =
+                            r.project_type
+
+                        AND l.status =
+                            'success'
+                )
+
+
+            
+
+                AND r.c_pull_timestamp_utc > (
+                    SELECT
+                        COALESCE(
+                            MAX(
+                                c_pull_timestamp_utc
+                            ),
+                            TIMESTAMP '1900-01-01'
+                        )
+
+                    FROM "api_modrinth_com"."main"."modrinth_project_versions"
+
+                    WHERE
+                        project_type =
+                            'plugin'
+                )
+
+            
+
+
+            GROUP BY
+                r.run_id
+
+            ORDER BY
+                max_pull_timestamp,
+                r.run_id
+
+        
+  
+[0m18:22:23.060653 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m18:22:23.061339 [info ] [Thread-1 (]: Processing project_type: minecraft_java_server
+[0m18:22:23.061603 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_project_versions"
+[0m18:22:23.061798 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_project_versions: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "node_id": "model.minecraft_data_platform.modrinth_project_versions"} */
+
+    
+
+            SELECT
+                r.run_id,
+
+                MAX(
+                    r.c_pull_timestamp_utc
+                ) AS max_pull_timestamp
+
+            FROM bronze.main.modrinth_project_versions AS r
+
+            WHERE
+                r.project_type = 'minecraft_java_server'
+
+                AND EXISTS (
+                    SELECT
+                        1
+
+                    FROM bronze.main.ingestion_log AS l
+
+                    WHERE l.run_id = r.run_id
+
+                        AND l.project_type =
+                            r.project_type
+
+                        AND l.status =
+                            'success'
+                )
+
+
+            
+
+                AND r.c_pull_timestamp_utc > (
+                    SELECT
+                        COALESCE(
+                            MAX(
+                                c_pull_timestamp_utc
+                            ),
+                            TIMESTAMP '1900-01-01'
+                        )
+
+                    FROM "api_modrinth_com"."main"."modrinth_project_versions"
+
+                    WHERE
+                        project_type =
+                            'minecraft_java_server'
+                )
+
+            
+
+
+            GROUP BY
+                r.run_id
+
+            ORDER BY
+                max_pull_timestamp,
+                r.run_id
+
+        
+  
+[0m18:22:23.064783 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m18:22:23.065648 [info ] [Thread-1 (]: Processing project_type: resourcepack
+[0m18:22:23.066071 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_project_versions"
+[0m18:22:23.066370 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_project_versions: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "node_id": "model.minecraft_data_platform.modrinth_project_versions"} */
+
+    
+
+            SELECT
+                r.run_id,
+
+                MAX(
+                    r.c_pull_timestamp_utc
+                ) AS max_pull_timestamp
+
+            FROM bronze.main.modrinth_project_versions AS r
+
+            WHERE
+                r.project_type = 'resourcepack'
+
+                AND EXISTS (
+                    SELECT
+                        1
+
+                    FROM bronze.main.ingestion_log AS l
+
+                    WHERE l.run_id = r.run_id
+
+                        AND l.project_type =
+                            r.project_type
+
+                        AND l.status =
+                            'success'
+                )
+
+
+            
+
+                AND r.c_pull_timestamp_utc > (
+                    SELECT
+                        COALESCE(
+                            MAX(
+                                c_pull_timestamp_utc
+                            ),
+                            TIMESTAMP '1900-01-01'
+                        )
+
+                    FROM "api_modrinth_com"."main"."modrinth_project_versions"
+
+                    WHERE
+                        project_type =
+                            'resourcepack'
+                )
+
+            
+
+
+            GROUP BY
+                r.run_id
+
+            ORDER BY
+                max_pull_timestamp,
+                r.run_id
+
+        
+  
+[0m18:22:23.069923 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m18:22:23.070787 [info ] [Thread-1 (]: Processing project_type: modpack
+[0m18:22:23.071185 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_project_versions"
+[0m18:22:23.071409 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_project_versions: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "node_id": "model.minecraft_data_platform.modrinth_project_versions"} */
+
+    
+
+            SELECT
+                r.run_id,
+
+                MAX(
+                    r.c_pull_timestamp_utc
+                ) AS max_pull_timestamp
+
+            FROM bronze.main.modrinth_project_versions AS r
+
+            WHERE
+                r.project_type = 'modpack'
+
+                AND EXISTS (
+                    SELECT
+                        1
+
+                    FROM bronze.main.ingestion_log AS l
+
+                    WHERE l.run_id = r.run_id
+
+                        AND l.project_type =
+                            r.project_type
+
+                        AND l.status =
+                            'success'
+                )
+
+
+            
+
+                AND r.c_pull_timestamp_utc > (
+                    SELECT
+                        COALESCE(
+                            MAX(
+                                c_pull_timestamp_utc
+                            ),
+                            TIMESTAMP '1900-01-01'
+                        )
+
+                    FROM "api_modrinth_com"."main"."modrinth_project_versions"
+
+                    WHERE
+                        project_type =
+                            'modpack'
+                )
+
+            
+
+
+            GROUP BY
+                r.run_id
+
+            ORDER BY
+                max_pull_timestamp,
+                r.run_id
+
+        
+  
+[0m18:22:23.074588 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m18:22:23.075386 [info ] [Thread-1 (]: Processing project_type: mod
+[0m18:22:23.075724 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_project_versions"
+[0m18:22:23.075945 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_project_versions: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "node_id": "model.minecraft_data_platform.modrinth_project_versions"} */
+
+    
+
+            SELECT
+                r.run_id,
+
+                MAX(
+                    r.c_pull_timestamp_utc
+                ) AS max_pull_timestamp
+
+            FROM bronze.main.modrinth_project_versions AS r
+
+            WHERE
+                r.project_type = 'mod'
+
+                AND EXISTS (
+                    SELECT
+                        1
+
+                    FROM bronze.main.ingestion_log AS l
+
+                    WHERE l.run_id = r.run_id
+
+                        AND l.project_type =
+                            r.project_type
+
+                        AND l.status =
+                            'success'
+                )
+
+
+            
+
+                AND r.c_pull_timestamp_utc > (
+                    SELECT
+                        COALESCE(
+                            MAX(
+                                c_pull_timestamp_utc
+                            ),
+                            TIMESTAMP '1900-01-01'
+                        )
+
+                    FROM "api_modrinth_com"."main"."modrinth_project_versions"
+
+                    WHERE
+                        project_type =
+                            'mod'
+                )
+
+            
+
+
+            GROUP BY
+                r.run_id
+
+            ORDER BY
+                max_pull_timestamp,
+                r.run_id
+
+        
+  
+[0m18:22:23.082468 [debug] [Thread-1 (]: SQL status: OK in 0.006 seconds
+[0m18:22:23.083419 [debug] [Thread-1 (]: Writing runtime sql for node "model.minecraft_data_platform.modrinth_project_versions"
+[0m18:22:23.083957 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_project_versions"
+[0m18:22:23.084127 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_project_versions: BEGIN
+[0m18:22:23.084424 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m18:22:23.084571 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_project_versions"
+[0m18:22:23.084721 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_project_versions: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "node_id": "model.minecraft_data_platform.modrinth_project_versions"} */
+
+
+        SELECT 1
+
+    
+[0m18:22:23.085021 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m18:22:23.085447 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_project_versions: COMMIT
+[0m18:22:23.085605 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_project_versions"
+[0m18:22:23.085751 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_project_versions: COMMIT
+[0m18:22:23.086043 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m18:22:23.087229 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_project_versions: Close
+[0m18:22:23.088516 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'fb162385-6993-4402-951f-92da46d83011', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f891de0>]}
+[0m18:22:23.088939 [info ] [Thread-1 (]: 1 of 1 OK created sql project_type_incremental model main.modrinth_project_versions  [[32mOK[0m in 0.06s]
+[0m18:22:23.089253 [debug] [Thread-1 (]: Finished running node model.minecraft_data_platform.modrinth_project_versions
+[0m18:22:23.090104 [debug] [MainThread]: Using duckdb connection "master"
+[0m18:22:23.090345 [debug] [MainThread]: On master: BEGIN
+[0m18:22:23.090491 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m18:22:23.090997 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m18:22:23.091165 [debug] [MainThread]: On master: COMMIT
+[0m18:22:23.091306 [debug] [MainThread]: Using duckdb connection "master"
+[0m18:22:23.091439 [debug] [MainThread]: On master: COMMIT
+[0m18:22:23.091723 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m18:22:23.092037 [debug] [MainThread]: On master: Close
+[0m18:22:23.092282 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m18:22:23.092416 [debug] [MainThread]: Connection 'model.minecraft_data_platform.modrinth_project_versions' was properly closed.
+[0m18:22:23.092564 [info ] [MainThread]: 
+[0m18:22:23.092716 [info ] [MainThread]: Finished running 1 project type incremental model in 0 hours 0 minutes and 0.14 seconds (0.14s).
+[0m18:22:23.093042 [debug] [MainThread]: Command end result
+[0m18:22:23.110385 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/target/manifest.json
+[0m18:22:23.111602 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/target/semantic_manifest.json
+[0m18:22:23.114925 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/target/run_results.json
+[0m18:22:23.115083 [info ] [MainThread]: 
+[0m18:22:23.115276 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m18:22:23.115416 [info ] [MainThread]: 
+[0m18:22:23.115581 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=1
+[0m18:22:23.117521 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 1.0986109, "process_in_blocks": "0", "process_kernel_time": 0.274333, "process_mem_max_rss": "208060416", "process_out_blocks": "0", "process_user_time": 2.144437}
+[0m18:22:23.117788 [debug] [MainThread]: Command `dbt run` succeeded at 18:22:23.117745 after 1.10 seconds
+[0m18:22:23.117978 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10fb67430>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f9d3e30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f714050>]}
+[0m18:22:23.118173 [debug] [MainThread]: Flushing usage events
+[0m18:22:23.501132 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m18:26:00.165171 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10de81940>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f097750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f0979d0>]}
+
+
+============================== 18:26:00.169162 | 766b6d3e-cf64-4d84-8ea7-174eccbadf8e ==============================
+[0m18:26:00.169162 [info ] [MainThread]: Running with dbt=1.11.11
+[0m18:26:00.169564 [debug] [MainThread]: running dbt with arguments {'no_print': 'None', 'quiet': 'False', 'target_path': 'None', 'debug': 'False', 'use_experimental_parser': 'False', 'empty': 'False', 'write_json': 'True', 'printer_width': '80', 'indirect_selection': 'eager', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt run --project-dir /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations --profiles-dir /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations --target dev --select modrinth_project_listings', 'version_check': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'log_path': '/Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/logs', 'use_colors': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'profiles_dir': '/Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations', 'fail_fast': 'False', 'send_anonymous_usage_stats': 'True', 'static_parser': 'True', 'log_format': 'default'}
+[0m18:26:00.322092 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '766b6d3e-cf64-4d84-8ea7-174eccbadf8e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e33d5b0>]}
+[0m18:26:00.351655 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '766b6d3e-cf64-4d84-8ea7-174eccbadf8e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f0c69c0>]}
+[0m18:26:00.353226 [info ] [MainThread]: Registered adapter: duckdb=1.11.0
+[0m18:26:00.410220 [debug] [MainThread]: checksum: b276df2e725538900e19c36eb2bf632d2152ccbe55054f2124b6d2db0feda968, vars: {}, profile: , target: dev, version: 1.11.11
+[0m18:26:00.466247 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m18:26:00.466503 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m18:26:00.466648 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m18:26:00.479471 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '766b6d3e-cf64-4d84-8ea7-174eccbadf8e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f174c50>]}
+[0m18:26:00.514845 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/target/manifest.json
+[0m18:26:00.516437 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/target/semantic_manifest.json
+[0m18:26:00.523181 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '766b6d3e-cf64-4d84-8ea7-174eccbadf8e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f10bd40>]}
+[0m18:26:00.523433 [info ] [MainThread]: Found 3 models, 507 macros
+[0m18:26:00.523601 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '766b6d3e-cf64-4d84-8ea7-174eccbadf8e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f2ae510>]}
+[0m18:26:00.524425 [info ] [MainThread]: 
+[0m18:26:00.524590 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m18:26:00.524724 [info ] [MainThread]: 
+[0m18:26:00.524964 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m18:26:00.525395 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_api_modrinth_com'
+[0m18:26:00.562322 [debug] [ThreadPool]: Using duckdb connection "list_api_modrinth_com"
+[0m18:26:00.562590 [debug] [ThreadPool]: On list_api_modrinth_com: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "connection_name": "list_api_modrinth_com"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"api_modrinth_com"'
+    
+  
+  
+[0m18:26:00.562756 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:26:00.581379 [debug] [ThreadPool]: SQL status: OK in 0.018 seconds
+[0m18:26:00.582243 [debug] [ThreadPool]: On list_api_modrinth_com: Close
+[0m18:26:00.582707 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_api_modrinth_com, now create_api_modrinth_com_main)
+[0m18:26:00.583053 [debug] [ThreadPool]: Creating schema "database: "api_modrinth_com"
+schema: "main"
+"
+[0m18:26:00.587300 [debug] [ThreadPool]: Using duckdb connection "create_api_modrinth_com_main"
+[0m18:26:00.587489 [debug] [ThreadPool]: On create_api_modrinth_com_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "connection_name": "create_api_modrinth_com_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='api_modrinth_com'
+        and type != 'duckdb'
+    
+  
+[0m18:26:00.587638 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m18:26:00.588204 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m18:26:00.588879 [debug] [ThreadPool]: Using duckdb connection "create_api_modrinth_com_main"
+[0m18:26:00.589027 [debug] [ThreadPool]: On create_api_modrinth_com_main: BEGIN
+[0m18:26:00.589202 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m18:26:00.589319 [debug] [ThreadPool]: Using duckdb connection "create_api_modrinth_com_main"
+[0m18:26:00.589439 [debug] [ThreadPool]: On create_api_modrinth_com_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "connection_name": "create_api_modrinth_com_main"} */
+
+    
+    
+        create schema if not exists "api_modrinth_com"."main"
+    
+[0m18:26:00.589630 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m18:26:00.590008 [debug] [ThreadPool]: On create_api_modrinth_com_main: COMMIT
+[0m18:26:00.590143 [debug] [ThreadPool]: Using duckdb connection "create_api_modrinth_com_main"
+[0m18:26:00.590264 [debug] [ThreadPool]: On create_api_modrinth_com_main: COMMIT
+[0m18:26:00.590435 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m18:26:00.590563 [debug] [ThreadPool]: On create_api_modrinth_com_main: Close
+[0m18:26:00.593051 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_api_modrinth_com_main, now list_api_modrinth_com_main)
+[0m18:26:00.595877 [debug] [ThreadPool]: Using duckdb connection "list_api_modrinth_com_main"
+[0m18:26:00.596055 [debug] [ThreadPool]: On list_api_modrinth_com_main: BEGIN
+[0m18:26:00.596190 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m18:26:00.596537 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m18:26:00.596665 [debug] [ThreadPool]: Using duckdb connection "list_api_modrinth_com_main"
+[0m18:26:00.596796 [debug] [ThreadPool]: On list_api_modrinth_com_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "connection_name": "list_api_modrinth_com_main"} */
+select
+      'api_modrinth_com' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'api_modrinth_com'
+  
+[0m18:26:00.598511 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m18:26:00.599184 [debug] [ThreadPool]: On list_api_modrinth_com_main: ROLLBACK
+[0m18:26:00.599382 [debug] [ThreadPool]: On list_api_modrinth_com_main: Close
+[0m18:26:00.599883 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '766b6d3e-cf64-4d84-8ea7-174eccbadf8e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f8da8f0>]}
+[0m18:26:00.600102 [debug] [MainThread]: Using duckdb connection "master"
+[0m18:26:00.600231 [debug] [MainThread]: On master: BEGIN
+[0m18:26:00.600348 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m18:26:00.600660 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m18:26:00.600792 [debug] [MainThread]: On master: COMMIT
+[0m18:26:00.600913 [debug] [MainThread]: Using duckdb connection "master"
+[0m18:26:00.601025 [debug] [MainThread]: On master: COMMIT
+[0m18:26:00.601185 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m18:26:00.601304 [debug] [MainThread]: On master: Close
+[0m18:26:00.602809 [debug] [Thread-1 (]: Began running node model.minecraft_data_platform.modrinth_project_listings
+[0m18:26:00.603061 [info ] [Thread-1 (]: 1 of 1 START python incremental model main.modrinth_project_listings ........... [RUN]
+[0m18:26:00.603274 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_api_modrinth_com_main, now model.minecraft_data_platform.modrinth_project_listings)
+[0m18:26:00.603441 [debug] [Thread-1 (]: Began compiling node model.minecraft_data_platform.modrinth_project_listings
+[0m18:26:00.618686 [debug] [Thread-1 (]: Writing injected SQL for node "model.minecraft_data_platform.modrinth_project_listings"
+[0m18:26:00.620278 [debug] [Thread-1 (]: Began executing node model.minecraft_data_platform.modrinth_project_listings
+[0m18:26:00.651986 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:26:02.124162 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_project_listings"
+[0m18:26:02.125016 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_project_listings: BEGIN
+[0m18:26:02.125871 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m18:26:02.126574 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_project_listings"
+[0m18:26:02.126850 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_project_listings: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "node_id": "model.minecraft_data_platform.modrinth_project_listings"} */
+
+      select
+          column_name,
+          column_type as data_type,
+          cast(null as bigint) as character_maximum_length,
+          cast(null as bigint) as numeric_precision,
+          cast(null as bigint) as numeric_scale
+      from (describe "modrinth_project_listings__dbt_tmp20260901182600644225")
+  
+[0m18:26:02.127501 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m18:26:02.130255 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_project_listings"
+[0m18:26:02.130543 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_project_listings: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "node_id": "model.minecraft_data_platform.modrinth_project_listings"} */
+
+      select
+          column_name,
+          column_type as data_type,
+          cast(null as bigint) as character_maximum_length,
+          cast(null as bigint) as numeric_precision,
+          cast(null as bigint) as numeric_scale
+      from (describe "api_modrinth_com"."main"."modrinth_project_listings")
+  
+[0m18:26:02.131085 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m18:26:02.138670 [debug] [Thread-1 (]: 
+    In "api_modrinth_com"."main"."modrinth_project_listings":
+        Schema changed: False
+        Source columns not in target: []
+        Target columns not in source: []
+        New column types: []
+  
+[0m18:26:02.138966 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_project_listings"
+[0m18:26:02.139148 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_project_listings: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "node_id": "model.minecraft_data_platform.modrinth_project_listings"} */
+SELECT version()
+[0m18:26:02.139470 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m18:26:02.172567 [debug] [Thread-1 (]: Writing runtime sql for node "model.minecraft_data_platform.modrinth_project_listings"
+[0m18:26:02.173261 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_project_listings"
+[0m18:26:02.173569 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_project_listings: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "node_id": "model.minecraft_data_platform.modrinth_project_listings"} */
+
+
+    MERGE INTO "api_modrinth_com"."main"."modrinth_project_listings" AS DBT_INTERNAL_DEST
+        USING "modrinth_project_listings__dbt_tmp20260901182600644225" AS DBT_INTERNAL_SOURCE
+        
+            
+                
+                    
+                
+                    
+                
+            
+        
+        ON (DBT_INTERNAL_SOURCE.project_type = DBT_INTERNAL_DEST.project_type) AND (DBT_INTERNAL_SOURCE.project_id = DBT_INTERNAL_DEST.project_id)
+    
+    WHEN MATCHED AND DBT_INTERNAL_SOURCE.hashed_payload <> DBT_INTERNAL_DEST.hashed_payload
+    THEN
+        UPDATE BY NAME
+    WHEN NOT MATCHED
+        
+    THEN
+        INSERT BY NAME
+
+  
+[0m18:26:02.175977 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m18:26:02.182029 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_project_listings: COMMIT
+[0m18:26:02.182245 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_project_listings"
+[0m18:26:02.182409 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_project_listings: COMMIT
+[0m18:26:02.182664 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m18:26:02.183587 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_project_listings: Close
+[0m18:26:02.184682 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '766b6d3e-cf64-4d84-8ea7-174eccbadf8e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f8b1850>]}
+[0m18:26:02.185201 [info ] [Thread-1 (]: 1 of 1 OK created python incremental model main.modrinth_project_listings ...... [[32mOK[0m in 1.58s]
+[0m18:26:02.185530 [debug] [Thread-1 (]: Finished running node model.minecraft_data_platform.modrinth_project_listings
+[0m18:26:02.186385 [debug] [MainThread]: Using duckdb connection "master"
+[0m18:26:02.186555 [debug] [MainThread]: On master: BEGIN
+[0m18:26:02.186693 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m18:26:02.187184 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m18:26:02.187381 [debug] [MainThread]: On master: COMMIT
+[0m18:26:02.187526 [debug] [MainThread]: Using duckdb connection "master"
+[0m18:26:02.187658 [debug] [MainThread]: On master: COMMIT
+[0m18:26:02.187853 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m18:26:02.187992 [debug] [MainThread]: On master: Close
+[0m18:26:02.188183 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m18:26:02.188315 [debug] [MainThread]: Connection 'model.minecraft_data_platform.modrinth_project_listings' was properly closed.
+[0m18:26:02.188457 [info ] [MainThread]: 
+[0m18:26:02.188598 [info ] [MainThread]: Finished running 1 incremental model in 0 hours 0 minutes and 1.66 seconds (1.66s).
+[0m18:26:02.188917 [debug] [MainThread]: Command end result
+[0m18:26:02.205429 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/target/manifest.json
+[0m18:26:02.206812 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/target/semantic_manifest.json
+[0m18:26:02.210533 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/target/run_results.json
+[0m18:26:02.210738 [info ] [MainThread]: 
+[0m18:26:02.210961 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m18:26:02.211116 [info ] [MainThread]: 
+[0m18:26:02.211290 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=1
+[0m18:26:02.213515 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 2.1002433, "process_in_blocks": "0", "process_kernel_time": 1.517753, "process_mem_max_rss": "1652129792", "process_out_blocks": "0", "process_user_time": 2.502124}
+[0m18:26:02.213820 [debug] [MainThread]: Command `dbt run` succeeded at 18:26:02.213771 after 2.10 seconds
+[0m18:26:02.214023 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111c6e410>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bf923f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x114b6a210>]}
+[0m18:26:02.214222 [debug] [MainThread]: Flushing usage events
+[0m18:26:02.603245 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m18:33:48.582803 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d5f1940>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e807750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e8079d0>]}
+
+
+============================== 18:33:48.586293 | 76082a26-debc-4ae4-b322-3009cc4ebe05 ==============================
+[0m18:33:48.586293 [info ] [MainThread]: Running with dbt=1.11.11
+[0m18:33:48.586740 [debug] [MainThread]: running dbt with arguments {'use_colors': 'True', 'empty': 'False', 'send_anonymous_usage_stats': 'True', 'no_print': 'None', 'partial_parse': 'True', 'log_format': 'default', 'printer_width': '80', 'profiles_dir': '/Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations', 'write_json': 'True', 'debug': 'False', 'introspect': 'True', 'invocation_command': 'dbt run --project-dir /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations --profiles-dir /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations --target dev --select modrinth_project_listings', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'use_experimental_parser': 'False', 'indirect_selection': 'eager', 'version_check': 'True', 'log_path': '/Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/logs', 'fail_fast': 'False', 'target_path': 'None', 'cache_selected_only': 'False', 'log_cache_events': 'False', 'quiet': 'False', 'warn_error': 'None'}
+[0m18:33:48.730675 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '76082a26-debc-4ae4-b322-3009cc4ebe05', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10daad5b0>]}
+[0m18:33:48.759852 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '76082a26-debc-4ae4-b322-3009cc4ebe05', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e83a9c0>]}
+[0m18:33:48.761503 [info ] [MainThread]: Registered adapter: duckdb=1.11.0
+[0m18:33:48.819378 [debug] [MainThread]: checksum: b276df2e725538900e19c36eb2bf632d2152ccbe55054f2124b6d2db0feda968, vars: {}, profile: , target: dev, version: 1.11.11
+[0m18:33:48.873115 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m18:33:48.873492 [debug] [MainThread]: Partial parsing: updated file: minecraft_data_platform://models/silver/modrinth_project_listings.py
+[0m18:33:48.991054 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '76082a26-debc-4ae4-b322-3009cc4ebe05', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e8e1350>]}
+[0m18:33:49.023842 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/target/manifest.json
+[0m18:33:49.025612 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/target/semantic_manifest.json
+[0m18:33:49.032855 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '76082a26-debc-4ae4-b322-3009cc4ebe05', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e87ea80>]}
+[0m18:33:49.033116 [info ] [MainThread]: Found 3 models, 507 macros
+[0m18:33:49.033288 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '76082a26-debc-4ae4-b322-3009cc4ebe05', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ef36270>]}
+[0m18:33:49.034118 [info ] [MainThread]: 
+[0m18:33:49.034326 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m18:33:49.034456 [info ] [MainThread]: 
+[0m18:33:49.034705 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m18:33:49.035133 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_api_modrinth_com'
+[0m18:33:49.140568 [debug] [ThreadPool]: Using duckdb connection "list_api_modrinth_com"
+[0m18:33:49.140944 [debug] [ThreadPool]: On list_api_modrinth_com: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "connection_name": "list_api_modrinth_com"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"api_modrinth_com"'
+    
+  
+  
+[0m18:33:49.141137 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:33:49.157629 [debug] [ThreadPool]: SQL status: OK in 0.016 seconds
+[0m18:33:49.158465 [debug] [ThreadPool]: On list_api_modrinth_com: Close
+[0m18:33:49.158846 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_api_modrinth_com, now create_api_modrinth_com_main)
+[0m18:33:49.159078 [debug] [ThreadPool]: Creating schema "database: "api_modrinth_com"
+schema: "main"
+"
+[0m18:33:49.163158 [debug] [ThreadPool]: Using duckdb connection "create_api_modrinth_com_main"
+[0m18:33:49.163341 [debug] [ThreadPool]: On create_api_modrinth_com_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "connection_name": "create_api_modrinth_com_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='api_modrinth_com'
+        and type != 'duckdb'
+    
+  
+[0m18:33:49.163481 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m18:33:49.163989 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m18:33:49.164628 [debug] [ThreadPool]: Using duckdb connection "create_api_modrinth_com_main"
+[0m18:33:49.164765 [debug] [ThreadPool]: On create_api_modrinth_com_main: BEGIN
+[0m18:33:49.164936 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m18:33:49.165063 [debug] [ThreadPool]: Using duckdb connection "create_api_modrinth_com_main"
+[0m18:33:49.165190 [debug] [ThreadPool]: On create_api_modrinth_com_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "connection_name": "create_api_modrinth_com_main"} */
+
+    
+    
+        create schema if not exists "api_modrinth_com"."main"
+    
+[0m18:33:49.165399 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m18:33:49.165798 [debug] [ThreadPool]: On create_api_modrinth_com_main: COMMIT
+[0m18:33:49.165940 [debug] [ThreadPool]: Using duckdb connection "create_api_modrinth_com_main"
+[0m18:33:49.166060 [debug] [ThreadPool]: On create_api_modrinth_com_main: COMMIT
+[0m18:33:49.166223 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m18:33:49.166351 [debug] [ThreadPool]: On create_api_modrinth_com_main: Close
+[0m18:33:49.168803 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_api_modrinth_com_main, now list_api_modrinth_com_main)
+[0m18:33:49.171563 [debug] [ThreadPool]: Using duckdb connection "list_api_modrinth_com_main"
+[0m18:33:49.171737 [debug] [ThreadPool]: On list_api_modrinth_com_main: BEGIN
+[0m18:33:49.171873 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m18:33:49.172303 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m18:33:49.172481 [debug] [ThreadPool]: Using duckdb connection "list_api_modrinth_com_main"
+[0m18:33:49.172633 [debug] [ThreadPool]: On list_api_modrinth_com_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "connection_name": "list_api_modrinth_com_main"} */
+select
+      'api_modrinth_com' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'api_modrinth_com'
+  
+[0m18:33:49.174586 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m18:33:49.175287 [debug] [ThreadPool]: On list_api_modrinth_com_main: ROLLBACK
+[0m18:33:49.175512 [debug] [ThreadPool]: On list_api_modrinth_com_main: Close
+[0m18:33:49.176107 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '76082a26-debc-4ae4-b322-3009cc4ebe05', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f1f9710>]}
+[0m18:33:49.176328 [debug] [MainThread]: Using duckdb connection "master"
+[0m18:33:49.176457 [debug] [MainThread]: On master: BEGIN
+[0m18:33:49.176574 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m18:33:49.176879 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m18:33:49.177004 [debug] [MainThread]: On master: COMMIT
+[0m18:33:49.177121 [debug] [MainThread]: Using duckdb connection "master"
+[0m18:33:49.177232 [debug] [MainThread]: On master: COMMIT
+[0m18:33:49.177395 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m18:33:49.177513 [debug] [MainThread]: On master: Close
+[0m18:33:49.179032 [debug] [Thread-1 (]: Began running node model.minecraft_data_platform.modrinth_project_listings
+[0m18:33:49.179280 [info ] [Thread-1 (]: 1 of 1 START python incremental model main.modrinth_project_listings ........... [RUN]
+[0m18:33:49.179484 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_api_modrinth_com_main, now model.minecraft_data_platform.modrinth_project_listings)
+[0m18:33:49.179650 [debug] [Thread-1 (]: Began compiling node model.minecraft_data_platform.modrinth_project_listings
+[0m18:33:49.195297 [debug] [Thread-1 (]: Writing injected SQL for node "model.minecraft_data_platform.modrinth_project_listings"
+[0m18:33:49.196147 [debug] [Thread-1 (]: Began executing node model.minecraft_data_platform.modrinth_project_listings
+[0m18:33:49.228332 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:33:50.660166 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_project_listings"
+[0m18:33:50.661237 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_project_listings: BEGIN
+[0m18:33:50.662102 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m18:33:50.662699 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_project_listings"
+[0m18:33:50.662938 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_project_listings: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "node_id": "model.minecraft_data_platform.modrinth_project_listings"} */
+
+      select
+          column_name,
+          column_type as data_type,
+          cast(null as bigint) as character_maximum_length,
+          cast(null as bigint) as numeric_precision,
+          cast(null as bigint) as numeric_scale
+      from (describe "modrinth_project_listings__dbt_tmp20260901183349221022")
+  
+[0m18:33:50.663615 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m18:33:50.666753 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_project_listings"
+[0m18:33:50.667033 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_project_listings: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "node_id": "model.minecraft_data_platform.modrinth_project_listings"} */
+
+      select
+          column_name,
+          column_type as data_type,
+          cast(null as bigint) as character_maximum_length,
+          cast(null as bigint) as numeric_precision,
+          cast(null as bigint) as numeric_scale
+      from (describe "api_modrinth_com"."main"."modrinth_project_listings")
+  
+[0m18:33:50.667583 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m18:33:50.675413 [debug] [Thread-1 (]: 
+    In "api_modrinth_com"."main"."modrinth_project_listings":
+        Schema changed: False
+        Source columns not in target: []
+        Target columns not in source: []
+        New column types: []
+  
+[0m18:33:50.676090 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_project_listings"
+[0m18:33:50.676319 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_project_listings: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "node_id": "model.minecraft_data_platform.modrinth_project_listings"} */
+SELECT version()
+[0m18:33:50.676628 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m18:33:50.710806 [debug] [Thread-1 (]: Writing runtime sql for node "model.minecraft_data_platform.modrinth_project_listings"
+[0m18:33:50.711480 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_project_listings"
+[0m18:33:50.711706 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_project_listings: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "node_id": "model.minecraft_data_platform.modrinth_project_listings"} */
+
+
+    MERGE INTO "api_modrinth_com"."main"."modrinth_project_listings" AS DBT_INTERNAL_DEST
+        USING "modrinth_project_listings__dbt_tmp20260901183349221022" AS DBT_INTERNAL_SOURCE
+        
+            
+                
+                    
+                
+                    
+                
+            
+        
+        ON (DBT_INTERNAL_SOURCE.project_type = DBT_INTERNAL_DEST.project_type) AND (DBT_INTERNAL_SOURCE.project_id = DBT_INTERNAL_DEST.project_id)
+    
+    WHEN MATCHED AND (DBT_INTERNAL_SOURCE.hashed_payload <> DBT_INTERNAL_DEST.hashed_payload OR DBT_INTERNAL_SOURCE.c_pull_timestamp_utc > DBT_INTERNAL_DEST.c_pull_timestamp_utc)
+    THEN
+        UPDATE BY NAME
+    WHEN NOT MATCHED
+        
+    THEN
+        INSERT BY NAME
+
+  
+[0m18:33:50.713979 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m18:33:50.719939 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_project_listings: COMMIT
+[0m18:33:50.720164 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_project_listings"
+[0m18:33:50.720330 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_project_listings: COMMIT
+[0m18:33:50.720584 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m18:33:50.722065 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_project_listings: Close
+[0m18:33:50.723393 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '76082a26-debc-4ae4-b322-3009cc4ebe05', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10efae210>]}
+[0m18:33:50.723843 [info ] [Thread-1 (]: 1 of 1 OK created python incremental model main.modrinth_project_listings ...... [[32mOK[0m in 1.54s]
+[0m18:33:50.724163 [debug] [Thread-1 (]: Finished running node model.minecraft_data_platform.modrinth_project_listings
+[0m18:33:50.725071 [debug] [MainThread]: Using duckdb connection "master"
+[0m18:33:50.725251 [debug] [MainThread]: On master: BEGIN
+[0m18:33:50.725404 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m18:33:50.725891 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m18:33:50.726041 [debug] [MainThread]: On master: COMMIT
+[0m18:33:50.726175 [debug] [MainThread]: Using duckdb connection "master"
+[0m18:33:50.726297 [debug] [MainThread]: On master: COMMIT
+[0m18:33:50.726474 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m18:33:50.726615 [debug] [MainThread]: On master: Close
+[0m18:33:50.726802 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m18:33:50.726927 [debug] [MainThread]: Connection 'model.minecraft_data_platform.modrinth_project_listings' was properly closed.
+[0m18:33:50.727088 [info ] [MainThread]: 
+[0m18:33:50.727251 [info ] [MainThread]: Finished running 1 incremental model in 0 hours 0 minutes and 1.69 seconds (1.69s).
+[0m18:33:50.727579 [debug] [MainThread]: Command end result
+[0m18:33:50.743123 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/target/manifest.json
+[0m18:33:50.744684 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/target/semantic_manifest.json
+[0m18:33:50.748172 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/target/run_results.json
+[0m18:33:50.748397 [info ] [MainThread]: 
+[0m18:33:50.748609 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m18:33:50.748751 [info ] [MainThread]: 
+[0m18:33:50.748917 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=1
+[0m18:33:50.751116 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 2.21534, "process_in_blocks": "0", "process_kernel_time": 1.524998, "process_mem_max_rss": "1474461696", "process_out_blocks": "0", "process_user_time": 2.357791}
+[0m18:33:50.751389 [debug] [MainThread]: Command `dbt run` succeeded at 18:33:50.751346 after 2.22 seconds
+[0m18:33:50.751611 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1142fb120>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1143ef930>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1143ef4d0>]}
+[0m18:33:50.751786 [debug] [MainThread]: Flushing usage events
+[0m18:33:51.246947 [debug] [MainThread]: An error was encountered while trying to flush usage events

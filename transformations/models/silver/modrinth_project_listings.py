@@ -12,18 +12,23 @@ def parse_payload(payload) -> dict:
 
 def model(dbt, session):
     dbt.config(
-        materialized="incremental",
-        incremental_strategy="merge",
-        unique_key=[
-            "project_type",
-            "project_id",
-        ],
-        on_schema_change="append_new_columns",
-        merge_update_condition=(
-            "DBT_INTERNAL_SOURCE.hashed_payload "
-            "<> DBT_INTERNAL_DEST.hashed_payload"
-        ),
-    )
+    materialized="incremental",
+    incremental_strategy="merge",
+    unique_key=[
+        "project_type",
+        "project_id",
+    ],
+    on_schema_change="append_new_columns",
+    merge_update_condition=(
+        "("
+        "DBT_INTERNAL_SOURCE.hashed_payload "
+        "<> DBT_INTERNAL_DEST.hashed_payload "
+        "OR "
+        "DBT_INTERNAL_SOURCE.c_pull_timestamp_utc "
+        "> DBT_INTERNAL_DEST.c_pull_timestamp_utc"
+        ")"
+    ),
+)
 
     if dbt.is_incremental:
         incremental_cte = f"""

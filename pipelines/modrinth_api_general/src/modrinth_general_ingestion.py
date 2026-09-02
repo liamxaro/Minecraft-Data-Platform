@@ -24,7 +24,7 @@ def parse_args():
         "--env",
         choices=[
             "dev",
-            "test"
+            "test",
             "prod",
         ],
         default="dev",
