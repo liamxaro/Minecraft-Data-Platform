@@ -139,7 +139,7 @@ with DAG(
     # -------------------------------------------------------------------
 
     bronze_project_listings = BashOperator(
-        task_id="bronze_project_listings",
+        task_id="modrinth_api_general_ingestion",
 
         bash_command=f"""
             set -euo pipefail
@@ -167,7 +167,7 @@ with DAG(
     # -------------------------------------------------------------------
 
     silver_project_listings = BashOperator(
-        task_id="silver_project_listings",
+        task_id="modrinth_api_general_dbt",
 
         bash_command=f"""
             set -euo pipefail
@@ -176,9 +176,10 @@ with DAG(
                 "{python_executable}"
                 "{general_silver_script}"
                 --target "$PIPELINE_ENV"
+                --select "modrinth_project_listings"
             )
 
-            if [[ "$DBT_FULL_REFRESH" == "True" ]]; then
+            if [[ "${{DBT_FULL_REFRESH,,}}" == "true" ]]; then
                 command+=(--full-refresh)
             fi
 
@@ -200,7 +201,7 @@ with DAG(
     # -------------------------------------------------------------------
 
     bronze_project_details = BashOperator(
-        task_id="bronze_project_details",
+        task_id="modrinth_api_detail_ingestion",
 
         bash_command=f"""
             set -euo pipefail
@@ -224,7 +225,7 @@ with DAG(
     # -------------------------------------------------------------------
 
     silver_project_details = BashOperator(
-        task_id="silver_project_details",
+        task_id="modrinth_api_detail_dbt",
 
         bash_command=f"""
             set -euo pipefail
@@ -233,9 +234,10 @@ with DAG(
                 "{python_executable}"
                 "{detail_silver_script}"
                 --target "$PIPELINE_ENV"
+                --select "modrinth_project_versions"
             )
 
-            if [[ "$DBT_FULL_REFRESH" == "True" ]]; then
+            if [[ "${{DBT_FULL_REFRESH,,}}" == "true" ]]; then
                 command+=(--full-refresh)
             fi
 
