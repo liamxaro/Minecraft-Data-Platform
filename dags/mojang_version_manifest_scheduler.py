@@ -2,15 +2,31 @@ from pathlib import Path
 
 import pendulum
 
-from airflow.sdk import DAG
+from airflow.sdk import DAG, Param
 from airflow.providers.standard.operators.bash import BashOperator
 
 
 # -------------------------------------------------------------------
-# PATHS
+# PROJECT PATHS
 # -------------------------------------------------------------------
 
 project_root = Path(__file__).resolve().parents[1]
+
+pipeline_venv = (
+    project_root
+    / ".venv"
+)
+
+python_executable = (
+    pipeline_venv
+    / "bin"
+    / "python"
+)
+
+
+# -------------------------------------------------------------------
+# MOJANG VERSION MANIFEST PATHS
+# -------------------------------------------------------------------
 
 pipeline_root = (
     project_root
@@ -18,24 +34,19 @@ pipeline_root = (
     / "mojang_version_manifest"
 )
 
-notebook_directory = pipeline_root / "notebooks"
-
-pipeline_venv = project_root / ".venv"
-
-jupyter_executable = (
-    pipeline_venv
-    / "bin"
-    / "jupyter"
+src_directory = (
+    pipeline_root
+    / "src"
 )
 
-bronze_notebook = (
-    notebook_directory
-    / "mojang-version-manifest-ingestion.ipynb"
+bronze_script = (
+    src_directory
+    / "mojang_version_manifest_ingestion.py"
 )
 
-silver_notebook = (
-    notebook_directory
-    / "mojang-version-manifest-bronze-to-silver.ipynb"
+silver_script = (
+    src_directory
+    / "bronze_to_silver_dbt.py"
 )
 
 
@@ -45,10 +56,12 @@ silver_notebook = (
 
 with DAG(
     dag_id="mojang_version_manifest",
-    description="Mojang version manifest ingestion and Bronze-to-Silver pipeline.",
 
-    # Midnight tonight:
-    # August 26, 2026 @ 12:00 AM Los Angeles time
+    description=(
+        "Mojang version manifest pipeline "
+        "from Bronze through Silver."
+    ),
+
     start_date=pendulum.datetime(
         2026,
         8,
@@ -58,11 +71,27 @@ with DAG(
         tz="America/Los_Angeles",
     ),
 
-    # Run once
     schedule="@once",
 
     catchup=False,
     max_active_runs=1,
+
+    params={
+        "environment": Param(
+            default="dev",
+            type="string",
+            enum=[
+                "dev",
+                "test",
+                "prod",
+            ],
+        ),
+
+        "dbt_full_refresh": Param(
+            default=False,
+            type="boolean",
+        ),
+    },
 
     tags=[
         "mojang",
@@ -70,38 +99,64 @@ with DAG(
     ],
 ) as dag:
 
+
+    # -------------------------------------------------------------------
+    # BRONZE
+    # -------------------------------------------------------------------
+
     bronze_version_manifest = BashOperator(
         task_id="bronze_version_manifest",
+
         bash_command=f"""
-            set -e
+            set -euo pipefail
 
-            cd "{notebook_directory}"
-
-            "{jupyter_executable}" nbconvert \
-                --to notebook \
-                --execute "{bronze_notebook.name}" \
-                --output-dir "/tmp" \
-                --output "mojang-version-manifest-ingestion-output.ipynb" \
-                --ExecutePreprocessor.timeout=-1
+            "{python_executable}" \
+                "{bronze_script}" \
+                --env "$PIPELINE_ENV"
         """,
+
+        env={
+            "PIPELINE_ENV": "{{ params.environment }}",
+        },
+
+        append_env=True,
+        cwd=str(project_root),
     )
+
+
+    # -------------------------------------------------------------------
+    # SILVER
+    # -------------------------------------------------------------------
 
     silver_version_manifest = BashOperator(
         task_id="silver_version_manifest",
         bash_command=f"""
-            set -e
+            set -euo pipefail
 
-            cd "{notebook_directory}"
+            command=(
+                "{python_executable}"
+                "{silver_script}"
+                --target "$PIPELINE_ENV"
+                --select "mojang_version_manifest"
+            )
 
-            "{jupyter_executable}" nbconvert \
-                --to notebook \
-                --execute "{silver_notebook.name}" \
-                --output-dir "/tmp" \
-                --output "mojang-version-manifest-bronze-to-silver-output.ipynb" \
-                --ExecutePreprocessor.timeout=-1
+            case "${{DBT_FULL_REFRESH:-false}}" in
+                true|True|TRUE|1)
+                    command+=(--full-refresh)
+                    ;;
+            esac
+
+            "${{command[@]}}"
         """,
-    )
+        env={
+            "PIPELINE_ENV": "{{ params.environment }}",
+            "DBT_FULL_REFRESH": "{{ params.dbt_full_refresh }}",
+            },
+        )
 
 
-    # Bronze must finish successfully before Silver begins.
+    # -------------------------------------------------------------------
+    # DEPENDENCIES
+    # -------------------------------------------------------------------
+
     bronze_version_manifest >> silver_version_manifest

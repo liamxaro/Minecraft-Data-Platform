@@ -1,0 +1,54 @@
+minecraft_data_platform:
+  target: dev #default target will use dev, but you can override this with the --target flag when running dbt commands
+
+  outputs:
+
+    dev:
+      type: duckdb
+
+      path: "{{ env_var('DBT_SILVER_PATH') }}"
+
+      threads: "{{ env_var('DBT_THREADS', '1') | int }}"
+
+      settings:
+        memory_limit: "{{ env_var('DBT_MEMORY_LIMIT', '4GB') }}"
+        preserve_insertion_order: false
+
+      attach:
+        - path: "{{ env_var('DBT_BRONZE_PATH') }}"
+          alias: bronze
+          read_only: true
+
+
+    test:
+      type: duckdb
+
+      path: "{{ env_var('DBT_SILVER_PATH') }}"
+
+      threads: "{{ env_var('DBT_THREADS', '1') | int }}"
+
+      settings:
+        memory_limit: "{{ env_var('DBT_MEMORY_LIMIT', '4GB') }}"
+        preserve_insertion_order: false
+
+      attach:
+        - path: "{{ env_var('DBT_BRONZE_PATH') }}"
+          alias: bronze
+          read_only: true
+
+
+    prod:
+      type: duckdb
+
+      path: "{{ env_var('DBT_SILVER_PATH') }}"
+
+      threads: "{{ env_var('DBT_THREADS', '1') | int }}"
+
+      settings:
+        memory_limit: "{{ env_var('DBT_MEMORY_LIMIT', '4GB') }}"
+        preserve_insertion_order: false
+
+      attach:
+        - path: "{{ env_var('DBT_BRONZE_PATH') }}"
+          alias: bronze
+          read_only: true

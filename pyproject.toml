@@ -19,6 +19,9 @@ dependencies = [
     "ipykernel",
     "nbconvert",
     "tldextract",
+    "dbt-core==1.11.11",
+    "dbt-duckdb==1.11.0",
+    "duckdb==1.5.5",
 ]
 
 [tool.setuptools.packages.find]
