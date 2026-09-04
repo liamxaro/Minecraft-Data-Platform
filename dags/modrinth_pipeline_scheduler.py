@@ -179,9 +179,11 @@ with DAG(
                 --select "modrinth_project_listings"
             )
 
-            if [[ "${{DBT_FULL_REFRESH,,}}" == "true" ]]; then
-                command+=(--full-refresh)
-            fi
+            case "${{DBT_FULL_REFRESH:-false}}" in
+                true|True|TRUE|1)
+                    command+=(--full-refresh)
+                    ;;
+            esac
 
             "${{command[@]}}"
         """,
@@ -237,9 +239,11 @@ with DAG(
                 --select "modrinth_project_versions"
             )
 
-            if [[ "${{DBT_FULL_REFRESH,,}}" == "true" ]]; then
-                command+=(--full-refresh)
-            fi
+            case "${{DBT_FULL_REFRESH:-false}}" in
+                true|True|TRUE|1)
+                    command+=(--full-refresh)
+                    ;;
+            esac
 
             "${{command[@]}}"
         """,

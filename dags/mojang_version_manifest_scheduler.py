@@ -130,7 +130,6 @@ with DAG(
 
     silver_version_manifest = BashOperator(
         task_id="silver_version_manifest",
-
         bash_command=f"""
             set -euo pipefail
 
@@ -141,21 +140,19 @@ with DAG(
                 --select "mojang_version_manifest"
             )
 
-            if [[ "${{DBT_FULL_REFRESH,,}}" == "true" ]]; then
-                command+=(--full-refresh)
-            fi
+            case "${{DBT_FULL_REFRESH:-false}}" in
+                true|True|TRUE|1)
+                    command+=(--full-refresh)
+                    ;;
+            esac
 
             "${{command[@]}}"
         """,
-
         env={
             "PIPELINE_ENV": "{{ params.environment }}",
             "DBT_FULL_REFRESH": "{{ params.dbt_full_refresh }}",
-        },
-
-        append_env=True,
-        cwd=str(project_root),
-    )
+            },
+        )
 
 
     # -------------------------------------------------------------------

@@ -9,9 +9,9 @@ KPIS:
 Charts:
 -Pie chart of project type distribution
 
-potential:
-    Section 4: Data recency / growth
-snapshot counts over time, if available
+Project Listings Over Time:
+- line chart of project_types over time
+- line chart of project_type growth as a percentage over time
 
 Data Preview:
 -A sample of 50 rows of what the data looks like

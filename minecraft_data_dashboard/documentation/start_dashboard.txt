@@ -1,0 +1,3 @@
+source .venv/bin/activate
+
+streamlit run minecraft_data_dashboard/app.py

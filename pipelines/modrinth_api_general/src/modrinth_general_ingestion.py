@@ -30,6 +30,13 @@ def parse_args():
         default="dev",
     )
     
+    parser.add_argument(
+        "--search-page-concurrency",
+        type=int,
+        default=8,
+    )
+
+    
     return parser.parse_args()
 
 def get_modrinth_project_types(url: str, headers: dict) -> list[str]:

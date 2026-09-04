@@ -1,7 +1,8 @@
 import argparse
 import os
-import shutil
 import subprocess
+import sys
+from pathlib import Path
 
 
 project_root = os.path.abspath(
@@ -9,10 +10,6 @@ project_root = os.path.abspath(
         os.path.dirname(__file__),
         "../../..",
     )
-)
-
-src_dir = os.path.dirname(
-    os.path.abspath(__file__)
 )
 
 transformations_dir = os.path.join(
@@ -53,14 +50,15 @@ def run_dbt(
     full_refresh: bool = False,
 ) -> None:
 
-    dbt_executable = shutil.which(
-        "dbt"
+    dbt_executable = (
+        Path(sys.executable).parent
+        / "dbt"
     )
 
-    if dbt_executable is None:
+    if not dbt_executable.exists():
         raise RuntimeError(
-            "dbt executable was not found "
-            "in the current environment."
+            f"dbt executable was not found at: "
+            f"{dbt_executable}"
         )
 
     bronze_path = os.path.join(
@@ -92,7 +90,7 @@ def run_dbt(
     dbt_env["DBT_THREADS"] = "1"
 
     command = [
-        dbt_executable,
+        str(dbt_executable),
         "run",
         "--project-dir",
         transformations_dir,
@@ -120,6 +118,14 @@ def run_dbt(
     )
 
     print(
+        f"(INFO) Python executable: {sys.executable}"
+    )
+
+    print(
+        f"(INFO) dbt executable: {dbt_executable}"
+    )
+
+    print(
         f"(INFO) Bronze database: {bronze_path}"
     )
 
@@ -128,11 +134,13 @@ def run_dbt(
     )
 
     print(
-        f"(INFO) DuckDB memory limit: {dbt_env['DBT_MEMORY_LIMIT']}"
+        f"(INFO) DuckDB memory limit: "
+        f"{dbt_env['DBT_MEMORY_LIMIT']}"
     )
 
     print(
-        f"(INFO) dbt threads: {dbt_env['DBT_THREADS']}"
+        f"(INFO) dbt threads: "
+        f"{dbt_env['DBT_THREADS']}"
     )
 
     subprocess.run(

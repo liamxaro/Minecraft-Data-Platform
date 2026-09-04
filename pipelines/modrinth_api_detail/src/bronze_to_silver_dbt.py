@@ -1,6 +1,8 @@
 import argparse
 import os
 import subprocess
+import sys
+from pathlib import Path
 
 
 def parse_args():
@@ -53,12 +55,16 @@ def run_dbt(
         "transformations",
     )
 
-    dbt_path = os.path.join(
-        project_root,
-        ".venv",
-        "bin",
-        "dbt",
+    dbt_path = (
+        Path(sys.executable).parent
+        / "dbt"
     )
+
+    if not dbt_path.exists():
+        raise RuntimeError(
+            f"dbt executable was not found at: "
+            f"{dbt_path}"
+        )
 
     bronze_path = os.path.join(
         project_root,
@@ -85,13 +91,11 @@ def run_dbt(
 
     dbt_env["DBT_BRONZE_PATH"] = bronze_path
     dbt_env["DBT_SILVER_PATH"] = silver_path
-
-    # Modrinth is the heavy pipeline.
     dbt_env["DBT_MEMORY_LIMIT"] = "14GB"
     dbt_env["DBT_THREADS"] = "1"
 
     command = [
-        dbt_path,
+        str(dbt_path),
         "run",
         "--project-dir",
         transformations_dir,
@@ -113,6 +117,14 @@ def run_dbt(
     )
 
     print(
+        f"(INFO) Python executable: {sys.executable}"
+    )
+
+    print(
+        f"(INFO) dbt executable: {dbt_path}"
+    )
+
+    print(
         f"(INFO) Bronze: {bronze_path}"
     )
 
@@ -121,11 +133,13 @@ def run_dbt(
     )
 
     print(
-        f"(INFO) DuckDB memory limit: {dbt_env['DBT_MEMORY_LIMIT']}"
+        f"(INFO) DuckDB memory limit: "
+        f"{dbt_env['DBT_MEMORY_LIMIT']}"
     )
 
     print(
-        f"(INFO) dbt threads: {dbt_env['DBT_THREADS']}"
+        f"(INFO) dbt threads: "
+        f"{dbt_env['DBT_THREADS']}"
     )
 
     subprocess.run(
