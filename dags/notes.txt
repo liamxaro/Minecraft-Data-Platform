@@ -4,6 +4,13 @@ export AIRFLOW_HOME="$(pwd)/.airflow"
 export AIRFLOW__CORE__DAGS_FOLDER="$(pwd)/dags"
 export AIRFLOW__CORE__SIMPLE_AUTH_MANAGER_ALL_ADMINS=True
 
-airflow config get-value core simple_auth_manager_all_admins
-
 airflow standalone > .airflow/standalone.log 2>&1 &
+
+sleep 3
+
+echo ""
+echo "Airflow UI:"
+echo "http://localhost:8080"
+echo ""
+
+open http://localhost:8080

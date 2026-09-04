@@ -6,6 +6,7 @@ def build_bronze_mojang_version_manifest_schema(
             run_id VARCHAR NOT NULL,
             stream VARCHAR NOT NULL,
             payload JSON NOT NULL,
+            hasehd_payload VARCHAR NOT NULL,
             c_pull_timestamp_utc TIMESTAMPTZ NOT NULL,
             PRIMARY KEY (
                 run_id,

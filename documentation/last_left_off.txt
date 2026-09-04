@@ -1,0 +1,2 @@
+converting modrinth_detail to dbt
+working through memory constraints. run query in sandbox then change profiles.yml

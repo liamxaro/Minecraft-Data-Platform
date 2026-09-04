@@ -2,7 +2,7 @@ from pathlib import Path
 
 import pendulum
 
-from airflow.sdk import DAG
+from airflow.sdk import DAG, Param
 from airflow.providers.standard.operators.bash import BashOperator
 
 
@@ -12,12 +12,15 @@ from airflow.providers.standard.operators.bash import BashOperator
 
 project_root = Path(__file__).resolve().parents[1]
 
-pipeline_venv = project_root / ".venv"
+pipeline_venv = (
+    project_root
+    / ".venv"
+)
 
-jupyter_executable = (
+python_executable = (
     pipeline_venv
     / "bin"
-    / "jupyter"
+    / "python"
 )
 
 
@@ -31,19 +34,19 @@ general_pipeline_root = (
     / "modrinth_api_general"
 )
 
-general_notebook_directory = (
+general_src_directory = (
     general_pipeline_root
-    / "notebooks"
+    / "src"
 )
 
-general_bronze_notebook = (
-    general_notebook_directory
-    / "modrinth-general-ingestion.ipynb"
+general_bronze_script = (
+    general_src_directory
+    / "modrinth_general_ingestion.py"
 )
 
-general_silver_notebook = (
-    general_notebook_directory
-    / "modrinth-general-bronze-to-silver.ipynb"
+general_silver_script = (
+    general_src_directory
+    / "bronze_to_silver_dbt.py"
 )
 
 
@@ -57,19 +60,19 @@ detail_pipeline_root = (
     / "modrinth_api_detail"
 )
 
-detail_notebook_directory = (
+detail_src_directory = (
     detail_pipeline_root
-    / "notebooks"
+    / "src"
 )
 
-detail_bronze_notebook = (
-    detail_notebook_directory
-    / "modrinth-detail-ingestion.ipynb"
+detail_bronze_script = (
+    detail_src_directory
+    / "modrinth_detail_ingestion.py"
 )
 
-detail_silver_notebook = (
-    detail_notebook_directory
-    / "modrinth-detail-bronze-to-silver.ipynb"
+detail_silver_script = (
+    detail_src_directory
+    / "bronze_to_silver_dbt.py"
 )
 
 
@@ -79,6 +82,7 @@ detail_silver_notebook = (
 
 with DAG(
     dag_id="modrinth_pipeline",
+
     description=(
         "Modrinth General and Detail pipelines "
         "from Bronze through Silver."
@@ -98,6 +102,30 @@ with DAG(
     catchup=False,
     max_active_runs=1,
 
+    params={
+        "environment": Param(
+            default="dev",
+            type="string",
+            enum=[
+                "dev",
+                "test",
+                "prod",
+            ],
+        ),
+
+        "search_page_concurrency": Param(
+            default=8,
+            type="integer",
+            minimum=1,
+            maximum=20,
+        ),
+
+        "dbt_full_refresh": Param(
+            default=False,
+            type="boolean",
+        ),
+    },
+
     tags=[
         "modrinth",
         "general",
@@ -111,20 +139,26 @@ with DAG(
     # -------------------------------------------------------------------
 
     bronze_project_listings = BashOperator(
-        task_id="bronze_project_listings",
+        task_id="modrinth_api_general_ingestion",
 
         bash_command=f"""
-            set -e
+            set -euo pipefail
 
-            cd "{general_notebook_directory}"
-
-            "{jupyter_executable}" nbconvert \
-                --to notebook \
-                --execute "{general_bronze_notebook.name}" \
-                --output-dir "/tmp" \
-                --output "modrinth-general-ingestion-output.ipynb" \
-                --ExecutePreprocessor.timeout=-1
+            "{python_executable}" \
+                "{general_bronze_script}" \
+                --env "$PIPELINE_ENV" \
+                --search-page-concurrency "$SEARCH_PAGE_CONCURRENCY"
         """,
+
+        env={
+            "PIPELINE_ENV": "{{ params.environment }}",
+            "SEARCH_PAGE_CONCURRENCY": (
+                "{{ params.search_page_concurrency }}"
+            ),
+        },
+
+        append_env=True,
+        cwd=str(project_root),
     )
 
 
@@ -133,20 +167,34 @@ with DAG(
     # -------------------------------------------------------------------
 
     silver_project_listings = BashOperator(
-        task_id="silver_project_listings",
+        task_id="modrinth_api_general_dbt",
 
         bash_command=f"""
-            set -e
+            set -euo pipefail
 
-            cd "{general_notebook_directory}"
+            command=(
+                "{python_executable}"
+                "{general_silver_script}"
+                --target "$PIPELINE_ENV"
+                --select "modrinth_project_listings"
+            )
 
-            "{jupyter_executable}" nbconvert \
-                --to notebook \
-                --execute "{general_silver_notebook.name}" \
-                --output-dir "/tmp" \
-                --output "modrinth-general-bronze-to-silver-output.ipynb" \
-                --ExecutePreprocessor.timeout=-1
+            case "${{DBT_FULL_REFRESH:-false}}" in
+                true|True|TRUE|1)
+                    command+=(--full-refresh)
+                    ;;
+            esac
+
+            "${{command[@]}}"
         """,
+
+        env={
+            "PIPELINE_ENV": "{{ params.environment }}",
+            "DBT_FULL_REFRESH": "{{ params.dbt_full_refresh }}",
+        },
+
+        append_env=True,
+        cwd=str(project_root),
     )
 
 
@@ -155,20 +203,22 @@ with DAG(
     # -------------------------------------------------------------------
 
     bronze_project_details = BashOperator(
-        task_id="bronze_project_details",
+        task_id="modrinth_api_detail_ingestion",
 
         bash_command=f"""
-            set -e
+            set -euo pipefail
 
-            cd "{detail_notebook_directory}"
-
-            "{jupyter_executable}" nbconvert \
-                --to notebook \
-                --execute "{detail_bronze_notebook.name}" \
-                --output-dir "/tmp" \
-                --output "modrinth-detail-ingestion-output.ipynb" \
-                --ExecutePreprocessor.timeout=-1
+            "{python_executable}" \
+                "{detail_bronze_script}" \
+                --env "$PIPELINE_ENV"
         """,
+
+        env={
+            "PIPELINE_ENV": "{{ params.environment }}",
+        },
+
+        append_env=True,
+        cwd=str(project_root),
     )
 
 
@@ -177,20 +227,34 @@ with DAG(
     # -------------------------------------------------------------------
 
     silver_project_details = BashOperator(
-        task_id="silver_project_details",
+        task_id="modrinth_api_detail_dbt",
 
         bash_command=f"""
-            set -e
+            set -euo pipefail
 
-            cd "{detail_notebook_directory}"
+            command=(
+                "{python_executable}"
+                "{detail_silver_script}"
+                --target "$PIPELINE_ENV"
+                --select "modrinth_project_versions"
+            )
 
-            "{jupyter_executable}" nbconvert \
-                --to notebook \
-                --execute "{detail_silver_notebook.name}" \
-                --output-dir "/tmp" \
-                --output "modrinth-detail-bronze-to-silver-output.ipynb" \
-                --ExecutePreprocessor.timeout=-1
+            case "${{DBT_FULL_REFRESH:-false}}" in
+                true|True|TRUE|1)
+                    command+=(--full-refresh)
+                    ;;
+            esac
+
+            "${{command[@]}}"
         """,
+
+        env={
+            "PIPELINE_ENV": "{{ params.environment }}",
+            "DBT_FULL_REFRESH": "{{ params.dbt_full_refresh }}",
+        },
+
+        append_env=True,
+        cwd=str(project_root),
     )
 
 

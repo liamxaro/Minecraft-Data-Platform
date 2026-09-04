@@ -17,7 +17,7 @@ def _get_base64_image(image_path: str) -> str:
 
 def apply_modrinth_theme(
     title: str,
-    logo_path: str = "assets/modrinth_icon_light.png",
+    logo_path: str = "minecraft_data_dashboard/assets/modrinth_icon_light.png",
 ) -> None:
     logo_base64 = _get_base64_image(logo_path)
 

@@ -1,0 +1,14 @@
+[0m17:42:12.774957 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b7c5940>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c9cf750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c9cf9d0>]}
+
+
+============================== 17:42:12.778637 | 22bf4573-4607-4e42-90b9-731bb5192485 ==============================
+[0m17:42:12.778637 [info ] [MainThread]: Running with dbt=1.11.11
+[0m17:42:12.779041 [debug] [MainThread]: running dbt with arguments {'log_format': 'default', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True', 'version_check': 'True', 'log_path': 'logs', 'fail_fast': 'False', 'write_json': 'True', 'quiet': 'False', 'warn_error': 'None', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'partial_parse': 'True', 'printer_width': '80', 'empty': 'False', 'profiles_dir': 'transformations', 'target_path': 'None', 'debug': 'False', 'invocation_command': 'dbt run --project-dir transformations --profiles-dir transformations --select test_bronze_connection', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'use_colors': 'True', 'no_print': 'None'}
+[0m17:42:12.779528 [error] [MainThread]: Encountered an error:
+Runtime Error
+  dbt_project.yml does not parse to a dictionary
+[0m17:42:12.781812 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.062406458, "process_in_blocks": "0", "process_kernel_time": 0.211971, "process_mem_max_rss": "131629056", "process_out_blocks": "0", "process_user_time": 1.379462}
+[0m17:42:12.782232 [debug] [MainThread]: Command `dbt run` failed at 17:42:12.782156 after 0.06 seconds
+[0m17:42:12.782481 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c9b7360>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ca19490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ca0d040>]}
+[0m17:42:12.782689 [debug] [MainThread]: Flushing usage events
+[0m17:42:13.172703 [debug] [MainThread]: An error was encountered while trying to flush usage events
