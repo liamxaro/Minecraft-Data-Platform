@@ -370,9 +370,12 @@ def finish_ingestion_log(
 
 async def ingestion(env: str):
     
-    src_dir = os.path.dirname(
-        os.path.abspath(__file__)
-    )
+    try:
+        src_dir = os.path.dirname(
+            os.path.abspath(__file__)
+        )
+    except NameError:
+        src_dir = os.getcwd()
 
     pipeline_dir = os.path.abspath(
         os.path.join(
@@ -403,6 +406,7 @@ async def ingestion(env: str):
     search_limit = streams[0]['search-limit']
     concurrency_limit = streams[0]['concurrency-limit']
     bronze_path = os.path.join(project_root, config_data['main']['parent-folder'], 'bronze', env, build_db_filename(streams[0]['source-url']))
+    silver_path = os.path.join(project_root, config_data['main']['parent-folder'], 'silver', env, build_db_filename(streams[0]['source-url']))
 
 
 
@@ -412,10 +416,12 @@ async def ingestion(env: str):
 
     # retrieve supported Modrinth project types
     # mod, modpack, resourcepack, shader, datapack, plugin, minecraft_java_server
-    project_types = get_modrinth_project_types(source_url, headers)
-
-    # TEMPORARY OVERRIDE
-    # project_types = ["mod"]
+    
+    with duckdb.connect(silver_path, read_only=True) as silver_con:
+        project_types = [
+            row[0].strip().lower() for row in silver_con.execute("SELECT DISTINCT project_type FROM modrinth_project_types").fetchall()
+            ]
+    #project_types = get_modrinth_project_types(source_url, headers)
 
     # one run_id represents this entire project-listings ingestion execution
     run_id = str(uuid.uuid4())

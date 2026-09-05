@@ -1,0 +1,38 @@
+main:
+  headers:
+    User-Agent: "liamxaro/Minecraft-data-platform/(contact: stormcraftmods@gmail.com)"
+
+  parent-folder: data
+
+  ingestion-log: ingestion_log_sync
+
+streams:
+  - name: loaders
+    source-url: https://api.modrinth.com/v2/tag/loader
+    table-name: modrinth_loaders
+    cdc-key:
+    cdc-sequence-key:
+
+  - name: categories
+    source-url: https://api.modrinth.com/v2/tag/category
+    table-name: modrinth_categories
+    cdc-key:
+    cdc-sequence-key:
+
+  - name: game_versions
+    source-url: https://api.modrinth.com/v2/tag/game_version
+    table-name: modrinth_game_versions
+    cdc-key:
+    cdc-sequence-key:
+
+  - name: project_types
+    source-url: https://api.modrinth.com/v2/tag/project_type
+    table-name: modrinth_project_types
+    cdc-key:
+    cdc-sequence-key:
+
+  - name: statistics
+    source-url: https://api.modrinth.com/v2/statistics
+    table-name: modrinth_statistics
+    cdc-key:
+    cdc-sequence-key:

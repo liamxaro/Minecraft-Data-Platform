@@ -23349,3 +23349,1060 @@ SELECT version()
 [0m01:23:23.839489 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x137f8a030>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x137ecbda0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ce7d7d0>]}
 [0m01:23:23.839707 [debug] [MainThread]: Flushing usage events
 [0m01:23:24.250066 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:04:28.236775 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a06d940>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b283890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b283750>]}
+
+
+============================== 17:04:28.240576 | 31657050-6a50-4b18-adda-6f856bddacf5 ==============================
+[0m17:04:28.240576 [info ] [MainThread]: Running with dbt=1.11.11
+[0m17:04:28.241088 [debug] [MainThread]: running dbt with arguments {'no_print': 'None', 'warn_error': 'None', 'empty': 'False', 'log_path': '/Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/logs', 'write_json': 'True', 'version_check': 'True', 'printer_width': '80', 'target_path': 'None', 'use_colors': 'True', 'indirect_selection': 'eager', 'cache_selected_only': 'False', 'debug': 'False', 'send_anonymous_usage_stats': 'True', 'partial_parse': 'True', 'log_format': 'default', 'fail_fast': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'static_parser': 'True', 'log_cache_events': 'False', 'use_experimental_parser': 'False', 'introspect': 'True', 'quiet': 'False', 'profiles_dir': '/Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations', 'invocation_command': 'dbt run --project-dir /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations --profiles-dir /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations --target dev --select tag:modrinth_meta --full-refresh'}
+[0m17:04:28.411821 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '31657050-6a50-4b18-adda-6f856bddacf5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a5295b0>]}
+[0m17:04:28.444847 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '31657050-6a50-4b18-adda-6f856bddacf5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b2b69c0>]}
+[0m17:04:28.447154 [info ] [MainThread]: Registered adapter: duckdb=1.11.0
+[0m17:04:28.529134 [debug] [MainThread]: checksum: b276df2e725538900e19c36eb2bf632d2152ccbe55054f2124b6d2db0feda968, vars: {}, profile: , target: dev, version: 1.11.11
+[0m17:04:28.591167 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 5 files added, 0 files changed.
+[0m17:04:28.591565 [debug] [MainThread]: Partial parsing: added file: minecraft_data_platform://models/silver/modrinth_api_meta/modrinth_game_versions.py
+[0m17:04:28.591751 [debug] [MainThread]: Partial parsing: added file: minecraft_data_platform://models/silver/modrinth_api_meta/modrinth_statistics.py
+[0m17:04:28.591911 [debug] [MainThread]: Partial parsing: added file: minecraft_data_platform://models/silver/modrinth_api_meta/modrinth_project_types.py
+[0m17:04:28.592062 [debug] [MainThread]: Partial parsing: added file: minecraft_data_platform://models/silver/modrinth_api_meta/modrinth_categories.py
+[0m17:04:28.592208 [debug] [MainThread]: Partial parsing: added file: minecraft_data_platform://models/silver/modrinth_api_meta/modrinth_loaders.py
+[0m17:04:28.727621 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '31657050-6a50-4b18-adda-6f856bddacf5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b884950>]}
+[0m17:04:28.766671 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/target/manifest.json
+[0m17:04:28.768940 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/target/semantic_manifest.json
+[0m17:04:28.778702 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '31657050-6a50-4b18-adda-6f856bddacf5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b312a80>]}
+[0m17:04:28.779062 [info ] [MainThread]: Found 8 models, 507 macros
+[0m17:04:28.779261 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '31657050-6a50-4b18-adda-6f856bddacf5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b9a7850>]}
+[0m17:04:28.780520 [info ] [MainThread]: 
+[0m17:04:28.780798 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m17:04:28.780955 [info ] [MainThread]: 
+[0m17:04:28.781246 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m17:04:28.783953 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_api_modrinth_com'
+[0m17:04:28.908666 [debug] [ThreadPool]: Using duckdb connection "list_api_modrinth_com"
+[0m17:04:28.908955 [debug] [ThreadPool]: On list_api_modrinth_com: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "connection_name": "list_api_modrinth_com"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"api_modrinth_com"'
+    
+  
+  
+[0m17:04:28.909127 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:04:28.927195 [debug] [ThreadPool]: SQL status: OK in 0.018 seconds
+[0m17:04:28.928090 [debug] [ThreadPool]: On list_api_modrinth_com: Close
+[0m17:04:28.928551 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_api_modrinth_com, now create_api_modrinth_com_main)
+[0m17:04:28.928799 [debug] [ThreadPool]: Creating schema "database: "api_modrinth_com"
+schema: "main"
+"
+[0m17:04:28.933635 [debug] [ThreadPool]: Using duckdb connection "create_api_modrinth_com_main"
+[0m17:04:28.933924 [debug] [ThreadPool]: On create_api_modrinth_com_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "connection_name": "create_api_modrinth_com_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='api_modrinth_com'
+        and type != 'duckdb'
+    
+  
+[0m17:04:28.934082 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m17:04:28.935117 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m17:04:28.936119 [debug] [ThreadPool]: Using duckdb connection "create_api_modrinth_com_main"
+[0m17:04:28.936289 [debug] [ThreadPool]: On create_api_modrinth_com_main: BEGIN
+[0m17:04:28.936520 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m17:04:28.936652 [debug] [ThreadPool]: Using duckdb connection "create_api_modrinth_com_main"
+[0m17:04:28.936781 [debug] [ThreadPool]: On create_api_modrinth_com_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "connection_name": "create_api_modrinth_com_main"} */
+
+    
+    
+        create schema if not exists "api_modrinth_com"."main"
+    
+[0m17:04:28.937011 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m17:04:28.937441 [debug] [ThreadPool]: On create_api_modrinth_com_main: COMMIT
+[0m17:04:28.937600 [debug] [ThreadPool]: Using duckdb connection "create_api_modrinth_com_main"
+[0m17:04:28.937752 [debug] [ThreadPool]: On create_api_modrinth_com_main: COMMIT
+[0m17:04:28.937991 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m17:04:28.938189 [debug] [ThreadPool]: On create_api_modrinth_com_main: Close
+[0m17:04:28.939054 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_api_modrinth_com_main, now list_api_modrinth_com_main)
+[0m17:04:28.942369 [debug] [ThreadPool]: Using duckdb connection "list_api_modrinth_com_main"
+[0m17:04:28.942603 [debug] [ThreadPool]: On list_api_modrinth_com_main: BEGIN
+[0m17:04:28.942745 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m17:04:28.943352 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m17:04:28.943596 [debug] [ThreadPool]: Using duckdb connection "list_api_modrinth_com_main"
+[0m17:04:28.943751 [debug] [ThreadPool]: On list_api_modrinth_com_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "connection_name": "list_api_modrinth_com_main"} */
+select
+      'api_modrinth_com' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'api_modrinth_com'
+  
+[0m17:04:28.946342 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m17:04:28.947186 [debug] [ThreadPool]: On list_api_modrinth_com_main: ROLLBACK
+[0m17:04:28.947482 [debug] [ThreadPool]: On list_api_modrinth_com_main: Close
+[0m17:04:28.948164 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '31657050-6a50-4b18-adda-6f856bddacf5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bbbe0d0>]}
+[0m17:04:28.948436 [debug] [MainThread]: Using duckdb connection "master"
+[0m17:04:28.948582 [debug] [MainThread]: On master: BEGIN
+[0m17:04:28.948711 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m17:04:28.949124 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m17:04:28.949267 [debug] [MainThread]: On master: COMMIT
+[0m17:04:28.949400 [debug] [MainThread]: Using duckdb connection "master"
+[0m17:04:28.949526 [debug] [MainThread]: On master: COMMIT
+[0m17:04:28.949704 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m17:04:28.949836 [debug] [MainThread]: On master: Close
+[0m17:04:28.951665 [debug] [Thread-1 (]: Began running node model.minecraft_data_platform.modrinth_loaders
+[0m17:04:28.952037 [info ] [Thread-1 (]: 1 of 3 START python table model main.modrinth_loaders .......................... [RUN]
+[0m17:04:28.952429 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_api_modrinth_com_main, now model.minecraft_data_platform.modrinth_loaders)
+[0m17:04:28.952795 [debug] [Thread-1 (]: Began compiling node model.minecraft_data_platform.modrinth_loaders
+[0m17:04:28.974360 [debug] [Thread-1 (]: Writing injected SQL for node "model.minecraft_data_platform.modrinth_loaders"
+[0m17:04:28.975499 [debug] [Thread-1 (]: Began executing node model.minecraft_data_platform.modrinth_loaders
+[0m17:04:29.003780 [debug] [Thread-1 (]: Writing runtime python for node "model.minecraft_data_platform.modrinth_loaders"
+[0m17:04:29.004462 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m17:04:31.443469 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_loaders"
+[0m17:04:31.443849 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_loaders: BEGIN
+[0m17:04:31.444443 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m17:04:31.444929 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_loaders"
+[0m17:04:31.445349 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_loaders: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "node_id": "model.minecraft_data_platform.modrinth_loaders"} */
+alter table "api_modrinth_com"."main"."modrinth_loaders__dbt_tmp" rename to "modrinth_loaders"
+[0m17:04:31.447902 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m17:04:31.458073 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_loaders: COMMIT
+[0m17:04:31.458646 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_loaders"
+[0m17:04:31.459359 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_loaders: COMMIT
+[0m17:04:31.460564 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m17:04:31.463757 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_loaders"
+[0m17:04:31.464027 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_loaders: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "node_id": "model.minecraft_data_platform.modrinth_loaders"} */
+
+      drop table if exists "api_modrinth_com"."main"."modrinth_loaders__dbt_backup" cascade
+    
+[0m17:04:31.464560 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m17:04:31.467741 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_loaders: Close
+[0m17:04:31.469748 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '31657050-6a50-4b18-adda-6f856bddacf5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11b9ba210>]}
+[0m17:04:31.470207 [info ] [Thread-1 (]: 1 of 3 OK created python table model main.modrinth_loaders ..................... [[32mOK[0m in 2.52s]
+[0m17:04:31.470914 [debug] [Thread-1 (]: Finished running node model.minecraft_data_platform.modrinth_loaders
+[0m17:04:31.471632 [debug] [Thread-1 (]: Began running node model.minecraft_data_platform.modrinth_project_types
+[0m17:04:31.472183 [info ] [Thread-1 (]: 2 of 3 START python table model main.modrinth_project_types .................... [RUN]
+[0m17:04:31.472478 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.minecraft_data_platform.modrinth_loaders, now model.minecraft_data_platform.modrinth_project_types)
+[0m17:04:31.472681 [debug] [Thread-1 (]: Began compiling node model.minecraft_data_platform.modrinth_project_types
+[0m17:04:31.475901 [debug] [Thread-1 (]: Writing injected SQL for node "model.minecraft_data_platform.modrinth_project_types"
+[0m17:04:31.476505 [debug] [Thread-1 (]: Began executing node model.minecraft_data_platform.modrinth_project_types
+[0m17:04:31.479397 [debug] [Thread-1 (]: Writing runtime python for node "model.minecraft_data_platform.modrinth_project_types"
+[0m17:04:31.481374 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m17:04:31.497748 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_project_types"
+[0m17:04:31.498036 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_project_types: BEGIN
+[0m17:04:31.498399 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m17:04:31.498575 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_project_types"
+[0m17:04:31.498750 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_project_types: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "node_id": "model.minecraft_data_platform.modrinth_project_types"} */
+alter table "api_modrinth_com"."main"."modrinth_project_types__dbt_tmp" rename to "modrinth_project_types"
+[0m17:04:31.499084 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m17:04:31.499988 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_project_types: COMMIT
+[0m17:04:31.500231 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_project_types"
+[0m17:04:31.500415 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_project_types: COMMIT
+[0m17:04:31.506308 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m17:04:31.507751 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_project_types"
+[0m17:04:31.507971 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_project_types: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "node_id": "model.minecraft_data_platform.modrinth_project_types"} */
+
+      drop table if exists "api_modrinth_com"."main"."modrinth_project_types__dbt_backup" cascade
+    
+[0m17:04:31.508362 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m17:04:31.509116 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_project_types: Close
+[0m17:04:31.509436 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '31657050-6a50-4b18-adda-6f856bddacf5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11b9f5700>]}
+[0m17:04:31.509786 [info ] [Thread-1 (]: 2 of 3 OK created python table model main.modrinth_project_types ............... [[32mOK[0m in 0.04s]
+[0m17:04:31.510066 [debug] [Thread-1 (]: Finished running node model.minecraft_data_platform.modrinth_project_types
+[0m17:04:31.510265 [debug] [Thread-1 (]: Began running node model.minecraft_data_platform.modrinth_statistics
+[0m17:04:31.511121 [info ] [Thread-1 (]: 3 of 3 START python table model main.modrinth_statistics ....................... [RUN]
+[0m17:04:31.511952 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.minecraft_data_platform.modrinth_project_types, now model.minecraft_data_platform.modrinth_statistics)
+[0m17:04:31.512851 [debug] [Thread-1 (]: Began compiling node model.minecraft_data_platform.modrinth_statistics
+[0m17:04:31.520987 [debug] [Thread-1 (]: Writing injected SQL for node "model.minecraft_data_platform.modrinth_statistics"
+[0m17:04:31.523425 [debug] [Thread-1 (]: Began executing node model.minecraft_data_platform.modrinth_statistics
+[0m17:04:31.529047 [debug] [Thread-1 (]: Writing runtime python for node "model.minecraft_data_platform.modrinth_statistics"
+[0m17:04:31.529637 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m17:04:31.546008 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_statistics"
+[0m17:04:31.546289 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_statistics: BEGIN
+[0m17:04:31.546648 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m17:04:31.546824 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_statistics"
+[0m17:04:31.546995 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_statistics: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "node_id": "model.minecraft_data_platform.modrinth_statistics"} */
+alter table "api_modrinth_com"."main"."modrinth_statistics__dbt_tmp" rename to "modrinth_statistics"
+[0m17:04:31.547316 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m17:04:31.547985 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_statistics: COMMIT
+[0m17:04:31.548161 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_statistics"
+[0m17:04:31.548312 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_statistics: COMMIT
+[0m17:04:31.548724 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m17:04:31.549914 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_statistics"
+[0m17:04:31.550297 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_statistics: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "node_id": "model.minecraft_data_platform.modrinth_statistics"} */
+
+      drop table if exists "api_modrinth_com"."main"."modrinth_statistics__dbt_backup" cascade
+    
+[0m17:04:31.550728 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m17:04:31.551533 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_statistics: Close
+[0m17:04:31.551828 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '31657050-6a50-4b18-adda-6f856bddacf5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11baeed50>]}
+[0m17:04:31.552229 [info ] [Thread-1 (]: 3 of 3 OK created python table model main.modrinth_statistics .................. [[32mOK[0m in 0.04s]
+[0m17:04:31.552506 [debug] [Thread-1 (]: Finished running node model.minecraft_data_platform.modrinth_statistics
+[0m17:04:31.553229 [debug] [MainThread]: Using duckdb connection "master"
+[0m17:04:31.553385 [debug] [MainThread]: On master: BEGIN
+[0m17:04:31.553512 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m17:04:31.553955 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m17:04:31.554097 [debug] [MainThread]: On master: COMMIT
+[0m17:04:31.554229 [debug] [MainThread]: Using duckdb connection "master"
+[0m17:04:31.554360 [debug] [MainThread]: On master: COMMIT
+[0m17:04:31.554536 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m17:04:31.554667 [debug] [MainThread]: On master: Close
+[0m17:04:31.554842 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m17:04:31.554972 [debug] [MainThread]: Connection 'model.minecraft_data_platform.modrinth_statistics' was properly closed.
+[0m17:04:31.555149 [info ] [MainThread]: 
+[0m17:04:31.555348 [info ] [MainThread]: Finished running 3 table models in 0 hours 0 minutes and 2.77 seconds (2.77s).
+[0m17:04:31.555827 [debug] [MainThread]: Command end result
+[0m17:04:31.580400 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/target/manifest.json
+[0m17:04:31.581753 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/target/semantic_manifest.json
+[0m17:04:31.587088 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/target/run_results.json
+[0m17:04:31.587341 [info ] [MainThread]: 
+[0m17:04:31.587552 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m17:04:31.587704 [info ] [MainThread]: 
+[0m17:04:31.587886 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=3
+[0m17:04:31.591489 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 3.415607, "process_in_blocks": "0", "process_kernel_time": 0.507771, "process_mem_max_rss": "297238528", "process_out_blocks": "0", "process_user_time": 2.433595}
+[0m17:04:31.591813 [debug] [MainThread]: Command `dbt run` succeeded at 17:04:31.591764 after 3.42 seconds
+[0m17:04:31.592019 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10baa7550>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b56c250>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b2be200>]}
+[0m17:04:31.592223 [debug] [MainThread]: Flushing usage events
+[0m17:04:32.318210 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:10:16.589976 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e1f9940>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f40f890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f40f750>]}
+
+
+============================== 17:10:16.593477 | 503b962d-a552-41e4-8491-7860cd1bc947 ==============================
+[0m17:10:16.593477 [info ] [MainThread]: Running with dbt=1.11.11
+[0m17:10:16.593872 [debug] [MainThread]: running dbt with arguments {'introspect': 'True', 'profiles_dir': '/Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations', 'use_experimental_parser': 'False', 'target_path': 'None', 'send_anonymous_usage_stats': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'indirect_selection': 'eager', 'quiet': 'False', 'use_colors': 'True', 'log_path': '/Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/logs', 'invocation_command': 'dbt run --project-dir /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations --profiles-dir /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations --target dev --select tag:modrinth_meta --full-refresh', 'cache_selected_only': 'False', 'log_cache_events': 'False', 'fail_fast': 'False', 'empty': 'False', 'no_print': 'None', 'partial_parse': 'True', 'warn_error': 'None', 'static_parser': 'True', 'write_json': 'True', 'log_format': 'default', 'version_check': 'True', 'debug': 'False', 'printer_width': '80'}
+[0m17:10:16.743495 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '503b962d-a552-41e4-8491-7860cd1bc947', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e6b95b0>]}
+[0m17:10:16.776959 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '503b962d-a552-41e4-8491-7860cd1bc947', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f4429c0>]}
+[0m17:10:16.779254 [info ] [MainThread]: Registered adapter: duckdb=1.11.0
+[0m17:10:16.846757 [debug] [MainThread]: checksum: b276df2e725538900e19c36eb2bf632d2152ccbe55054f2124b6d2db0feda968, vars: {}, profile: , target: dev, version: 1.11.11
+[0m17:10:16.907483 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 2 files changed.
+[0m17:10:16.907980 [debug] [MainThread]: Partial parsing: updated file: minecraft_data_platform://models/silver/modrinth_api_meta/modrinth_categories.py
+[0m17:10:16.908194 [debug] [MainThread]: Partial parsing: updated file: minecraft_data_platform://models/silver/modrinth_api_meta/modrinth_game_versions.py
+[0m17:10:17.040172 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '503b962d-a552-41e4-8491-7860cd1bc947', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f9f0e50>]}
+[0m17:10:17.076304 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/target/manifest.json
+[0m17:10:17.078235 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/target/semantic_manifest.json
+[0m17:10:17.086622 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '503b962d-a552-41e4-8491-7860cd1bc947', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f486a80>]}
+[0m17:10:17.086915 [info ] [MainThread]: Found 8 models, 507 macros
+[0m17:10:17.087089 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '503b962d-a552-41e4-8491-7860cd1bc947', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10faf75b0>]}
+[0m17:10:17.088098 [info ] [MainThread]: 
+[0m17:10:17.088291 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m17:10:17.088433 [info ] [MainThread]: 
+[0m17:10:17.088689 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m17:10:17.091192 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_api_modrinth_com'
+[0m17:10:17.215191 [debug] [ThreadPool]: Using duckdb connection "list_api_modrinth_com"
+[0m17:10:17.215473 [debug] [ThreadPool]: On list_api_modrinth_com: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "connection_name": "list_api_modrinth_com"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"api_modrinth_com"'
+    
+  
+  
+[0m17:10:17.215644 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:10:17.232066 [debug] [ThreadPool]: SQL status: OK in 0.016 seconds
+[0m17:10:17.232951 [debug] [ThreadPool]: On list_api_modrinth_com: Close
+[0m17:10:17.233576 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_api_modrinth_com, now create_api_modrinth_com_main)
+[0m17:10:17.233821 [debug] [ThreadPool]: Creating schema "database: "api_modrinth_com"
+schema: "main"
+"
+[0m17:10:17.237992 [debug] [ThreadPool]: Using duckdb connection "create_api_modrinth_com_main"
+[0m17:10:17.238210 [debug] [ThreadPool]: On create_api_modrinth_com_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "connection_name": "create_api_modrinth_com_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='api_modrinth_com'
+        and type != 'duckdb'
+    
+  
+[0m17:10:17.238360 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m17:10:17.239077 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m17:10:17.239832 [debug] [ThreadPool]: Using duckdb connection "create_api_modrinth_com_main"
+[0m17:10:17.240481 [debug] [ThreadPool]: On create_api_modrinth_com_main: BEGIN
+[0m17:10:17.240768 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m17:10:17.240909 [debug] [ThreadPool]: Using duckdb connection "create_api_modrinth_com_main"
+[0m17:10:17.241046 [debug] [ThreadPool]: On create_api_modrinth_com_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "connection_name": "create_api_modrinth_com_main"} */
+
+    
+    
+        create schema if not exists "api_modrinth_com"."main"
+    
+[0m17:10:17.241314 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m17:10:17.241756 [debug] [ThreadPool]: On create_api_modrinth_com_main: COMMIT
+[0m17:10:17.241912 [debug] [ThreadPool]: Using duckdb connection "create_api_modrinth_com_main"
+[0m17:10:17.242133 [debug] [ThreadPool]: On create_api_modrinth_com_main: COMMIT
+[0m17:10:17.242360 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m17:10:17.242644 [debug] [ThreadPool]: On create_api_modrinth_com_main: Close
+[0m17:10:17.243440 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_api_modrinth_com_main, now list_api_modrinth_com_main)
+[0m17:10:17.246669 [debug] [ThreadPool]: Using duckdb connection "list_api_modrinth_com_main"
+[0m17:10:17.246875 [debug] [ThreadPool]: On list_api_modrinth_com_main: BEGIN
+[0m17:10:17.247010 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m17:10:17.248287 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m17:10:17.248537 [debug] [ThreadPool]: Using duckdb connection "list_api_modrinth_com_main"
+[0m17:10:17.248706 [debug] [ThreadPool]: On list_api_modrinth_com_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "connection_name": "list_api_modrinth_com_main"} */
+select
+      'api_modrinth_com' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'api_modrinth_com'
+  
+[0m17:10:17.250985 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m17:10:17.252051 [debug] [ThreadPool]: On list_api_modrinth_com_main: ROLLBACK
+[0m17:10:17.252349 [debug] [ThreadPool]: On list_api_modrinth_com_main: Close
+[0m17:10:17.253071 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '503b962d-a552-41e4-8491-7860cd1bc947', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10fde21a0>]}
+[0m17:10:17.253350 [debug] [MainThread]: Using duckdb connection "master"
+[0m17:10:17.253500 [debug] [MainThread]: On master: BEGIN
+[0m17:10:17.253634 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m17:10:17.253996 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m17:10:17.254137 [debug] [MainThread]: On master: COMMIT
+[0m17:10:17.254265 [debug] [MainThread]: Using duckdb connection "master"
+[0m17:10:17.254391 [debug] [MainThread]: On master: COMMIT
+[0m17:10:17.254557 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m17:10:17.254686 [debug] [MainThread]: On master: Close
+[0m17:10:17.256682 [debug] [Thread-1 (]: Began running node model.minecraft_data_platform.modrinth_categories
+[0m17:10:17.257000 [info ] [Thread-1 (]: 1 of 5 START python table model main.modrinth_categories ....................... [RUN]
+[0m17:10:17.257245 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_api_modrinth_com_main, now model.minecraft_data_platform.modrinth_categories)
+[0m17:10:17.257427 [debug] [Thread-1 (]: Began compiling node model.minecraft_data_platform.modrinth_categories
+[0m17:10:17.339172 [debug] [Thread-1 (]: Writing injected SQL for node "model.minecraft_data_platform.modrinth_categories"
+[0m17:10:17.342520 [debug] [Thread-1 (]: Began executing node model.minecraft_data_platform.modrinth_categories
+[0m17:10:17.404562 [debug] [Thread-1 (]: Writing runtime python for node "model.minecraft_data_platform.modrinth_categories"
+[0m17:10:17.405202 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m17:10:17.987825 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_categories"
+[0m17:10:17.988082 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_categories: BEGIN
+[0m17:10:17.988476 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m17:10:17.988656 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_categories"
+[0m17:10:17.988827 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_categories: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "node_id": "model.minecraft_data_platform.modrinth_categories"} */
+alter table "api_modrinth_com"."main"."modrinth_categories__dbt_tmp" rename to "modrinth_categories"
+[0m17:10:17.989121 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m17:10:17.996821 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_categories: COMMIT
+[0m17:10:17.997060 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_categories"
+[0m17:10:17.997232 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_categories: COMMIT
+[0m17:10:17.997801 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m17:10:18.000800 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_categories"
+[0m17:10:18.001038 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_categories: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "node_id": "model.minecraft_data_platform.modrinth_categories"} */
+
+      drop table if exists "api_modrinth_com"."main"."modrinth_categories__dbt_backup" cascade
+    
+[0m17:10:18.001393 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m17:10:18.002666 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_categories: Close
+[0m17:10:18.003898 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '503b962d-a552-41e4-8491-7860cd1bc947', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11faf2750>]}
+[0m17:10:18.004386 [info ] [Thread-1 (]: 1 of 5 OK created python table model main.modrinth_categories .................. [[32mOK[0m in 0.75s]
+[0m17:10:18.004784 [debug] [Thread-1 (]: Finished running node model.minecraft_data_platform.modrinth_categories
+[0m17:10:18.005028 [debug] [Thread-1 (]: Began running node model.minecraft_data_platform.modrinth_game_versions
+[0m17:10:18.005324 [info ] [Thread-1 (]: 2 of 5 START python table model main.modrinth_game_versions .................... [RUN]
+[0m17:10:18.005581 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.minecraft_data_platform.modrinth_categories, now model.minecraft_data_platform.modrinth_game_versions)
+[0m17:10:18.005771 [debug] [Thread-1 (]: Began compiling node model.minecraft_data_platform.modrinth_game_versions
+[0m17:10:18.007449 [debug] [Thread-1 (]: Writing injected SQL for node "model.minecraft_data_platform.modrinth_game_versions"
+[0m17:10:18.008061 [debug] [Thread-1 (]: Began executing node model.minecraft_data_platform.modrinth_game_versions
+[0m17:10:18.012122 [debug] [Thread-1 (]: Writing runtime python for node "model.minecraft_data_platform.modrinth_game_versions"
+[0m17:10:18.012740 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m17:10:18.023529 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_game_versions"
+[0m17:10:18.023809 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_game_versions: BEGIN
+[0m17:10:18.024126 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m17:10:18.024304 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_game_versions"
+[0m17:10:18.024474 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_game_versions: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "node_id": "model.minecraft_data_platform.modrinth_game_versions"} */
+alter table "api_modrinth_com"."main"."modrinth_game_versions__dbt_tmp" rename to "modrinth_game_versions"
+[0m17:10:18.024799 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m17:10:18.025515 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_game_versions: COMMIT
+[0m17:10:18.025710 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_game_versions"
+[0m17:10:18.025871 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_game_versions: COMMIT
+[0m17:10:18.026339 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m17:10:18.027884 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_game_versions"
+[0m17:10:18.028120 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_game_versions: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "node_id": "model.minecraft_data_platform.modrinth_game_versions"} */
+
+      drop table if exists "api_modrinth_com"."main"."modrinth_game_versions__dbt_backup" cascade
+    
+[0m17:10:18.028516 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m17:10:18.029292 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_game_versions: Close
+[0m17:10:18.029747 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '503b962d-a552-41e4-8491-7860cd1bc947', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11fb295a0>]}
+[0m17:10:18.030178 [info ] [Thread-1 (]: 2 of 5 OK created python table model main.modrinth_game_versions ............... [[32mOK[0m in 0.02s]
+[0m17:10:18.030506 [debug] [Thread-1 (]: Finished running node model.minecraft_data_platform.modrinth_game_versions
+[0m17:10:18.030725 [debug] [Thread-1 (]: Began running node model.minecraft_data_platform.modrinth_loaders
+[0m17:10:18.031030 [info ] [Thread-1 (]: 3 of 5 START python table model main.modrinth_loaders .......................... [RUN]
+[0m17:10:18.031267 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.minecraft_data_platform.modrinth_game_versions, now model.minecraft_data_platform.modrinth_loaders)
+[0m17:10:18.031457 [debug] [Thread-1 (]: Began compiling node model.minecraft_data_platform.modrinth_loaders
+[0m17:10:18.033046 [debug] [Thread-1 (]: Writing injected SQL for node "model.minecraft_data_platform.modrinth_loaders"
+[0m17:10:18.033482 [debug] [Thread-1 (]: Began executing node model.minecraft_data_platform.modrinth_loaders
+[0m17:10:18.035104 [debug] [Thread-1 (]: Writing runtime python for node "model.minecraft_data_platform.modrinth_loaders"
+[0m17:10:18.035457 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m17:10:18.045047 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_loaders"
+[0m17:10:18.045356 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_loaders: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "node_id": "model.minecraft_data_platform.modrinth_loaders"} */
+
+    SELECT index_name
+    FROM duckdb_indexes()
+    WHERE database_name = 'api_modrinth_com'
+      AND schema_name = 'main'
+      AND table_name = 'modrinth_loaders'
+  
+[0m17:10:18.045918 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m17:10:18.047997 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_loaders"
+[0m17:10:18.048233 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_loaders: BEGIN
+[0m17:10:18.048616 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m17:10:18.048915 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_loaders"
+[0m17:10:18.049152 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_loaders: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "node_id": "model.minecraft_data_platform.modrinth_loaders"} */
+alter table "api_modrinth_com"."main"."modrinth_loaders" rename to "modrinth_loaders__dbt_backup"
+[0m17:10:18.049607 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m17:10:18.051176 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_loaders"
+[0m17:10:18.051386 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_loaders: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "node_id": "model.minecraft_data_platform.modrinth_loaders"} */
+alter table "api_modrinth_com"."main"."modrinth_loaders__dbt_tmp" rename to "modrinth_loaders"
+[0m17:10:18.051987 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m17:10:18.054220 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_loaders: COMMIT
+[0m17:10:18.054540 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_loaders"
+[0m17:10:18.054763 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_loaders: COMMIT
+[0m17:10:18.055219 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m17:10:18.056342 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_loaders"
+[0m17:10:18.056530 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_loaders: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "node_id": "model.minecraft_data_platform.modrinth_loaders"} */
+
+      drop table if exists "api_modrinth_com"."main"."modrinth_loaders__dbt_backup" cascade
+    
+[0m17:10:18.057027 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m17:10:18.057749 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_loaders: Close
+[0m17:10:18.058051 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '503b962d-a552-41e4-8491-7860cd1bc947', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11fb919f0>]}
+[0m17:10:18.058456 [info ] [Thread-1 (]: 3 of 5 OK created python table model main.modrinth_loaders ..................... [[32mOK[0m in 0.03s]
+[0m17:10:18.058889 [debug] [Thread-1 (]: Finished running node model.minecraft_data_platform.modrinth_loaders
+[0m17:10:18.059107 [debug] [Thread-1 (]: Began running node model.minecraft_data_platform.modrinth_project_types
+[0m17:10:18.059365 [info ] [Thread-1 (]: 4 of 5 START python table model main.modrinth_project_types .................... [RUN]
+[0m17:10:18.059608 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.minecraft_data_platform.modrinth_loaders, now model.minecraft_data_platform.modrinth_project_types)
+[0m17:10:18.059824 [debug] [Thread-1 (]: Began compiling node model.minecraft_data_platform.modrinth_project_types
+[0m17:10:18.061468 [debug] [Thread-1 (]: Writing injected SQL for node "model.minecraft_data_platform.modrinth_project_types"
+[0m17:10:18.062376 [debug] [Thread-1 (]: Began executing node model.minecraft_data_platform.modrinth_project_types
+[0m17:10:18.066005 [debug] [Thread-1 (]: Writing runtime python for node "model.minecraft_data_platform.modrinth_project_types"
+[0m17:10:18.066589 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m17:10:18.074178 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_project_types"
+[0m17:10:18.074487 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_project_types: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "node_id": "model.minecraft_data_platform.modrinth_project_types"} */
+
+    SELECT index_name
+    FROM duckdb_indexes()
+    WHERE database_name = 'api_modrinth_com'
+      AND schema_name = 'main'
+      AND table_name = 'modrinth_project_types'
+  
+[0m17:10:18.075002 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m17:10:18.076982 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_project_types"
+[0m17:10:18.077385 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_project_types: BEGIN
+[0m17:10:18.077837 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m17:10:18.078622 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_project_types"
+[0m17:10:18.079345 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_project_types: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "node_id": "model.minecraft_data_platform.modrinth_project_types"} */
+alter table "api_modrinth_com"."main"."modrinth_project_types" rename to "modrinth_project_types__dbt_backup"
+[0m17:10:18.079937 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m17:10:18.081879 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_project_types"
+[0m17:10:18.082118 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_project_types: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "node_id": "model.minecraft_data_platform.modrinth_project_types"} */
+alter table "api_modrinth_com"."main"."modrinth_project_types__dbt_tmp" rename to "modrinth_project_types"
+[0m17:10:18.082498 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m17:10:18.083188 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_project_types: COMMIT
+[0m17:10:18.083376 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_project_types"
+[0m17:10:18.083536 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_project_types: COMMIT
+[0m17:10:18.084123 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m17:10:18.085566 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_project_types"
+[0m17:10:18.085800 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_project_types: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "node_id": "model.minecraft_data_platform.modrinth_project_types"} */
+
+      drop table if exists "api_modrinth_com"."main"."modrinth_project_types__dbt_backup" cascade
+    
+[0m17:10:18.086428 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m17:10:18.087249 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_project_types: Close
+[0m17:10:18.087569 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '503b962d-a552-41e4-8491-7860cd1bc947', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11fbaae50>]}
+[0m17:10:18.088391 [info ] [Thread-1 (]: 4 of 5 OK created python table model main.modrinth_project_types ............... [[32mOK[0m in 0.03s]
+[0m17:10:18.089226 [debug] [Thread-1 (]: Finished running node model.minecraft_data_platform.modrinth_project_types
+[0m17:10:18.089821 [debug] [Thread-1 (]: Began running node model.minecraft_data_platform.modrinth_statistics
+[0m17:10:18.090340 [info ] [Thread-1 (]: 5 of 5 START python table model main.modrinth_statistics ....................... [RUN]
+[0m17:10:18.090740 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.minecraft_data_platform.modrinth_project_types, now model.minecraft_data_platform.modrinth_statistics)
+[0m17:10:18.090972 [debug] [Thread-1 (]: Began compiling node model.minecraft_data_platform.modrinth_statistics
+[0m17:10:18.093349 [debug] [Thread-1 (]: Writing injected SQL for node "model.minecraft_data_platform.modrinth_statistics"
+[0m17:10:18.093969 [debug] [Thread-1 (]: Began executing node model.minecraft_data_platform.modrinth_statistics
+[0m17:10:18.095767 [debug] [Thread-1 (]: Writing runtime python for node "model.minecraft_data_platform.modrinth_statistics"
+[0m17:10:18.096267 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m17:10:18.103128 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_statistics"
+[0m17:10:18.103407 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_statistics: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "node_id": "model.minecraft_data_platform.modrinth_statistics"} */
+
+    SELECT index_name
+    FROM duckdb_indexes()
+    WHERE database_name = 'api_modrinth_com'
+      AND schema_name = 'main'
+      AND table_name = 'modrinth_statistics'
+  
+[0m17:10:18.103906 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m17:10:18.106360 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_statistics"
+[0m17:10:18.106596 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_statistics: BEGIN
+[0m17:10:18.106881 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m17:10:18.107043 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_statistics"
+[0m17:10:18.107200 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_statistics: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "node_id": "model.minecraft_data_platform.modrinth_statistics"} */
+alter table "api_modrinth_com"."main"."modrinth_statistics" rename to "modrinth_statistics__dbt_backup"
+[0m17:10:18.107491 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m17:10:18.108753 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_statistics"
+[0m17:10:18.108925 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_statistics: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "node_id": "model.minecraft_data_platform.modrinth_statistics"} */
+alter table "api_modrinth_com"."main"."modrinth_statistics__dbt_tmp" rename to "modrinth_statistics"
+[0m17:10:18.109179 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m17:10:18.109778 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_statistics: COMMIT
+[0m17:10:18.109940 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_statistics"
+[0m17:10:18.110086 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_statistics: COMMIT
+[0m17:10:18.110562 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m17:10:18.112109 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_statistics"
+[0m17:10:18.112431 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_statistics: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "node_id": "model.minecraft_data_platform.modrinth_statistics"} */
+
+      drop table if exists "api_modrinth_com"."main"."modrinth_statistics__dbt_backup" cascade
+    
+[0m17:10:18.112909 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m17:10:18.113592 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_statistics: Close
+[0m17:10:18.113875 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '503b962d-a552-41e4-8491-7860cd1bc947', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f50d1d0>]}
+[0m17:10:18.114190 [info ] [Thread-1 (]: 5 of 5 OK created python table model main.modrinth_statistics .................. [[32mOK[0m in 0.02s]
+[0m17:10:18.114464 [debug] [Thread-1 (]: Finished running node model.minecraft_data_platform.modrinth_statistics
+[0m17:10:18.115402 [debug] [MainThread]: Using duckdb connection "master"
+[0m17:10:18.115737 [debug] [MainThread]: On master: BEGIN
+[0m17:10:18.116055 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m17:10:18.116719 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m17:10:18.116917 [debug] [MainThread]: On master: COMMIT
+[0m17:10:18.117069 [debug] [MainThread]: Using duckdb connection "master"
+[0m17:10:18.117203 [debug] [MainThread]: On master: COMMIT
+[0m17:10:18.117410 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m17:10:18.117592 [debug] [MainThread]: On master: Close
+[0m17:10:18.117794 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m17:10:18.118058 [debug] [MainThread]: Connection 'model.minecraft_data_platform.modrinth_statistics' was properly closed.
+[0m17:10:18.118592 [info ] [MainThread]: 
+[0m17:10:18.118809 [info ] [MainThread]: Finished running 5 table models in 0 hours 0 minutes and 1.03 seconds (1.03s).
+[0m17:10:18.119355 [debug] [MainThread]: Command end result
+[0m17:10:18.138028 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/target/manifest.json
+[0m17:10:18.139374 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/target/semantic_manifest.json
+[0m17:10:18.143498 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/target/run_results.json
+[0m17:10:18.143726 [info ] [MainThread]: 
+[0m17:10:18.143937 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m17:10:18.144086 [info ] [MainThread]: 
+[0m17:10:18.144255 [info ] [MainThread]: Done. PASS=5 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=5
+[0m17:10:18.147878 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 1.6069597, "process_in_blocks": "0", "process_kernel_time": 0.486657, "process_mem_max_rss": "302301184", "process_out_blocks": "0", "process_user_time": 2.578772}
+[0m17:10:18.148159 [debug] [MainThread]: Command `dbt run` succeeded at 17:10:18.148116 after 1.61 seconds
+[0m17:10:18.148363 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ed08a70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f548350>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1110f48f0>]}
+[0m17:10:18.148555 [debug] [MainThread]: Flushing usage events
+[0m17:10:18.719472 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:44:11.427703 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10dd1d940>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ef33890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ef33750>]}
+
+
+============================== 17:44:11.431414 | ab68e96a-bd84-475b-ae8a-dc8826b60b0c ==============================
+[0m17:44:11.431414 [info ] [MainThread]: Running with dbt=1.11.11
+[0m17:44:11.432010 [debug] [MainThread]: running dbt with arguments {'target_path': 'None', 'static_parser': 'True', 'log_format': 'default', 'use_experimental_parser': 'False', 'no_print': 'None', 'version_check': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'partial_parse': 'True', 'debug': 'False', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'profiles_dir': '/Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations', 'empty': 'False', 'log_path': '/Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/logs', 'warn_error': 'None', 'invocation_command': 'dbt run --project-dir /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations --profiles-dir /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations --target dev --select tag:modrinth_meta --full-refresh', 'log_cache_events': 'False', 'printer_width': '80', 'fail_fast': 'False', 'cache_selected_only': 'False', 'write_json': 'True', 'use_colors': 'True', 'indirect_selection': 'eager'}
+[0m17:44:11.590658 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'ab68e96a-bd84-475b-ae8a-dc8826b60b0c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e1dd5b0>]}
+[0m17:44:11.623393 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'ab68e96a-bd84-475b-ae8a-dc8826b60b0c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ef6a9c0>]}
+[0m17:44:11.625550 [info ] [MainThread]: Registered adapter: duckdb=1.11.0
+[0m17:44:11.719453 [debug] [MainThread]: checksum: b276df2e725538900e19c36eb2bf632d2152ccbe55054f2124b6d2db0feda968, vars: {}, profile: , target: dev, version: 1.11.11
+[0m17:44:11.800132 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m17:44:11.800562 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m17:44:11.800785 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m17:44:11.815696 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'ab68e96a-bd84-475b-ae8a-dc8826b60b0c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f010c50>]}
+[0m17:44:11.856547 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/target/manifest.json
+[0m17:44:11.858294 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/target/semantic_manifest.json
+[0m17:44:11.869254 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'ab68e96a-bd84-475b-ae8a-dc8826b60b0c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10efaaa80>]}
+[0m17:44:11.869634 [info ] [MainThread]: Found 8 models, 507 macros
+[0m17:44:11.869835 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'ab68e96a-bd84-475b-ae8a-dc8826b60b0c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f14add0>]}
+[0m17:44:11.870978 [info ] [MainThread]: 
+[0m17:44:11.871192 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m17:44:11.871342 [info ] [MainThread]: 
+[0m17:44:11.871652 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m17:44:11.874400 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_api_modrinth_com'
+[0m17:44:11.927773 [debug] [ThreadPool]: Using duckdb connection "list_api_modrinth_com"
+[0m17:44:11.928084 [debug] [ThreadPool]: On list_api_modrinth_com: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "connection_name": "list_api_modrinth_com"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"api_modrinth_com"'
+    
+  
+  
+[0m17:44:11.928251 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:44:11.953491 [debug] [ThreadPool]: SQL status: OK in 0.025 seconds
+[0m17:44:11.954753 [debug] [ThreadPool]: On list_api_modrinth_com: Close
+[0m17:44:11.955166 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_api_modrinth_com, now create_api_modrinth_com_main)
+[0m17:44:11.955422 [debug] [ThreadPool]: Creating schema "database: "api_modrinth_com"
+schema: "main"
+"
+[0m17:44:11.959845 [debug] [ThreadPool]: Using duckdb connection "create_api_modrinth_com_main"
+[0m17:44:11.960128 [debug] [ThreadPool]: On create_api_modrinth_com_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "connection_name": "create_api_modrinth_com_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='api_modrinth_com'
+        and type != 'duckdb'
+    
+  
+[0m17:44:11.960289 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m17:44:11.961619 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m17:44:11.962743 [debug] [ThreadPool]: Using duckdb connection "create_api_modrinth_com_main"
+[0m17:44:11.962925 [debug] [ThreadPool]: On create_api_modrinth_com_main: BEGIN
+[0m17:44:11.963193 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m17:44:11.963334 [debug] [ThreadPool]: Using duckdb connection "create_api_modrinth_com_main"
+[0m17:44:11.963473 [debug] [ThreadPool]: On create_api_modrinth_com_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "connection_name": "create_api_modrinth_com_main"} */
+
+    
+    
+        create schema if not exists "api_modrinth_com"."main"
+    
+[0m17:44:11.963714 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m17:44:11.964135 [debug] [ThreadPool]: On create_api_modrinth_com_main: COMMIT
+[0m17:44:11.964296 [debug] [ThreadPool]: Using duckdb connection "create_api_modrinth_com_main"
+[0m17:44:11.964436 [debug] [ThreadPool]: On create_api_modrinth_com_main: COMMIT
+[0m17:44:11.964627 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m17:44:11.964776 [debug] [ThreadPool]: On create_api_modrinth_com_main: Close
+[0m17:44:11.965778 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_api_modrinth_com_main, now list_api_modrinth_com_main)
+[0m17:44:11.969265 [debug] [ThreadPool]: Using duckdb connection "list_api_modrinth_com_main"
+[0m17:44:11.969524 [debug] [ThreadPool]: On list_api_modrinth_com_main: BEGIN
+[0m17:44:11.969675 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m17:44:11.970167 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m17:44:11.970314 [debug] [ThreadPool]: Using duckdb connection "list_api_modrinth_com_main"
+[0m17:44:11.970465 [debug] [ThreadPool]: On list_api_modrinth_com_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "connection_name": "list_api_modrinth_com_main"} */
+select
+      'api_modrinth_com' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'api_modrinth_com'
+  
+[0m17:44:11.974103 [debug] [ThreadPool]: SQL status: OK in 0.003 seconds
+[0m17:44:11.975036 [debug] [ThreadPool]: On list_api_modrinth_com_main: ROLLBACK
+[0m17:44:11.975354 [debug] [ThreadPool]: On list_api_modrinth_com_main: Close
+[0m17:44:11.976336 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'ab68e96a-bd84-475b-ae8a-dc8826b60b0c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f73a0d0>]}
+[0m17:44:11.976660 [debug] [MainThread]: Using duckdb connection "master"
+[0m17:44:11.976825 [debug] [MainThread]: On master: BEGIN
+[0m17:44:11.976966 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m17:44:11.977390 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m17:44:11.977537 [debug] [MainThread]: On master: COMMIT
+[0m17:44:11.977678 [debug] [MainThread]: Using duckdb connection "master"
+[0m17:44:11.977804 [debug] [MainThread]: On master: COMMIT
+[0m17:44:11.977979 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m17:44:11.978115 [debug] [MainThread]: On master: Close
+[0m17:44:11.980135 [debug] [Thread-1 (]: Began running node model.minecraft_data_platform.modrinth_categories
+[0m17:44:11.980484 [info ] [Thread-1 (]: 1 of 5 START python table model main.modrinth_categories ....................... [RUN]
+[0m17:44:11.980746 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_api_modrinth_com_main, now model.minecraft_data_platform.modrinth_categories)
+[0m17:44:11.980939 [debug] [Thread-1 (]: Began compiling node model.minecraft_data_platform.modrinth_categories
+[0m17:44:11.996365 [debug] [Thread-1 (]: Writing injected SQL for node "model.minecraft_data_platform.modrinth_categories"
+[0m17:44:11.997340 [debug] [Thread-1 (]: Began executing node model.minecraft_data_platform.modrinth_categories
+[0m17:44:12.025490 [debug] [Thread-1 (]: Writing runtime python for node "model.minecraft_data_platform.modrinth_categories"
+[0m17:44:12.026453 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m17:44:12.852959 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_categories"
+[0m17:44:12.853299 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_categories: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "node_id": "model.minecraft_data_platform.modrinth_categories"} */
+
+    SELECT index_name
+    FROM duckdb_indexes()
+    WHERE database_name = 'api_modrinth_com'
+      AND schema_name = 'main'
+      AND table_name = 'modrinth_categories'
+  
+[0m17:44:12.853992 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m17:44:12.857258 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_categories"
+[0m17:44:12.857486 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_categories: BEGIN
+[0m17:44:12.858038 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m17:44:12.858233 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_categories"
+[0m17:44:12.858428 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_categories: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "node_id": "model.minecraft_data_platform.modrinth_categories"} */
+alter table "api_modrinth_com"."main"."modrinth_categories" rename to "modrinth_categories__dbt_backup"
+[0m17:44:12.859657 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m17:44:12.861144 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_categories"
+[0m17:44:12.861354 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_categories: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "node_id": "model.minecraft_data_platform.modrinth_categories"} */
+alter table "api_modrinth_com"."main"."modrinth_categories__dbt_tmp" rename to "modrinth_categories"
+[0m17:44:12.861714 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m17:44:12.870325 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_categories: COMMIT
+[0m17:44:12.870672 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_categories"
+[0m17:44:12.870869 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_categories: COMMIT
+[0m17:44:12.871466 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m17:44:12.874666 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_categories"
+[0m17:44:12.874941 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_categories: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "node_id": "model.minecraft_data_platform.modrinth_categories"} */
+
+      drop table if exists "api_modrinth_com"."main"."modrinth_categories__dbt_backup" cascade
+    
+[0m17:44:12.875567 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m17:44:12.876942 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_categories: Close
+[0m17:44:12.878234 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'ab68e96a-bd84-475b-ae8a-dc8826b60b0c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f769190>]}
+[0m17:44:12.878720 [info ] [Thread-1 (]: 1 of 5 OK created python table model main.modrinth_categories .................. [[32mOK[0m in 0.90s]
+[0m17:44:12.879130 [debug] [Thread-1 (]: Finished running node model.minecraft_data_platform.modrinth_categories
+[0m17:44:12.879374 [debug] [Thread-1 (]: Began running node model.minecraft_data_platform.modrinth_game_versions
+[0m17:44:12.879694 [info ] [Thread-1 (]: 2 of 5 START python table model main.modrinth_game_versions .................... [RUN]
+[0m17:44:12.879955 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.minecraft_data_platform.modrinth_categories, now model.minecraft_data_platform.modrinth_game_versions)
+[0m17:44:12.880147 [debug] [Thread-1 (]: Began compiling node model.minecraft_data_platform.modrinth_game_versions
+[0m17:44:12.881785 [debug] [Thread-1 (]: Writing injected SQL for node "model.minecraft_data_platform.modrinth_game_versions"
+[0m17:44:12.882535 [debug] [Thread-1 (]: Began executing node model.minecraft_data_platform.modrinth_game_versions
+[0m17:44:12.884435 [debug] [Thread-1 (]: Writing runtime python for node "model.minecraft_data_platform.modrinth_game_versions"
+[0m17:44:12.885126 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m17:44:12.895282 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_game_versions"
+[0m17:44:12.895603 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_game_versions: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "node_id": "model.minecraft_data_platform.modrinth_game_versions"} */
+
+    SELECT index_name
+    FROM duckdb_indexes()
+    WHERE database_name = 'api_modrinth_com'
+      AND schema_name = 'main'
+      AND table_name = 'modrinth_game_versions'
+  
+[0m17:44:12.896090 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m17:44:12.897773 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_game_versions"
+[0m17:44:12.897990 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_game_versions: BEGIN
+[0m17:44:12.898351 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m17:44:12.898593 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_game_versions"
+[0m17:44:12.898762 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_game_versions: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "node_id": "model.minecraft_data_platform.modrinth_game_versions"} */
+alter table "api_modrinth_com"."main"."modrinth_game_versions" rename to "modrinth_game_versions__dbt_backup"
+[0m17:44:12.899089 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m17:44:12.900679 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_game_versions"
+[0m17:44:12.900882 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_game_versions: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "node_id": "model.minecraft_data_platform.modrinth_game_versions"} */
+alter table "api_modrinth_com"."main"."modrinth_game_versions__dbt_tmp" rename to "modrinth_game_versions"
+[0m17:44:12.901162 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m17:44:12.901799 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_game_versions: COMMIT
+[0m17:44:12.901999 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_game_versions"
+[0m17:44:12.902236 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_game_versions: COMMIT
+[0m17:44:12.902801 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m17:44:12.903987 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_game_versions"
+[0m17:44:12.904196 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_game_versions: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "node_id": "model.minecraft_data_platform.modrinth_game_versions"} */
+
+      drop table if exists "api_modrinth_com"."main"."modrinth_game_versions__dbt_backup" cascade
+    
+[0m17:44:12.904747 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m17:44:12.905514 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_game_versions: Close
+[0m17:44:12.905829 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'ab68e96a-bd84-475b-ae8a-dc8826b60b0c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11f664680>]}
+[0m17:44:12.906171 [info ] [Thread-1 (]: 2 of 5 OK created python table model main.modrinth_game_versions ............... [[32mOK[0m in 0.03s]
+[0m17:44:12.906448 [debug] [Thread-1 (]: Finished running node model.minecraft_data_platform.modrinth_game_versions
+[0m17:44:12.906656 [debug] [Thread-1 (]: Began running node model.minecraft_data_platform.modrinth_loaders
+[0m17:44:12.906923 [info ] [Thread-1 (]: 3 of 5 START python table model main.modrinth_loaders .......................... [RUN]
+[0m17:44:12.907138 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.minecraft_data_platform.modrinth_game_versions, now model.minecraft_data_platform.modrinth_loaders)
+[0m17:44:12.907321 [debug] [Thread-1 (]: Began compiling node model.minecraft_data_platform.modrinth_loaders
+[0m17:44:12.908875 [debug] [Thread-1 (]: Writing injected SQL for node "model.minecraft_data_platform.modrinth_loaders"
+[0m17:44:12.909598 [debug] [Thread-1 (]: Began executing node model.minecraft_data_platform.modrinth_loaders
+[0m17:44:12.911537 [debug] [Thread-1 (]: Writing runtime python for node "model.minecraft_data_platform.modrinth_loaders"
+[0m17:44:12.912271 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m17:44:12.919767 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_loaders"
+[0m17:44:12.920076 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_loaders: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "node_id": "model.minecraft_data_platform.modrinth_loaders"} */
+
+    SELECT index_name
+    FROM duckdb_indexes()
+    WHERE database_name = 'api_modrinth_com'
+      AND schema_name = 'main'
+      AND table_name = 'modrinth_loaders'
+  
+[0m17:44:12.920594 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m17:44:12.922294 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_loaders"
+[0m17:44:12.922518 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_loaders: BEGIN
+[0m17:44:12.922815 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m17:44:12.922989 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_loaders"
+[0m17:44:12.923162 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_loaders: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "node_id": "model.minecraft_data_platform.modrinth_loaders"} */
+alter table "api_modrinth_com"."main"."modrinth_loaders" rename to "modrinth_loaders__dbt_backup"
+[0m17:44:12.923489 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m17:44:12.925178 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_loaders"
+[0m17:44:12.925398 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_loaders: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "node_id": "model.minecraft_data_platform.modrinth_loaders"} */
+alter table "api_modrinth_com"."main"."modrinth_loaders__dbt_tmp" rename to "modrinth_loaders"
+[0m17:44:12.925746 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m17:44:12.926403 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_loaders: COMMIT
+[0m17:44:12.926592 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_loaders"
+[0m17:44:12.926758 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_loaders: COMMIT
+[0m17:44:12.927160 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m17:44:12.928277 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_loaders"
+[0m17:44:12.928479 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_loaders: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "node_id": "model.minecraft_data_platform.modrinth_loaders"} */
+
+      drop table if exists "api_modrinth_com"."main"."modrinth_loaders__dbt_backup" cascade
+    
+[0m17:44:12.928996 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m17:44:12.929680 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_loaders: Close
+[0m17:44:12.929984 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'ab68e96a-bd84-475b-ae8a-dc8826b60b0c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11f68ab70>]}
+[0m17:44:12.930327 [info ] [Thread-1 (]: 3 of 5 OK created python table model main.modrinth_loaders ..................... [[32mOK[0m in 0.02s]
+[0m17:44:12.930607 [debug] [Thread-1 (]: Finished running node model.minecraft_data_platform.modrinth_loaders
+[0m17:44:12.930814 [debug] [Thread-1 (]: Began running node model.minecraft_data_platform.modrinth_project_types
+[0m17:44:12.931108 [info ] [Thread-1 (]: 4 of 5 START python table model main.modrinth_project_types .................... [RUN]
+[0m17:44:12.931327 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.minecraft_data_platform.modrinth_loaders, now model.minecraft_data_platform.modrinth_project_types)
+[0m17:44:12.931512 [debug] [Thread-1 (]: Began compiling node model.minecraft_data_platform.modrinth_project_types
+[0m17:44:12.933573 [debug] [Thread-1 (]: Writing injected SQL for node "model.minecraft_data_platform.modrinth_project_types"
+[0m17:44:12.934924 [debug] [Thread-1 (]: Began executing node model.minecraft_data_platform.modrinth_project_types
+[0m17:44:12.936803 [debug] [Thread-1 (]: Writing runtime python for node "model.minecraft_data_platform.modrinth_project_types"
+[0m17:44:12.937285 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m17:44:12.949269 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_project_types"
+[0m17:44:12.949694 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_project_types: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "node_id": "model.minecraft_data_platform.modrinth_project_types"} */
+
+    SELECT index_name
+    FROM duckdb_indexes()
+    WHERE database_name = 'api_modrinth_com'
+      AND schema_name = 'main'
+      AND table_name = 'modrinth_project_types'
+  
+[0m17:44:12.950434 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m17:44:12.955934 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_project_types"
+[0m17:44:12.956430 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_project_types: BEGIN
+[0m17:44:12.958408 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m17:44:12.958864 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_project_types"
+[0m17:44:12.959267 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_project_types: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "node_id": "model.minecraft_data_platform.modrinth_project_types"} */
+alter table "api_modrinth_com"."main"."modrinth_project_types" rename to "modrinth_project_types__dbt_backup"
+[0m17:44:12.960499 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m17:44:12.964475 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_project_types"
+[0m17:44:12.964801 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_project_types: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "node_id": "model.minecraft_data_platform.modrinth_project_types"} */
+alter table "api_modrinth_com"."main"."modrinth_project_types__dbt_tmp" rename to "modrinth_project_types"
+[0m17:44:12.965394 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m17:44:12.966320 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_project_types: COMMIT
+[0m17:44:12.966540 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_project_types"
+[0m17:44:12.966787 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_project_types: COMMIT
+[0m17:44:12.967525 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m17:44:12.970099 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_project_types"
+[0m17:44:12.970397 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_project_types: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "node_id": "model.minecraft_data_platform.modrinth_project_types"} */
+
+      drop table if exists "api_modrinth_com"."main"."modrinth_project_types__dbt_backup" cascade
+    
+[0m17:44:12.972971 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m17:44:12.973810 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_project_types: Close
+[0m17:44:12.974141 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'ab68e96a-bd84-475b-ae8a-dc8826b60b0c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11f825250>]}
+[0m17:44:12.974502 [info ] [Thread-1 (]: 4 of 5 OK created python table model main.modrinth_project_types ............... [[32mOK[0m in 0.04s]
+[0m17:44:12.974788 [debug] [Thread-1 (]: Finished running node model.minecraft_data_platform.modrinth_project_types
+[0m17:44:12.974996 [debug] [Thread-1 (]: Began running node model.minecraft_data_platform.modrinth_statistics
+[0m17:44:12.975223 [info ] [Thread-1 (]: 5 of 5 START python table model main.modrinth_statistics ....................... [RUN]
+[0m17:44:12.975448 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.minecraft_data_platform.modrinth_project_types, now model.minecraft_data_platform.modrinth_statistics)
+[0m17:44:12.975633 [debug] [Thread-1 (]: Began compiling node model.minecraft_data_platform.modrinth_statistics
+[0m17:44:12.977284 [debug] [Thread-1 (]: Writing injected SQL for node "model.minecraft_data_platform.modrinth_statistics"
+[0m17:44:12.977817 [debug] [Thread-1 (]: Began executing node model.minecraft_data_platform.modrinth_statistics
+[0m17:44:12.979567 [debug] [Thread-1 (]: Writing runtime python for node "model.minecraft_data_platform.modrinth_statistics"
+[0m17:44:12.979993 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m17:44:12.999718 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_statistics"
+[0m17:44:13.000010 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_statistics: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "node_id": "model.minecraft_data_platform.modrinth_statistics"} */
+
+    SELECT index_name
+    FROM duckdb_indexes()
+    WHERE database_name = 'api_modrinth_com'
+      AND schema_name = 'main'
+      AND table_name = 'modrinth_statistics'
+  
+[0m17:44:13.000512 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m17:44:13.002147 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_statistics"
+[0m17:44:13.002358 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_statistics: BEGIN
+[0m17:44:13.002625 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m17:44:13.002791 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_statistics"
+[0m17:44:13.002961 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_statistics: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "node_id": "model.minecraft_data_platform.modrinth_statistics"} */
+alter table "api_modrinth_com"."main"."modrinth_statistics" rename to "modrinth_statistics__dbt_backup"
+[0m17:44:13.003264 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m17:44:13.004857 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_statistics"
+[0m17:44:13.005109 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_statistics: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "node_id": "model.minecraft_data_platform.modrinth_statistics"} */
+alter table "api_modrinth_com"."main"."modrinth_statistics__dbt_tmp" rename to "modrinth_statistics"
+[0m17:44:13.005500 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m17:44:13.006168 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_statistics: COMMIT
+[0m17:44:13.006359 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_statistics"
+[0m17:44:13.006523 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_statistics: COMMIT
+[0m17:44:13.006999 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m17:44:13.010843 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_statistics"
+[0m17:44:13.011121 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_statistics: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "node_id": "model.minecraft_data_platform.modrinth_statistics"} */
+
+      drop table if exists "api_modrinth_com"."main"."modrinth_statistics__dbt_backup" cascade
+    
+[0m17:44:13.012035 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m17:44:13.013213 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_statistics: Close
+[0m17:44:13.013579 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'ab68e96a-bd84-475b-ae8a-dc8826b60b0c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f8a9f60>]}
+[0m17:44:13.014470 [info ] [Thread-1 (]: 5 of 5 OK created python table model main.modrinth_statistics .................. [[32mOK[0m in 0.04s]
+[0m17:44:13.014820 [debug] [Thread-1 (]: Finished running node model.minecraft_data_platform.modrinth_statistics
+[0m17:44:13.015972 [debug] [MainThread]: Using duckdb connection "master"
+[0m17:44:13.016170 [debug] [MainThread]: On master: BEGIN
+[0m17:44:13.016317 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m17:44:13.016791 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m17:44:13.016944 [debug] [MainThread]: On master: COMMIT
+[0m17:44:13.017105 [debug] [MainThread]: Using duckdb connection "master"
+[0m17:44:13.017328 [debug] [MainThread]: On master: COMMIT
+[0m17:44:13.017590 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m17:44:13.017741 [debug] [MainThread]: On master: Close
+[0m17:44:13.017928 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m17:44:13.018061 [debug] [MainThread]: Connection 'model.minecraft_data_platform.modrinth_statistics' was properly closed.
+[0m17:44:13.018249 [info ] [MainThread]: 
+[0m17:44:13.018406 [info ] [MainThread]: Finished running 5 table models in 0 hours 0 minutes and 1.15 seconds (1.15s).
+[0m17:44:13.018960 [debug] [MainThread]: Command end result
+[0m17:44:13.038656 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/target/manifest.json
+[0m17:44:13.040768 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/target/semantic_manifest.json
+[0m17:44:13.047475 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/target/run_results.json
+[0m17:44:13.047747 [info ] [MainThread]: 
+[0m17:44:13.047961 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m17:44:13.048115 [info ] [MainThread]: 
+[0m17:44:13.048294 [info ] [MainThread]: Done. PASS=5 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=5
+[0m17:44:13.057248 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 1.6877116, "process_in_blocks": "0", "process_kernel_time": 0.508236, "process_mem_max_rss": "294977536", "process_out_blocks": "0", "process_user_time": 2.366389}
+[0m17:44:13.057618 [debug] [MainThread]: Command `dbt run` succeeded at 17:44:13.057565 after 1.69 seconds
+[0m17:44:13.057852 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e8310d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11f84fb30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11f84f950>]}
+[0m17:44:13.058052 [debug] [MainThread]: Flushing usage events
+[0m17:44:13.510460 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:51:15.622090 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109f7d940>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b193890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b193750>]}
+
+
+============================== 17:51:15.626102 | ed73d012-3c83-4cd5-9856-95913d15b9aa ==============================
+[0m17:51:15.626102 [info ] [MainThread]: Running with dbt=1.11.11
+[0m17:51:15.626542 [debug] [MainThread]: running dbt with arguments {'log_cache_events': 'False', 'version_check': 'True', 'profiles_dir': '/Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations', 'quiet': 'False', 'static_parser': 'True', 'invocation_command': 'dbt run --project-dir /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations --profiles-dir /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations --target dev --select modrinth_project_listings --full-refresh', 'debug': 'False', 'empty': 'False', 'printer_width': '80', 'log_format': 'default', 'fail_fast': 'False', 'no_print': 'None', 'write_json': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'use_colors': 'True', 'introspect': 'True', 'cache_selected_only': 'False', 'target_path': 'None', 'indirect_selection': 'eager', 'warn_error': 'None', 'send_anonymous_usage_stats': 'True', 'use_experimental_parser': 'False', 'log_path': '/Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/logs', 'partial_parse': 'True'}
+[0m17:51:15.813037 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'ed73d012-3c83-4cd5-9856-95913d15b9aa', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a43d5b0>]}
+[0m17:51:15.858452 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'ed73d012-3c83-4cd5-9856-95913d15b9aa', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b1ca9c0>]}
+[0m17:51:15.862094 [info ] [MainThread]: Registered adapter: duckdb=1.11.0
+[0m17:51:15.932651 [debug] [MainThread]: checksum: b276df2e725538900e19c36eb2bf632d2152ccbe55054f2124b6d2db0feda968, vars: {}, profile: , target: dev, version: 1.11.11
+[0m17:51:15.997330 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m17:51:15.997608 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m17:51:15.997767 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m17:51:16.011797 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'ed73d012-3c83-4cd5-9856-95913d15b9aa', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b26cc50>]}
+[0m17:51:16.049655 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/target/manifest.json
+[0m17:51:16.051689 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/target/semantic_manifest.json
+[0m17:51:16.059161 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'ed73d012-3c83-4cd5-9856-95913d15b9aa', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b21ea80>]}
+[0m17:51:16.059492 [info ] [MainThread]: Found 8 models, 507 macros
+[0m17:51:16.059674 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'ed73d012-3c83-4cd5-9856-95913d15b9aa', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b3a2dd0>]}
+[0m17:51:16.060725 [info ] [MainThread]: 
+[0m17:51:16.060930 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m17:51:16.061175 [info ] [MainThread]: 
+[0m17:51:16.061463 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m17:51:16.061973 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_api_modrinth_com'
+[0m17:51:16.098601 [debug] [ThreadPool]: Using duckdb connection "list_api_modrinth_com"
+[0m17:51:16.098879 [debug] [ThreadPool]: On list_api_modrinth_com: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "connection_name": "list_api_modrinth_com"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"api_modrinth_com"'
+    
+  
+  
+[0m17:51:16.099051 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:51:16.113531 [debug] [ThreadPool]: SQL status: OK in 0.014 seconds
+[0m17:51:16.114414 [debug] [ThreadPool]: On list_api_modrinth_com: Close
+[0m17:51:16.114838 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_api_modrinth_com, now create_api_modrinth_com_main)
+[0m17:51:16.115075 [debug] [ThreadPool]: Creating schema "database: "api_modrinth_com"
+schema: "main"
+"
+[0m17:51:16.119165 [debug] [ThreadPool]: Using duckdb connection "create_api_modrinth_com_main"
+[0m17:51:16.119399 [debug] [ThreadPool]: On create_api_modrinth_com_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "connection_name": "create_api_modrinth_com_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='api_modrinth_com'
+        and type != 'duckdb'
+    
+  
+[0m17:51:16.119557 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m17:51:16.120255 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m17:51:16.120951 [debug] [ThreadPool]: Using duckdb connection "create_api_modrinth_com_main"
+[0m17:51:16.121113 [debug] [ThreadPool]: On create_api_modrinth_com_main: BEGIN
+[0m17:51:16.121312 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m17:51:16.121443 [debug] [ThreadPool]: Using duckdb connection "create_api_modrinth_com_main"
+[0m17:51:16.121573 [debug] [ThreadPool]: On create_api_modrinth_com_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "connection_name": "create_api_modrinth_com_main"} */
+
+    
+    
+        create schema if not exists "api_modrinth_com"."main"
+    
+[0m17:51:16.121783 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m17:51:16.122185 [debug] [ThreadPool]: On create_api_modrinth_com_main: COMMIT
+[0m17:51:16.122340 [debug] [ThreadPool]: Using duckdb connection "create_api_modrinth_com_main"
+[0m17:51:16.122476 [debug] [ThreadPool]: On create_api_modrinth_com_main: COMMIT
+[0m17:51:16.122660 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m17:51:16.122797 [debug] [ThreadPool]: On create_api_modrinth_com_main: Close
+[0m17:51:16.125738 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_api_modrinth_com_main, now list_api_modrinth_com_main)
+[0m17:51:16.128840 [debug] [ThreadPool]: Using duckdb connection "list_api_modrinth_com_main"
+[0m17:51:16.129032 [debug] [ThreadPool]: On list_api_modrinth_com_main: BEGIN
+[0m17:51:16.129174 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m17:51:16.129611 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m17:51:16.129750 [debug] [ThreadPool]: Using duckdb connection "list_api_modrinth_com_main"
+[0m17:51:16.129900 [debug] [ThreadPool]: On list_api_modrinth_com_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "connection_name": "list_api_modrinth_com_main"} */
+select
+      'api_modrinth_com' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'api_modrinth_com'
+  
+[0m17:51:16.131764 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m17:51:16.132518 [debug] [ThreadPool]: On list_api_modrinth_com_main: ROLLBACK
+[0m17:51:16.132752 [debug] [ThreadPool]: On list_api_modrinth_com_main: Close
+[0m17:51:16.133533 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'ed73d012-3c83-4cd5-9856-95913d15b9aa', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b9a71e0>]}
+[0m17:51:16.133766 [debug] [MainThread]: Using duckdb connection "master"
+[0m17:51:16.133908 [debug] [MainThread]: On master: BEGIN
+[0m17:51:16.134036 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m17:51:16.134396 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m17:51:16.134531 [debug] [MainThread]: On master: COMMIT
+[0m17:51:16.134661 [debug] [MainThread]: Using duckdb connection "master"
+[0m17:51:16.134785 [debug] [MainThread]: On master: COMMIT
+[0m17:51:16.134955 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m17:51:16.135086 [debug] [MainThread]: On master: Close
+[0m17:51:16.136902 [debug] [Thread-1 (]: Began running node model.minecraft_data_platform.modrinth_project_listings
+[0m17:51:16.137205 [info ] [Thread-1 (]: 1 of 1 START python incremental model main.modrinth_project_listings ........... [RUN]
+[0m17:51:16.137425 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_api_modrinth_com_main, now model.minecraft_data_platform.modrinth_project_listings)
+[0m17:51:16.137604 [debug] [Thread-1 (]: Began compiling node model.minecraft_data_platform.modrinth_project_listings
+[0m17:51:16.153950 [debug] [Thread-1 (]: Writing injected SQL for node "model.minecraft_data_platform.modrinth_project_listings"
+[0m17:51:16.155306 [debug] [Thread-1 (]: Began executing node model.minecraft_data_platform.modrinth_project_listings
+[0m17:51:16.196143 [debug] [Thread-1 (]: Writing runtime python for node "model.minecraft_data_platform.modrinth_project_listings"
+[0m17:51:16.197213 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m17:51:38.472784 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_project_listings"
+[0m17:51:38.473734 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_project_listings: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "node_id": "model.minecraft_data_platform.modrinth_project_listings"} */
+
+    SELECT index_name
+    FROM duckdb_indexes()
+    WHERE database_name = 'api_modrinth_com'
+      AND schema_name = 'main'
+      AND table_name = 'modrinth_project_listings'
+  
+[0m17:51:38.474973 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m17:51:38.480245 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_project_listings"
+[0m17:51:38.480617 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_project_listings: BEGIN
+[0m17:51:38.481090 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m17:51:38.481286 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_project_listings"
+[0m17:51:38.481477 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_project_listings: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "node_id": "model.minecraft_data_platform.modrinth_project_listings"} */
+alter table "api_modrinth_com"."main"."modrinth_project_listings" rename to "modrinth_project_listings__dbt_backup"
+[0m17:51:38.481863 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m17:51:38.483657 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_project_listings"
+[0m17:51:38.483882 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_project_listings: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "node_id": "model.minecraft_data_platform.modrinth_project_listings"} */
+alter table "api_modrinth_com"."main"."modrinth_project_listings__dbt_tmp" rename to "modrinth_project_listings"
+[0m17:51:38.484221 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m17:51:38.493361 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_project_listings: COMMIT
+[0m17:51:38.493679 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_project_listings"
+[0m17:51:38.493873 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_project_listings: COMMIT
+[0m17:51:38.494584 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m17:51:38.495100 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_project_listings"
+[0m17:51:38.495385 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_project_listings: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "node_id": "model.minecraft_data_platform.modrinth_project_listings"} */
+
+    SELECT index_name
+    FROM duckdb_indexes()
+    WHERE database_name = 'api_modrinth_com'
+      AND schema_name = 'main'
+      AND table_name = 'modrinth_project_listings__dbt_backup'
+  
+[0m17:51:38.496099 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m17:51:38.499722 [debug] [Thread-1 (]: Using duckdb connection "model.minecraft_data_platform.modrinth_project_listings"
+[0m17:51:38.499994 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_project_listings: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "minecraft_data_platform", "target_name": "dev", "node_id": "model.minecraft_data_platform.modrinth_project_listings"} */
+
+      drop table if exists "api_modrinth_com"."main"."modrinth_project_listings__dbt_backup" cascade
+    
+[0m17:51:38.501157 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m17:51:38.503236 [debug] [Thread-1 (]: On model.minecraft_data_platform.modrinth_project_listings: Close
+[0m17:51:38.505167 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'ed73d012-3c83-4cd5-9856-95913d15b9aa', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b9c5d90>]}
+[0m17:51:38.505847 [info ] [Thread-1 (]: 1 of 1 OK created python incremental model main.modrinth_project_listings ...... [[32mOK[0m in 22.37s]
+[0m17:51:38.506231 [debug] [Thread-1 (]: Finished running node model.minecraft_data_platform.modrinth_project_listings
+[0m17:51:38.524080 [debug] [MainThread]: Using duckdb connection "master"
+[0m17:51:38.524365 [debug] [MainThread]: On master: BEGIN
+[0m17:51:38.524537 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m17:51:38.525113 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m17:51:38.525314 [debug] [MainThread]: On master: COMMIT
+[0m17:51:38.525478 [debug] [MainThread]: Using duckdb connection "master"
+[0m17:51:38.525626 [debug] [MainThread]: On master: COMMIT
+[0m17:51:38.525837 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m17:51:38.525988 [debug] [MainThread]: On master: Close
+[0m17:51:38.526191 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m17:51:38.526343 [debug] [MainThread]: Connection 'model.minecraft_data_platform.modrinth_project_listings' was properly closed.
+[0m17:51:38.526552 [info ] [MainThread]: 
+[0m17:51:38.526743 [info ] [MainThread]: Finished running 1 incremental model in 0 hours 0 minutes and 22.47 seconds (22.47s).
+[0m17:51:38.527121 [debug] [MainThread]: Command end result
+[0m17:51:38.545454 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/target/manifest.json
+[0m17:51:38.548395 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/target/semantic_manifest.json
+[0m17:51:38.552361 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/transformations/target/run_results.json
+[0m17:51:38.552597 [info ] [MainThread]: 
+[0m17:51:38.552841 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m17:51:38.553004 [info ] [MainThread]: 
+[0m17:51:38.553231 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=1
+[0m17:51:38.557003 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 22.98298, "process_in_blocks": "0", "process_kernel_time": 8.430136, "process_mem_max_rss": "2876309504", "process_out_blocks": "0", "process_user_time": 13.735628}
+[0m17:51:38.557446 [debug] [MainThread]: Command `dbt run` succeeded at 17:51:38.557393 after 22.98 seconds
+[0m17:51:38.557713 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x136f50b50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x136fa0b90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x136fa0a50>]}
+[0m17:51:38.557925 [debug] [MainThread]: Flushing usage events
+[0m17:51:39.453290 [debug] [MainThread]: An error was encountered while trying to flush usage events

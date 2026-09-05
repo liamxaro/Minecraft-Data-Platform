@@ -3,6 +3,7 @@ import pandas as pd
 
 modrinth_bronze_db_path = "/Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/data/bronze/dev/api_modrinth_com.duckdb"
 modrinth_silver_db_path = "/Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/data/silver/dev/api_modrinth_com.duckdb"
+mojang_version_manifest_db_path = "/Users/admin/AroTekCodingSpace/Python-Workspace/Minecraft-Data-Platform/data/silver/dev/mojang_version_manifest.duckdb"
 
 
 #Utility methods
@@ -48,34 +49,56 @@ def get_distinct_modrinth_versions(project_type: str):
 def get_modrinth_kpis(project_type: str):
     query = f"""
     SELECT
-        COUNT(DISTINCT project_id) AS total_mods,
-        COUNT(DISTINCT author) AS total_mod_authors,
-        CAST(SUM(COALESCE(downloads, 0)) AS BIGINT) AS total_mod_downloads,
-        MIN(c_pull_timestamp_utc) AS current_refresh_date,
+        COUNT(DISTINCT project_id) AS total_projects,
+
+        COUNT(DISTINCT author) AS total_authors,
+
+        CAST(
+            SUM(COALESCE(downloads, 0))
+            AS BIGINT
+        ) AS total_downloads,
+
+        MAX(c_pull_timestamp_utc) AS current_refresh_date,
+
         COUNT(DISTINCT license) AS total_distinct_licenses,
 
-        (
-            SELECT COUNT(DISTINCT loader_value)
-            FROM (
-                SELECT UNNEST(platform_loaders) AS loader_value
-                FROM modrinth_project_listings
-                WHERE project_type = '{project_type}'
-            ) t
+        COALESCE(
+            list_count(
+                list_distinct(
+                    flatten(
+                        list(platform_loaders)
+                        FILTER (
+                            WHERE platform_loaders IS NOT NULL
+                        )
+                    )
+                )
+            ),
+            0
         ) AS total_distinct_platform_loaders,
 
-        (
-            SELECT COUNT(DISTINCT category_value)
-            FROM (
-                SELECT UNNEST(gameplay_categories) AS category_value
-                FROM modrinth_project_listings
-                WHERE project_type = '{project_type}'
-            ) t
+        COALESCE(
+            list_count(
+                list_distinct(
+                    flatten(
+                        list(gameplay_categories)
+                        FILTER (
+                            WHERE gameplay_categories IS NOT NULL
+                        )
+                    )
+                )
+            ),
+            0
         ) AS total_distinct_gameplay_categories
 
     FROM modrinth_project_listings
+
     WHERE project_type = '{project_type}'
     """
-    return run_query(query, modrinth_silver_db_path)
+
+    return run_query(
+        query,
+        modrinth_silver_db_path,
+    )
 
 def get_most_popular_modrinth_projects(
     project_type: str,
