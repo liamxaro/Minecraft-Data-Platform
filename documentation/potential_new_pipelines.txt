@@ -3,6 +3,7 @@ general takeaway:
 
 nexusmods.com -> has api
 hangar.papermc.io -> has an api, but focus is around plugins
+technic - > has an api
 
 planetminecraft.com -> doesn't have an api, but there are talks of developing one
 minecraftmods.com -> doesn't have an api

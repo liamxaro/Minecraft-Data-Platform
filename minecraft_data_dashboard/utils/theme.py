@@ -17,9 +17,12 @@ def _get_base64_image(image_path: str) -> str:
 
 def apply_modrinth_theme(
     title: str,
+    subtitle: str | None = None,
     logo_path: str = "minecraft_data_dashboard/assets/modrinth_icon_light.png",
 ) -> None:
     logo_base64 = _get_base64_image(logo_path)
+    
+    subtitle_html = f'<div class="modrinth-subtitle">{subtitle}</div>' if subtitle else ""
 
     st.markdown(
         f"""
@@ -106,6 +109,13 @@ def apply_modrinth_theme(
             margin-bottom: 1rem;
             font-size: 1rem;
         }}
+        
+        .modrinth-brand-row .modrinth-subtitle {{
+            margin-top: 0.3rem;
+            margin-bottom: 0;
+            font-size: 0.9rem;
+            line-height: 1.2;
+        }}
 
         .modrinth-section-header {{
             margin: 1.15rem 0 0.55rem 0;
@@ -142,7 +152,10 @@ def apply_modrinth_theme(
 
         <div class="modrinth-brand-row">
             <img class="modrinth-brand-logo" src="data:image/png;base64,{logo_base64}">
-            <h1 class="modrinth-brand-title">{title}</h1>
+            <div>
+                <h1 class="modrinth-brand-title">{title}</h1>
+                {subtitle_html}
+            </div>
         </div>
         """,
         unsafe_allow_html=True,

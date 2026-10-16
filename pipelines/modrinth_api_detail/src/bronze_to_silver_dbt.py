@@ -19,6 +19,15 @@ def parse_args():
     )
 
     parser.add_argument(
+        "--layer",
+        choices=[
+            "silver",
+            "gold",
+        ],
+        default="silver",
+    )
+
+    parser.add_argument(
         "--select",
         required=True,
     )
@@ -33,10 +42,10 @@ def parse_args():
 
 def run_dbt(
     target: str,
+    layer: str,
     select: str,
     full_refresh: bool = False,
 ) -> None:
-
     src_dir = os.path.dirname(
         os.path.abspath(__file__)
     )
@@ -66,12 +75,16 @@ def run_dbt(
             f"{dbt_path}"
         )
 
+    database_file_name = (
+        "api_modrinth_com.duckdb"
+    )
+
     bronze_path = os.path.join(
         project_root,
         "data",
         "bronze",
         target,
-        "api_modrinth_com.duckdb",
+        database_file_name,
     )
 
     silver_path = os.path.join(
@@ -79,11 +92,30 @@ def run_dbt(
         "data",
         "silver",
         target,
-        "api_modrinth_com.duckdb",
+        database_file_name,
     )
 
+    gold_path = os.path.join(
+        project_root,
+        "data",
+        "gold",
+        target,
+        database_file_name,
+    )
+
+    if layer == "silver":
+        output_path = silver_path
+
+    elif layer == "gold":
+        output_path = gold_path
+
+    else:
+        raise ValueError(
+            f"Unsupported layer: {layer}"
+        )
+
     os.makedirs(
-        os.path.dirname(silver_path),
+        os.path.dirname(output_path),
         exist_ok=True,
     )
 
@@ -91,8 +123,13 @@ def run_dbt(
 
     dbt_env["DBT_BRONZE_PATH"] = bronze_path
     dbt_env["DBT_SILVER_PATH"] = silver_path
+    dbt_env["DBT_GOLD_PATH"] = gold_path
     dbt_env["DBT_MEMORY_LIMIT"] = "14GB"
     dbt_env["DBT_THREADS"] = "1"
+
+    dbt_target = (
+        f"{target}_{layer}"
+    )
 
     command = [
         str(dbt_path),
@@ -102,7 +139,7 @@ def run_dbt(
         "--profiles-dir",
         transformations_dir,
         "--target",
-        target,
+        dbt_target,
         "--select",
         select,
     ]
@@ -117,19 +154,41 @@ def run_dbt(
     )
 
     print(
-        f"(INFO) Python executable: {sys.executable}"
+        f"(INFO) Layer: {layer}"
     )
 
     print(
-        f"(INFO) dbt executable: {dbt_path}"
+        f"(INFO) dbt target: {dbt_target}"
     )
 
     print(
-        f"(INFO) Bronze: {bronze_path}"
+        f"(INFO) Python executable: "
+        f"{sys.executable}"
     )
 
     print(
-        f"(INFO) Silver: {silver_path}"
+        f"(INFO) dbt executable: "
+        f"{dbt_path}"
+    )
+
+    print(
+        f"(INFO) Bronze: "
+        f"{bronze_path}"
+    )
+
+    print(
+        f"(INFO) Silver: "
+        f"{silver_path}"
+    )
+
+    print(
+        f"(INFO) Gold: "
+        f"{gold_path}"
+    )
+
+    print(
+        f"(INFO) Output database: "
+        f"{output_path}"
     )
 
     print(
@@ -155,6 +214,7 @@ if __name__ == "__main__":
 
     run_dbt(
         target=args.target,
+        layer=args.layer,
         select=args.select,
         full_refresh=args.full_refresh,
     )

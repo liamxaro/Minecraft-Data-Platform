@@ -5,16 +5,11 @@ import sys
 from pathlib import Path
 
 
-project_root = os.path.abspath(
-    os.path.join(
-        os.path.dirname(__file__),
-        "../../..",
-    )
-)
+project_root = Path(__file__).resolve().parents[3]
 
-transformations_dir = os.path.join(
-    project_root,
-    "transformations",
+transformations_dir = (
+    project_root
+    / "transformations"
 )
 
 
@@ -32,6 +27,15 @@ def parse_args():
     )
 
     parser.add_argument(
+        "--layer",
+        choices=[
+            "silver",
+            "gold",
+        ],
+        default="silver",
+    )
+
+    parser.add_argument(
         "--select",
         default=None,
     )
@@ -46,10 +50,10 @@ def parse_args():
 
 def run_dbt(
     target: str,
+    layer: str,
     select: str | None = None,
     full_refresh: bool = False,
 ) -> None:
-
     dbt_executable = (
         Path(sys.executable).parent
         / "dbt"
@@ -61,43 +65,80 @@ def run_dbt(
             f"{dbt_executable}"
         )
 
-    bronze_path = os.path.join(
-        project_root,
-        "data",
-        "bronze",
-        target,
-        "api_modrinth_com.duckdb",
+    database_file_name = (
+        "api_modrinth_com.duckdb"
     )
 
-    silver_path = os.path.join(
-        project_root,
-        "data",
-        "silver",
-        target,
-        "api_modrinth_com.duckdb",
+    bronze_path = (
+        project_root
+        / "data"
+        / "bronze"
+        / target
+        / database_file_name
     )
 
-    os.makedirs(
-        os.path.dirname(silver_path),
+    silver_path = (
+        project_root
+        / "data"
+        / "silver"
+        / target
+        / database_file_name
+    )
+
+    gold_path = (
+        project_root
+        / "data"
+        / "gold"
+        / target
+        / database_file_name
+    )
+
+    if layer == "silver":
+        output_path = silver_path
+
+    elif layer == "gold":
+        output_path = gold_path
+
+    else:
+        raise ValueError(
+            f"Unsupported dbt layer: {layer}"
+        )
+
+    output_path.parent.mkdir(
+        parents=True,
         exist_ok=True,
     )
 
     dbt_env = os.environ.copy()
 
-    dbt_env["DBT_BRONZE_PATH"] = bronze_path
-    dbt_env["DBT_SILVER_PATH"] = silver_path
+    dbt_env["DBT_BRONZE_PATH"] = str(
+        bronze_path
+    )
+
+    dbt_env["DBT_SILVER_PATH"] = str(
+        silver_path
+    )
+
+    dbt_env["DBT_GOLD_PATH"] = str(
+        gold_path
+    )
+
     dbt_env["DBT_MEMORY_LIMIT"] = "14GB"
     dbt_env["DBT_THREADS"] = "1"
+
+    dbt_target = (
+        f"{target}_{layer}"
+    )
 
     command = [
         str(dbt_executable),
         "run",
         "--project-dir",
-        transformations_dir,
+        str(transformations_dir),
         "--profiles-dir",
-        transformations_dir,
+        str(transformations_dir),
         "--target",
-        target,
+        dbt_target,
     ]
 
     if select:
@@ -114,23 +155,45 @@ def run_dbt(
         )
 
     print(
-        f"(INFO) Target: {target}"
+        f"(INFO) Environment: {target}"
     )
 
     print(
-        f"(INFO) Python executable: {sys.executable}"
+        f"(INFO) Layer: {layer}"
     )
 
     print(
-        f"(INFO) dbt executable: {dbt_executable}"
+        f"(INFO) dbt target: {dbt_target}"
     )
 
     print(
-        f"(INFO) Bronze database: {bronze_path}"
+        f"(INFO) Python executable: "
+        f"{sys.executable}"
     )
 
     print(
-        f"(INFO) Silver database: {silver_path}"
+        f"(INFO) dbt executable: "
+        f"{dbt_executable}"
+    )
+
+    print(
+        f"(INFO) Bronze database: "
+        f"{bronze_path}"
+    )
+
+    print(
+        f"(INFO) Silver database: "
+        f"{silver_path}"
+    )
+
+    print(
+        f"(INFO) Gold database: "
+        f"{gold_path}"
+    )
+
+    print(
+        f"(INFO) Output database: "
+        f"{output_path}"
     )
 
     print(
@@ -156,6 +219,7 @@ if __name__ == "__main__":
 
     run_dbt(
         target=args.target,
+        layer=args.layer,
         select=args.select,
         full_refresh=args.full_refresh,
     )
