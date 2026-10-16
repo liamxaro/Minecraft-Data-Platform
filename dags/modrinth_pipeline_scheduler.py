@@ -103,6 +103,27 @@ detail_silver_script = (
 
 
 # -------------------------------------------------------------------
+# MODRINTH GOLD PATHS
+# -------------------------------------------------------------------
+
+gold_pipeline_root = (
+    project_root
+    / "pipelines"
+    / "modrinth_gold_dbt"
+)
+
+gold_src_directory = (
+    gold_pipeline_root
+    / "src"
+)
+
+gold_dbt_script = (
+    gold_src_directory
+    / "run_dbt.py"
+)
+
+
+# -------------------------------------------------------------------
 # DAG
 # -------------------------------------------------------------------
 
@@ -110,8 +131,8 @@ with DAG(
     dag_id="modrinth_pipeline",
 
     description=(
-        "Modrinth Meta, General, and Detail pipelines "
-        "from Bronze through Silver."
+        "Modrinth Meta, General, and Detail ingestion "
+        "through Bronze, Silver, and Gold."
     ),
 
     start_date=pendulum.datetime(
@@ -157,6 +178,7 @@ with DAG(
         "meta",
         "general",
         "detail",
+        "gold",
     ],
 ) as dag:
 
@@ -346,6 +368,42 @@ with DAG(
 
 
     # -------------------------------------------------------------------
+    # GOLD
+    # -------------------------------------------------------------------
+
+    gold_modrinth = BashOperator(
+        task_id="modrinth_gold_dbt",
+
+        bash_command=f"""
+            set -euo pipefail
+
+            command=(
+                "{python_executable}"
+                "{gold_dbt_script}"
+                --target "$PIPELINE_ENV"
+                --select "path:models/gold/modrinth"
+            )
+
+            case "${{DBT_FULL_REFRESH:-false}}" in
+                true|True|TRUE|1)
+                    command+=(--full-refresh)
+                    ;;
+            esac
+
+            "${{command[@]}}"
+        """,
+
+        env={
+            "PIPELINE_ENV": "{{ params.environment }}",
+            "DBT_FULL_REFRESH": "{{ params.dbt_full_refresh }}",
+        },
+
+        append_env=True,
+        cwd=str(project_root),
+    )
+
+
+    # -------------------------------------------------------------------
     # DEPENDENCIES
     # -------------------------------------------------------------------
 
@@ -356,4 +414,5 @@ with DAG(
         >> silver_project_listings
         >> bronze_project_details
         >> silver_project_details
+        >> gold_modrinth
     )

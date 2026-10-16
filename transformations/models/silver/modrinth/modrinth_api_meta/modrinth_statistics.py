@@ -1,6 +1,9 @@
 import json
-
 import polars as pl
+
+from shared_code.table_logic.column_renaming_snake_case import (
+    convert_columns_to_snake_case
+)
 
 
 def model(dbt, session):
@@ -55,7 +58,9 @@ def model(dbt, session):
 
         rows.append(payload)
 
-    return pl.from_dicts(
+    return convert_columns_to_snake_case(
+        pl.from_dicts(
         rows,
         infer_schema_length=None,
+        )
     )

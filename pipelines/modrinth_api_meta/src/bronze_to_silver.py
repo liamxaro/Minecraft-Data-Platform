@@ -38,7 +38,8 @@ def parse_args():
 
     parser.add_argument(
         "--full-refresh",
-        action="store_true",
+        action=argparse.BooleanOptionalAction,
+        default=True,
     )
 
     return parser.parse_args()
@@ -47,9 +48,8 @@ def parse_args():
 def run_dbt(
     target: str,
     select: str = "tag:modrinth_meta",
-    full_refresh: bool = False,
+    full_refresh: bool = True,
 ) -> None:
-
     dbt_executable = (
         Path(sys.executable).parent
         / "dbt"
@@ -61,12 +61,16 @@ def run_dbt(
             f"{dbt_executable}"
         )
 
+    database_file_name = (
+        "api_modrinth_com.duckdb"
+    )
+
     bronze_path = os.path.join(
         project_root,
         "data",
         "bronze",
         target,
-        "api_modrinth_com.duckdb",
+        database_file_name,
     )
 
     silver_path = os.path.join(
@@ -74,7 +78,7 @@ def run_dbt(
         "data",
         "silver",
         target,
-        "api_modrinth_com.duckdb",
+        database_file_name,
     )
 
     os.makedirs(
@@ -89,6 +93,10 @@ def run_dbt(
     dbt_env["DBT_MEMORY_LIMIT"] = "14GB"
     dbt_env["DBT_THREADS"] = "1"
 
+    dbt_target = (
+        f"{target}_silver"
+    )
+
     command = [
         str(dbt_executable),
         "run",
@@ -97,7 +105,7 @@ def run_dbt(
         "--profiles-dir",
         transformations_dir,
         "--target",
-        target,
+        dbt_target,
     ]
 
     if select:
@@ -114,7 +122,15 @@ def run_dbt(
         )
 
     print(
-        f"(INFO) Target: {target}"
+        f"(INFO) Environment: {target}"
+    )
+
+    print(
+        "(INFO) Layer: silver"
+    )
+
+    print(
+        f"(INFO) dbt target: {dbt_target}"
     )
 
     print(

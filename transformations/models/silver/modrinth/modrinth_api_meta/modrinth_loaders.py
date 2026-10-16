@@ -1,6 +1,9 @@
 import json
-
 import polars as pl
+
+from shared_code.table_logic.column_renaming_snake_case import (
+    convert_columns_to_snake_case
+)
 
 
 def model(dbt, session):
@@ -17,13 +20,13 @@ def model(dbt, session):
             b.hashed_payload,
             b.c_pull_timestamp_utc
 
-        FROM bronze.main.modrinth_categories AS b
+        FROM bronze.main.modrinth_loaders AS b
 
         INNER JOIN bronze.main.ingestion_log_sync AS l
             ON b.run_id = l.run_id
             AND b.stream = l.stream
 
-        WHERE b.stream = 'categories'
+        WHERE b.stream = 'loaders'
           AND LOWER(TRIM(l.status)) = 'success'
 
         ORDER BY
@@ -36,7 +39,7 @@ def model(dbt, session):
 
     if raw_df.is_empty():
         raise RuntimeError(
-            "No successful Bronze snapshot found for categories."
+            "No successful Bronze snapshot found for loaders."
         )
 
     payload = raw_df["payload"][0]
@@ -48,17 +51,20 @@ def model(dbt, session):
         payload,
         infer_schema_length=None,
     )
+    
 
-    return silver_df.with_columns(
-        pl.lit(
-            raw_df["run_id"][0]
-        ).alias("run_id"),
-
-        pl.lit(
-            raw_df["hashed_payload"][0]
-        ).alias("hashed_payload"),
-
-        pl.lit(
-            raw_df["c_pull_timestamp_utc"][0]
-        ).alias("c_pull_timestamp_utc"),
-    )
+    silver_df = silver_df.with_columns(
+            pl.lit(
+                raw_df["run_id"][0]
+            ).alias("run_id"),
+    
+            pl.lit(
+                raw_df["hashed_payload"][0]
+            ).alias("hashed_payload"),
+    
+            pl.lit(
+                raw_df["c_pull_timestamp_utc"][0]
+            ).alias("c_pull_timestamp_utc"),
+        )
+        
+    return convert_columns_to_snake_case(silver_df)
