@@ -1,6 +1,8 @@
 import argparse
 import os
 import subprocess
+import sys
+from pathlib import Path
 
 
 def parse_args():
@@ -18,7 +20,7 @@ def parse_args():
 
     parser.add_argument(
         "--select",
-        required=True,
+        default="mojang_version_manifest",
     )
 
     parser.add_argument(
@@ -34,7 +36,6 @@ def run_dbt(
     select: str,
     full_refresh: bool = False,
 ) -> None:
-
     src_dir = os.path.dirname(
         os.path.abspath(__file__)
     )
@@ -53,11 +54,19 @@ def run_dbt(
         "transformations",
     )
 
-    dbt_path = os.path.join(
-        project_root,
-        ".venv",
-        "bin",
-        "dbt",
+    dbt_path = (
+        Path(sys.executable).parent
+        / "dbt"
+    )
+
+    if not dbt_path.exists():
+        raise RuntimeError(
+            f"dbt executable was not found at: "
+            f"{dbt_path}"
+        )
+
+    database_file_name = (
+        "piston_meta_mojang_com.duckdb"
     )
 
     bronze_path = os.path.join(
@@ -65,7 +74,7 @@ def run_dbt(
         "data",
         "bronze",
         target,
-        "piston_meta_mojang_com.duckdb",
+        database_file_name,
     )
 
     silver_path = os.path.join(
@@ -73,7 +82,7 @@ def run_dbt(
         "data",
         "silver",
         target,
-        "piston_meta_mojang_com.duckdb",
+        database_file_name,
     )
 
     os.makedirs(
@@ -90,15 +99,19 @@ def run_dbt(
     dbt_env["DBT_MEMORY_LIMIT"] = "8GB"
     dbt_env["DBT_THREADS"] = "4"
 
+    dbt_target = (
+        f"{target}_silver"
+    )
+
     command = [
-        dbt_path,
+        str(dbt_path),
         "run",
         "--project-dir",
         transformations_dir,
         "--profiles-dir",
         transformations_dir,
         "--target",
-        target,
+        dbt_target,
         "--select",
         select,
     ]
@@ -113,19 +126,49 @@ def run_dbt(
     )
 
     print(
-        f"(INFO) Bronze: {bronze_path}"
+        "(INFO) Layer: silver"
     )
 
     print(
-        f"(INFO) Silver: {silver_path}"
+        f"(INFO) dbt target: {dbt_target}"
     )
 
     print(
-        f"(INFO) DuckDB memory limit: {dbt_env['DBT_MEMORY_LIMIT']}"
+        f"(INFO) Selection: {select}"
     )
 
     print(
-        f"(INFO) dbt threads: {dbt_env['DBT_THREADS']}"
+        f"(INFO) Full refresh: {full_refresh}"
+    )
+
+    print(
+        f"(INFO) Python executable: "
+        f"{sys.executable}"
+    )
+
+    print(
+        f"(INFO) dbt executable: "
+        f"{dbt_path}"
+    )
+
+    print(
+        f"(INFO) Bronze: "
+        f"{bronze_path}"
+    )
+
+    print(
+        f"(INFO) Silver: "
+        f"{silver_path}"
+    )
+
+    print(
+        f"(INFO) DuckDB memory limit: "
+        f"{dbt_env['DBT_MEMORY_LIMIT']}"
+    )
+
+    print(
+        f"(INFO) dbt threads: "
+        f"{dbt_env['DBT_THREADS']}"
     )
 
     subprocess.run(

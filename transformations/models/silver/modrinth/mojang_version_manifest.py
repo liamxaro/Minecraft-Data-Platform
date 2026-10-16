@@ -1,7 +1,10 @@
 import hashlib
 import json
-
 import polars as pl
+
+from shared_code.table_logic.column_renaming_snake_case import (
+    convert_columns_to_snake_case
+)
 
 
 BRONZE_TABLE = "bronze.main.mojang_version_manifest"
@@ -280,4 +283,4 @@ def model(dbt, session):
             null_columns
         )
 
-    return silver_df
+    return convert_columns_to_snake_case(silver_df)
