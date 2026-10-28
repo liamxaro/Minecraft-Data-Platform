@@ -10,7 +10,7 @@ minecraft_data_platform:
       threads: "{{ env_var('DBT_THREADS', '1') | int }}"
 
       settings:
-        memory_limit: "{{ env_var('DBT_MEMORY_LIMIT', '4GB') }}"
+        memory_limit: "{{ env_var('DBT_MEMORY_LIMIT', '14GB') }}"
         preserve_insertion_order: false
 
       attach:
@@ -26,7 +26,7 @@ minecraft_data_platform:
       threads: "{{ env_var('DBT_THREADS', '1') | int }}"
 
       settings:
-        memory_limit: "{{ env_var('DBT_MEMORY_LIMIT', '4GB') }}"
+        memory_limit: "{{ env_var('DBT_MEMORY_LIMIT', '14GB') }}"
         preserve_insertion_order: false
 
       attach:
@@ -46,7 +46,7 @@ minecraft_data_platform:
       threads: "{{ env_var('DBT_THREADS', '1') | int }}"
 
       settings:
-        memory_limit: "{{ env_var('DBT_MEMORY_LIMIT', '4GB') }}"
+        memory_limit: "{{ env_var('DBT_MEMORY_LIMIT', '14GB') }}"
         preserve_insertion_order: false
 
       attach:
@@ -62,7 +62,7 @@ minecraft_data_platform:
       threads: "{{ env_var('DBT_THREADS', '1') | int }}"
 
       settings:
-        memory_limit: "{{ env_var('DBT_MEMORY_LIMIT', '4GB') }}"
+        memory_limit: "{{ env_var('DBT_MEMORY_LIMIT', '14GB') }}"
         preserve_insertion_order: false
 
       attach:
@@ -82,7 +82,7 @@ minecraft_data_platform:
       threads: "{{ env_var('DBT_THREADS', '1') | int }}"
 
       settings:
-        memory_limit: "{{ env_var('DBT_MEMORY_LIMIT', '4GB') }}"
+        memory_limit: "{{ env_var('DBT_MEMORY_LIMIT', '14GB') }}"
         preserve_insertion_order: false
 
       attach:
@@ -98,7 +98,7 @@ minecraft_data_platform:
       threads: "{{ env_var('DBT_THREADS', '1') | int }}"
 
       settings:
-        memory_limit: "{{ env_var('DBT_MEMORY_LIMIT', '4GB') }}"
+        memory_limit: "{{ env_var('DBT_MEMORY_LIMIT', '14GB') }}"
         preserve_insertion_order: false
 
       attach:

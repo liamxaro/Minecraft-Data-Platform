@@ -1,6 +1,6 @@
 main:
   headers:
-    User-Agent: "liamxaro/Minecraft-data-platform/(contact: stormcraftmods@gmail.com)"
+    User-Agent: "liamxaro/Minecraft-Data-Platform/(contact: stormcraftmods@gmail.com)"
 
   parent-folder: data
 

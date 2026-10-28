@@ -119,7 +119,7 @@ def get_project_listings(
         )
     ):
         version_conditions = [
-            f"list_contains(game_versions, '{version}')"
+            f"list_contains(versions, '{version}')"
             for version in selected_versions
         ]
 
@@ -492,7 +492,32 @@ def get_first_activity(project_type: str):
     
     return run_query(query, modrinth_silver_db_path)
 
+def get_project_version_by_id(
+    version_id: str,
+    project_type: str = "mod",
+):
 
+    query = f"""
+        SELECT
+            v.*,
+            p.title AS project_title,
+            p.author AS project_author,
+            p.categories AS project_categories
+
+        FROM modrinth_project_versions AS v
+
+        LEFT JOIN modrinth_project_listings AS p
+            ON v.project_id = p.project_id
+            AND v.project_type = p.project_type
+
+        WHERE v.project_type = '{project_type}'
+            AND v.version_id = '{version_id}'
+    """
+
+    return run_query(
+        query,
+        modrinth_silver_db_path,
+    )
 
 
 #Modrinth Overview Data Pulls

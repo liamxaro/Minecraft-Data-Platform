@@ -143,70 +143,104 @@
     run_id
 ) %}
 
+    {#
+        Infer the version-object schema without aggregating all Bronze
+        payloads into one giant JSON value.
+
+        Each Bronze row contains an array of versions. We infer the
+        structure of each individual payload array first, extract its
+        element structure, then choose the richest observed structure
+        for each field.
+
+        This keeps schema inference bounded by individual Bronze rows
+        instead of the entire run.
+    #}
+
     {% set schema_query %}
 
-        SELECT
-            CAST(
+        WITH payload_structures AS (
+
+            SELECT
                 json_extract(
-                    json_group_structure(
+                    json_structure(
                         CAST(
                             payload AS JSON
                         )
                     ),
                     '$[0]'
-                ) AS VARCHAR
-            ) AS element_structure
+                ) AS element_structure
 
-        FROM bronze.main.modrinth_project_versions
+            FROM bronze.main.modrinth_project_versions
 
-        WHERE project_type = '{{ project_type }}'
-            AND run_id = '{{ run_id }}'
+            WHERE project_type = '{{ project_type }}'
+                AND run_id = '{{ run_id }}'
+
+        ),
+
+        observed_columns AS (
+
+            SELECT
+                j.key AS column_name,
+
+                CAST(
+                    j.value AS VARCHAR
+                ) AS column_structure
+
+            FROM payload_structures AS p,
+
+                LATERAL json_each(
+                    p.element_structure
+                ) AS j
+
+            WHERE p.element_structure IS NOT NULL
+
+        ),
+
+        ranked_columns AS (
+
+            SELECT
+                column_name,
+
+                column_structure,
+
+                ROW_NUMBER() OVER (
+                    PARTITION BY column_name
+
+                    ORDER BY
+                        LENGTH(
+                            column_structure
+                        ) DESC,
+
+                        column_structure
+                ) AS structure_rank
+
+            FROM observed_columns
+
+        )
+
+        SELECT
+            column_name,
+            column_structure
+
+        FROM ranked_columns
+
+        WHERE structure_rank = 1
+
+        ORDER BY column_name
 
     {% endset %}
 
 
-    {% set schema_result = run_query(
-        schema_query
-    ) %}
+    {% set schema_result =
+        run_query(
+            schema_query
+        )
+    %}
 
 
     {% if schema_result is none %}
 
         {{ return([]) }}
-
-    {% endif %}
-
-
-    {% set structure_json =
-        schema_result.columns[0].values()[0]
-    %}
-
-
-    {% if structure_json is none %}
-
-        {{ return([]) }}
-
-    {% endif %}
-
-
-    {% set structure =
-        fromjson(structure_json)
-    %}
-
-
-    {% if structure is not mapping %}
-
-        {{
-            exceptions.raise_compiler_error(
-                "Expected Modrinth version payload "
-                ~ "to contain JSON objects for "
-                ~ project_type
-                ~ " run_id="
-                ~ run_id
-                ~ ". Inferred structure: "
-                ~ structure_json
-            )
-        }}
 
     {% endif %}
 
@@ -225,13 +259,28 @@
     {% set inferred_columns = [] %}
 
 
-    {% for item in structure | dictsort %}
+    {% for row in schema_result.rows %}
 
-        {% set column_name = item[0] %}
-        {% set column_structure = item[1] %}
+        {% set column_name =
+            row[0]
+        %}
+
+        {% set structure_json =
+            row[1]
+        %}
 
 
-        {% if column_name not in reserved_columns %}
+        {% if
+            column_name not in reserved_columns
+            and structure_json is not none
+        %}
+
+            {% set column_structure =
+                fromjson(
+                    structure_json
+                )
+            %}
+
 
             {% set data_type =
                 json_structure_to_duckdb_type(
@@ -295,7 +344,9 @@
         {% if column['name'] not in existing_names %}
 
             {{ log(
-                "Adding inferred Silver column: "
+                "Adding inferred column to "
+                ~ target_relation
+                ~ ": "
                 ~ column['name']
                 ~ " "
                 ~ column['data_type'],
@@ -538,6 +589,12 @@ WHERE json_extract_string(
         load_relation(this)
     %}
 
+    {% set stage_relation = api.Relation.create(
+        database=target_relation.database,
+        schema=target_relation.schema,
+        identifier=target_relation.identifier ~ '__project_type_stage',
+        type='table'
+    ) %}
 
     {% set project_types = [
         'shader',
@@ -549,18 +606,15 @@ WHERE json_extract_string(
         'mod'
     ] %}
 
-
     {% set rebuild_table =
         should_full_refresh()
         or existing_relation is none
     %}
 
 
-
     {# ============================================================= #}
     {# CREATE EMPTY SILVER TABLE                                     #}
     {# ============================================================= #}
-
 
     {% if rebuild_table %}
 
@@ -605,14 +659,11 @@ WHERE json_extract_string(
     {% endif %}
 
 
-
     {# ============================================================= #}
     {# PROCESS PROJECT TYPES                                         #}
     {# ============================================================= #}
 
-
     {% for project_type in project_types %}
-
 
         {{ log(
             "Processing project_type: "
@@ -621,11 +672,39 @@ WHERE json_extract_string(
         ) }}
 
 
+        {# --------------------------------------------------------- #}
+        {# FULL REFRESH: CREATE SMALL PROJECT-TYPE STAGING TABLE    #}
+        {# --------------------------------------------------------- #}
+
+        {% if rebuild_table %}
+
+            {% call statement(
+                'drop_stage_' ~ project_type
+            ) %}
+
+                DROP TABLE IF EXISTS {{ stage_relation }}
+
+            {% endcall %}
+
+
+            {% call statement(
+                'create_stage_' ~ project_type
+            ) %}
+
+                CREATE TABLE {{ stage_relation }} AS
+
+                SELECT *
+                FROM {{ target_relation }}
+                WHERE FALSE
+
+            {% endcall %}
+
+        {% endif %}
+
 
         {# --------------------------------------------------------- #}
         {# DETERMINE WHICH SUCCESSFUL BRONZE RUNS NEED PROCESSING   #}
         {# --------------------------------------------------------- #}
-
 
         {% set run_query_sql %}
 
@@ -648,10 +727,8 @@ WHERE json_extract_string(
                     FROM bronze.main.ingestion_log AS l
 
                     WHERE l.run_id = r.run_id
-
                         AND l.project_type =
                             r.project_type
-
                         AND l.status =
                             'success'
                 )
@@ -688,7 +765,6 @@ WHERE json_extract_string(
         {% endset %}
 
 
-
         {% set run_results =
             run_query(
                 run_query_sql
@@ -696,16 +772,13 @@ WHERE json_extract_string(
         %}
 
 
-
         {# ========================================================= #}
         {# PROCESS RUNS SEQUENTIALLY                                 #}
         {# ========================================================= #}
 
-
         {% if run_results is not none %}
 
             {% for row in run_results.rows %}
-
 
                 {% set run_id =
                     row[0]
@@ -720,12 +793,18 @@ WHERE json_extract_string(
                     info=True
                 ) }}
 
+                {{ log(
+                    "Starting schema inference for "
+                    ~ project_type
+                    ~ " run_id="
+                    ~ run_id,
+                    info=True
+                ) }}
 
 
                 {# ------------------------------------------------- #}
                 {# INFER CURRENT API SCHEMA                         #}
                 {# ------------------------------------------------- #}
-
 
                 {% set inferred_columns =
                     infer_version_payload_columns(
@@ -734,12 +813,18 @@ WHERE json_extract_string(
                     )
                 %}
 
+                {{ log(
+                    "Finished schema inference for "
+                    ~ project_type
+                    ~ " run_id="
+                    ~ run_id,
+                    info=True
+                ) }}
 
 
                 {# ------------------------------------------------- #}
                 {# EVOLVE SILVER IF NEW FIELDS APPEARED            #}
                 {# ------------------------------------------------- #}
-
 
                 {% do evolve_version_target_schema(
                     target_relation,
@@ -747,11 +832,23 @@ WHERE json_extract_string(
                 ) %}
 
 
+                {# ------------------------------------------------- #}
+                {# FULL REFRESH: EVOLVE STAGING SCHEMA TOO          #}
+                {# ------------------------------------------------- #}
+
+                {% if rebuild_table %}
+
+                    {% do evolve_version_target_schema(
+                        stage_relation,
+                        inferred_columns
+                    ) %}
+
+                {% endif %}
+
 
                 {# ------------------------------------------------- #}
                 {# READ CURRENT SILVER SCHEMA                       #}
                 {# ------------------------------------------------- #}
-
 
                 {% set payload_columns =
                     get_version_payload_columns(
@@ -760,11 +857,28 @@ WHERE json_extract_string(
                 %}
 
 
+                {# ------------------------------------------------- #}
+                {# CHOOSE MERGE DESTINATION                         #}
+                {# ------------------------------------------------- #}
+
+                {% if rebuild_table %}
+
+                    {% set merge_relation =
+                        stage_relation
+                    %}
+
+                {% else %}
+
+                    {% set merge_relation =
+                        target_relation
+                    %}
+
+                {% endif %}
+
 
                 {# ------------------------------------------------- #}
                 {# MERGE                                            #}
                 {# ------------------------------------------------- #}
-
 
                 {% call statement(
                     'merge_'
@@ -773,10 +887,16 @@ WHERE json_extract_string(
                     ~ loop.index
                 ) %}
 
+                {{ log(
+                    "Starting merge for "
+                    ~ project_type
+                    ~ " run_id="
+                    ~ run_id,
+                    info=True
+                ) }}
 
                     MERGE INTO
-                        {{ target_relation }} AS dest
-
+                        {{ merge_relation }} AS dest
 
                     USING (
 
@@ -802,11 +922,9 @@ WHERE json_extract_string(
                             src.version_id
 
 
-
                     {# --------------------------------------------- #}
                     {# PAYLOAD CHANGED                              #}
                     {# --------------------------------------------- #}
-
 
                     WHEN MATCHED
                         AND (
@@ -836,11 +954,9 @@ WHERE json_extract_string(
                         {% endfor %}
 
 
-
                     {# --------------------------------------------- #}
                     {# SAME PAYLOAD, NEWER OBSERVATION              #}
                     {# --------------------------------------------- #}
-
 
                     WHEN MATCHED
                         AND (
@@ -860,11 +976,9 @@ WHERE json_extract_string(
                             src.c_pull_timestamp_utc
 
 
-
                     {# --------------------------------------------- #}
                     {# NEW VERSION                                  #}
                     {# --------------------------------------------- #}
-
 
                     WHEN NOT MATCHED
 
@@ -892,7 +1006,6 @@ WHERE json_extract_string(
 
                     )
 
-
                     VALUES (
 
                         src.run_id,
@@ -917,26 +1030,54 @@ WHERE json_extract_string(
 
                     )
 
-
                 {% endcall %}
 
 
                 {% do adapter.commit() %}
-
 
             {% endfor %}
 
         {% endif %}
 
 
-    {% endfor %}
+        {# --------------------------------------------------------- #}
+        {# FULL REFRESH: APPEND FINISHED PROJECT TYPE TO SILVER     #}
+        {# --------------------------------------------------------- #}
 
+        {% if rebuild_table %}
+
+            {% call statement(
+                'append_stage_' ~ project_type
+            ) %}
+
+                INSERT INTO {{ target_relation }}
+                BY NAME
+
+                SELECT *
+                FROM {{ stage_relation }}
+
+            {% endcall %}
+
+
+            {% call statement(
+                'drop_stage_' ~ project_type
+            ) %}
+
+                DROP TABLE {{ stage_relation }}
+
+            {% endcall %}
+
+
+            {% do adapter.commit() %}
+
+        {% endif %}
+
+    {% endfor %}
 
 
     {# ============================================================= #}
     {# DBT REQUIRES A MAIN STATEMENT                                 #}
     {# ============================================================= #}
-
 
     {% call statement('main') %}
 
@@ -955,6 +1096,5 @@ WHERE json_extract_string(
             ]
         })
     }}
-
 
 {% endmaterialization %}

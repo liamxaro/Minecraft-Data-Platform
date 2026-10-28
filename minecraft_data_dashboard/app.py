@@ -9,6 +9,7 @@ st.set_page_config(
 modrinth_pages = [
     st.Page("pages/00_00_modrinth_overview.py", title="Modrinth Overview"),
     st.Page("pages/00_01_modrinth_mods.py", title="Modrinth Mods"),
+    st.Page("pages/00_02_modrinth_mod_compatibility_validator.py", title="Modrinth Mod Compatibility Validator"),
 ]
 
 curseforge_pages = [

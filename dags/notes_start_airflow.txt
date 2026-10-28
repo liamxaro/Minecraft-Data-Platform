@@ -4,9 +4,19 @@ export AIRFLOW_HOME="$(pwd)/.airflow"
 export AIRFLOW__CORE__DAGS_FOLDER="$(pwd)/dags"
 export AIRFLOW__CORE__SIMPLE_AUTH_MANAGER_ALL_ADMINS=True
 
-airflow standalone > .airflow/standalone.log 2>&1 &
+if pgrep -f "airflowstandalone|airflow standalone|airflow scheduler|airflowscheduler" > /dev/null; then
+    echo ""
+    echo "Airflow is already running."
+    echo ""
+    ps aux | grep airflow | grep -v grep
+else
+    airflow standalone > .airflow/standalone.log 2>&1 &
 
-sleep 3
+    sleep 3
+
+    echo ""
+    echo "Airflow started."
+fi
 
 echo ""
 echo "Airflow UI:"
